@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DVLD___Data_Access
 {
-    internal class clsPersonData
+    public class clsPersonData
     {
         public static bool GetPersonByID(int PersonID, ref string NationalNo,
             ref string FirstName, ref string SecondName,

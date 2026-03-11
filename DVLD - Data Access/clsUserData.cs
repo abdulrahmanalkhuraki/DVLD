@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace DVLD___Data_Access
 {
-    internal class clsUserData
+    public class clsUserData
     {
-        public static bool GetPersonByID(int UserID, ref int PersonID, ref string UserName, ref string Password, ref bool IsActive)
+        public static bool GetUserByID(int UserID, ref int PersonID, ref string Username, ref string Password, ref bool IsActive)
         {
             bool isFound = false;
 
@@ -33,7 +33,7 @@ namespace DVLD___Data_Access
                     isFound = true;
 
                     PersonID = (int)reader["PersonID"];
-                    UserName = (string)reader["UserName"];
+                    Username = (string)reader["Username"];
                     Password = (string)reader["Password"];
                     IsActive = (bool)reader["IsActive"];
 
@@ -60,21 +60,21 @@ namespace DVLD___Data_Access
             return isFound;
         }
 
-        public static int AddNewUser(int PersonID, string UserName, string Password, bool IsActive)
+        public static int AddNewUser(int PersonID, string Username, string Password, bool IsActive)
         {
             // This function will return the new User id if succeeded and -1 if not.
             int UserID = -1;
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = @"INSERT INTO Users (PersonID, UserName, Password, IsActive)
-                         VALUES (@PersonID, @UserName, @Password, @IsActive);
+            string query = @"INSERT INTO Users (PersonID, Username, Password, IsActive)
+                         VALUES (@PersonID, @Username, @Password, @IsActive);
                          SELECT SCOPE_IDENTITY();";
 
             SqlCommand command = new SqlCommand(query, connection);
             // Add parameters
             command.Parameters.AddWithValue("@PersonID", PersonID);
-            command.Parameters.AddWithValue("@UserName", UserName);
+            command.Parameters.AddWithValue("@Username", Username);
             command.Parameters.AddWithValue("@Password", Password);
             command.Parameters.AddWithValue("@IsActive", IsActive);
 
@@ -98,7 +98,7 @@ namespace DVLD___Data_Access
             return UserID;
         }
 
-        public static bool UpdateUser(int UserID, int PersonID, string UserName, string Password, bool IsActive)
+        public static bool UpdateUser(int UserID, int PersonID, string Username, string Password, bool IsActive)
         {
             int rowsAffected = 0;
 
@@ -106,7 +106,7 @@ namespace DVLD___Data_Access
 
             string query = @"UPDATE Users SET 
                             PersonID = @PersonID,
-                            UserName = @UserName,
+                            Username = @Username,
                             Password = @Password,
                             IsActive = @IsActive
                          WHERE UserID = @UserID";
@@ -116,7 +116,7 @@ namespace DVLD___Data_Access
             // Add parameters
             command.Parameters.AddWithValue("@UserID", UserID);
             command.Parameters.AddWithValue("@PersonID", PersonID);
-            command.Parameters.AddWithValue("@UserName", UserName);
+            command.Parameters.AddWithValue("@Username", Username);
             command.Parameters.AddWithValue("@Password", Password);
             command.Parameters.AddWithValue("@IsActive", IsActive);
 
