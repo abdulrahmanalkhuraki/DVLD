@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -322,7 +324,24 @@ namespace DVLD___Data_Access
             DataTable dt = new DataTable();
             SqlConnection sqlConnection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string Query = "select * from People";
+            string Query = @"SELECT 
+                                PersonId AS 'Person ID',
+                                FirstName + ' ' + SecondName + ' ' + ThirdName + ' ' + LastName AS Fullname,
+                                NationalNo AS 'National Number',
+                                FORMAT(DateOfBirth, 'yyyy-MM-dd') AS 'Date Of Birth',
+                                CASE
+                                    WHEN Gendor = 0 THEN 'Male'
+                                    WHEN Gendor = 1 THEN 'Female'
+                                    ELSE 'Unknown'
+                                END AS Gender,
+                                Countries.CountryName AS 'Nationality',
+                                Address,
+                                Phone,
+                                Email
+                            FROM
+                                People
+                                JOIN Countries ON Countries.CountryID = People.NationalityCountryID;";
+
             SqlCommand sqlCommand = new SqlCommand(Query, sqlConnection);
             try
             {

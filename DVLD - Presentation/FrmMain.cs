@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DVLD.Person;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,6 +26,12 @@ namespace DVLD
         private void drivingLicenseToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void peopleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmManagePeople frm = new FrmManagePeople();
+            frm.ShowDialog();
         }
     }
 }
