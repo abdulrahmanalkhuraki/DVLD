@@ -27,6 +27,14 @@ namespace DVLD___Business
         public string Email { get; set; }
         public int NationalityCountryId { get; set; }
         public string ImagePath { get; set; }
+        public string Fullname
+        {
+            get
+            {
+                return FirstName + " " + SecondName + " " + ThirdName + " " + LastName;
+            }
+        }
+
 
         public clsPerson()
         {

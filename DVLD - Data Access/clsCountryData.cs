@@ -38,5 +38,10 @@ namespace DVLD___Data_Access
             }
             return dt;
         }
+
+        public static bool GetCountryByID(int countryId, ref string CountryName)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

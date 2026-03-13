@@ -52,6 +52,12 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Person\ctrlPersonCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Person\ctrlPersonCard.Designer.cs">
+      <DependentUpon>ctrlPersonCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Person\FrmManagePeople.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Person\ctrlPersonCard.resx">
+      <DependentUpon>ctrlPersonCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Person\FrmManagePeople.resx">
       <DependentUpon>FrmManagePeople.cs</DependentUpon>
@@ -151,6 +160,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\filter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-person-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-person-100 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-id-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-name-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-gender-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-email-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-phone-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-country-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-date-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-address-24.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

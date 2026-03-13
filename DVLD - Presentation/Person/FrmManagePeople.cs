@@ -209,7 +209,7 @@ namespace DVLD.Person
 
         private void tbUserInput_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(cbFilterBy.SelectedIndex != 1)
+            if (cbFilterBy.SelectedIndex != 1)
             {
                 return;
             }
@@ -222,6 +222,11 @@ namespace DVLD.Person
                     e.Handled = true;
                 }
             }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
