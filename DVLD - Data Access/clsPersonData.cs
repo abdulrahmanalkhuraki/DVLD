@@ -326,7 +326,7 @@ namespace DVLD___Data_Access
 
             string Query = @"SELECT 
                                 PersonId AS 'Person ID',
-                                FirstName + ' ' + SecondName + ' ' + ThirdName + ' ' + LastName AS Fullname,
+                                Firstname,Secondname,Thirdname,Lastname,
                                 NationalNo AS 'National Number',
                                 FORMAT(DateOfBirth, 'yyyy-MM-dd') AS 'Date Of Birth',
                                 CASE

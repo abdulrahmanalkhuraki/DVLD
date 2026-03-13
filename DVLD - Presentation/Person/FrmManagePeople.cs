@@ -33,20 +33,6 @@ namespace DVLD.Person
             dgvPeople.DataSource = people;
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void cbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -83,7 +69,7 @@ namespace DVLD.Person
                 tbUserInput.Visible = false;
                 cbUserChoice.Visible = true;
 
-                if(CurrentSelectedIndex == 7)
+                if (CurrentSelectedIndex == 7)
                 {
                     string[] genders = { "Male", "Female" };
                     cbUserChoice.Items.Clear();
@@ -107,6 +93,7 @@ namespace DVLD.Person
             {
                 tbUserInput.Visible = false;
                 cbUserChoice.Visible = false;
+                dgvPeople.DataSource = clsPerson.GetAllPeople();
             }
         }
 
@@ -118,12 +105,12 @@ namespace DVLD.Person
             DataTable peopleData = clsPerson.GetAllPeople();
             DataRow[] filteredData = null;
 
-            if (cbFilterBy.SelectedIndex == 7) 
+            if (cbFilterBy.SelectedIndex == 7)
             {
                 string gender = cbUserChoice.SelectedIndex == 0 ? "Male" : "Female";
                 filteredData = peopleData.Select($"Gender = '{gender}'");
             }
-            else if (cbFilterBy.SelectedIndex == 10) 
+            else if (cbFilterBy.SelectedIndex == 10)
             {
                 string nationality = cbUserChoice.Text;
                 filteredData = peopleData.Select($"Nationality = '{nationality}'");
@@ -148,21 +135,22 @@ namespace DVLD.Person
         private void tbUserInput_TextChanged(object sender, EventArgs e)
         {
             /*
- * Items in cbFilterBy *
- index | property
-   0   | select a filter
-   1   | Person ID
-   2   | National Number
-   3   | First Name
-   4   | Second Name
-   5   | Third Name
-   6   | Last Name
-   7   | Gender
-   8   | Phone
-   9   | Email
-   10  | Nationality Country
+             * Items in cbFilterBy *
+             index | property
+               0   | select a filter
+               1   | Person ID
+               2   | National Number
+               3   | First Name
+               4   | Second Name
+               5   | Third Name
+               6   | Last Name
+               7   | Gender
+               8   | Phone
+               9   | Email
+               10  | Nationality Country
 
- */
+             */
+
             if (cbFilterBy.SelectedIndex < 0 || string.IsNullOrEmpty(tbUserInput.Text))
                 return;
 
@@ -176,46 +164,64 @@ namespace DVLD.Person
             {
                 case 1:
                     {
-                        filteredData = peopleData.Select($"Person ID = {Convert.ToInt16(tbUserInput.Text)}");
+                        filteredData = peopleData.Select($"[Person ID] = {Convert.ToInt16(tbUserInput.Text)}");
                     }
                     break;
                 case 2:
                     {
-                        filteredData = peopleData.Select($"National Number = '{tbUserInput.Text}'");
+                        filteredData = peopleData.Select($"[National Number] = '{tbUserInput.Text}'");
                     }
                     break;
                 case 3:
                     {
-                        filteredData = peopleData.Select($"National Number = '{tbUserInput.Text}'");
+                        filteredData = peopleData.Select($"Firstname = '{tbUserInput.Text}'");
                     }
                     break;
                 case 4:
                     {
-                        filteredData = peopleData.Select($"National Number = '{tbUserInput.Text}'");
+                        filteredData = peopleData.Select($"Secondname = '{tbUserInput.Text}'");
                     }
                     break;
                 case 5:
                     {
-                        filteredData = peopleData.Select($"National Number = '{tbUserInput.Text}'");
+                        filteredData = peopleData.Select($"Thirdname = '{tbUserInput.Text}'");
                     }
                     break;
                 case 6:
                     {
-                        filteredData = peopleData.Select($"National Number = '{tbUserInput.Text}'");
+                        filteredData = peopleData.Select($"Lastname = '{tbUserInput.Text}'");
                     }
                     break;
                 case 8:
                     {
-                        filteredData = peopleData.Select($"National Number = '{tbUserInput.Text}'");
+                        filteredData = peopleData.Select($"Phone = '{tbUserInput.Text}'");
                     }
                     break;
                 case 9:
                     {
-                        filteredData = peopleData.Select($"National Number = '{tbUserInput.Text}'");
+                        filteredData = peopleData.Select($"Email = '{tbUserInput.Text}'");
                     }
                     break;
             }
+            UpdateDataGridView(filteredData);
 
         }
+
+        private void tbUserInput_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(cbFilterBy.SelectedIndex != 1)
+            {
+                return;
+            }
+
+
+            if (!char.IsControl(e.KeyChar))
+            {
+                if (!char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+            }
+        }
     }
-    }
+}
