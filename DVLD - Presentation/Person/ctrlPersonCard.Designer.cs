@@ -48,7 +48,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblPersonId = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.lnklblEditInfo = new System.Windows.Forms.LinkLabel();
             this.pbPersonPicture = new System.Windows.Forms.PictureBox();
             this.gbPersonInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonPicture)).BeginInit();
@@ -75,20 +75,21 @@
             this.gbPersonInfo.Controls.Add(this.label3);
             this.gbPersonInfo.Controls.Add(this.lblPersonId);
             this.gbPersonInfo.Controls.Add(this.label1);
-            this.gbPersonInfo.Controls.Add(this.linkLabel1);
+            this.gbPersonInfo.Controls.Add(this.lnklblEditInfo);
             this.gbPersonInfo.Controls.Add(this.pbPersonPicture);
             this.gbPersonInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbPersonInfo.Font = new System.Drawing.Font("Myanmar Text", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbPersonInfo.Location = new System.Drawing.Point(0, 0);
             this.gbPersonInfo.Name = "gbPersonInfo";
-            this.gbPersonInfo.Size = new System.Drawing.Size(577, 492);
+            this.gbPersonInfo.Size = new System.Drawing.Size(656, 492);
             this.gbPersonInfo.TabIndex = 0;
             this.gbPersonInfo.TabStop = false;
             this.gbPersonInfo.Text = "Person Information";
             // 
             // lblAddress
             // 
-            this.lblAddress.Location = new System.Drawing.Point(315, 429);
+            this.lblAddress.Font = new System.Drawing.Font("Myanmar Text", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress.Location = new System.Drawing.Point(409, 429);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(228, 46);
             this.lblAddress.TabIndex = 20;
@@ -99,7 +100,7 @@
             // 
             this.label19.Image = global::DVLD.Properties.Resources.icons8_address_24;
             this.label19.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label19.Location = new System.Drawing.Point(369, 388);
+            this.label19.Location = new System.Drawing.Point(463, 388);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(126, 24);
             this.label19.TabIndex = 19;
@@ -108,28 +109,31 @@
             // 
             // lblDateOfBirth
             // 
-            this.lblDateOfBirth.Location = new System.Drawing.Point(393, 355);
+            this.lblDateOfBirth.Font = new System.Drawing.Font("Myanmar Text", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateOfBirth.Location = new System.Drawing.Point(419, 355);
             this.lblDateOfBirth.Name = "lblDateOfBirth";
-            this.lblDateOfBirth.Size = new System.Drawing.Size(78, 24);
+            this.lblDateOfBirth.Size = new System.Drawing.Size(214, 24);
             this.lblDateOfBirth.TabIndex = 18;
             this.lblDateOfBirth.Text = "???";
+            this.lblDateOfBirth.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label17
             // 
             this.label17.Image = global::DVLD.Properties.Resources.icons8_date_24;
             this.label17.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label17.Location = new System.Drawing.Point(369, 325);
+            this.label17.Location = new System.Drawing.Point(463, 325);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(126, 24);
+            this.label17.Size = new System.Drawing.Size(137, 24);
             this.label17.TabIndex = 17;
             this.label17.Text = "Date Of Birth";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblCountry
             // 
+            this.lblCountry.Font = new System.Drawing.Font("Myanmar Text", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCountry.Location = new System.Drawing.Point(197, 451);
             this.lblCountry.Name = "lblCountry";
-            this.lblCountry.Size = new System.Drawing.Size(78, 24);
+            this.lblCountry.Size = new System.Drawing.Size(112, 24);
             this.lblCountry.TabIndex = 16;
             this.lblCountry.Text = "???";
             // 
@@ -146,11 +150,13 @@
             // 
             // lblPhone
             // 
+            this.lblPhone.Font = new System.Drawing.Font("Myanmar Text", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhone.Location = new System.Drawing.Point(197, 388);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(78, 24);
+            this.lblPhone.Size = new System.Drawing.Size(146, 24);
             this.lblPhone.TabIndex = 14;
             this.lblPhone.Text = "???";
+            this.lblPhone.Click += new System.EventHandler(this.lblPhone_Click);
             // 
             // label13
             // 
@@ -165,9 +171,10 @@
             // 
             // lblEmail
             // 
+            this.lblEmail.Font = new System.Drawing.Font("Myanmar Text", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.Location = new System.Drawing.Point(197, 325);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(78, 24);
+            this.lblEmail.Size = new System.Drawing.Size(146, 24);
             this.lblEmail.TabIndex = 12;
             this.lblEmail.Text = "???";
             // 
@@ -184,6 +191,7 @@
             // 
             // lblGender
             // 
+            this.lblGender.Font = new System.Drawing.Font("Myanmar Text", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGender.Location = new System.Drawing.Point(197, 262);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(78, 24);
@@ -203,6 +211,7 @@
             // 
             // lblNationalNumber
             // 
+            this.lblNationalNumber.Font = new System.Drawing.Font("Myanmar Text", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNationalNumber.Location = new System.Drawing.Point(197, 136);
             this.lblNationalNumber.Name = "lblNationalNumber";
             this.lblNationalNumber.Size = new System.Drawing.Size(78, 24);
@@ -211,21 +220,22 @@
             // 
             // label7
             // 
-            this.label7.Image = global::DVLD.Properties.Resources.icons8_id_24;
+            this.label7.Image = global::DVLD.Properties.Resources.icons8_national_24;
             this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label7.Location = new System.Drawing.Point(18, 136);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(151, 24);
             this.label7.TabIndex = 7;
-            this.label7.Text = "National Number";
+            this.label7.Text = "National No";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblName
             // 
-            this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.lblName.Font = new System.Drawing.Font("Myanmar Text", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.lblName.Location = new System.Drawing.Point(197, 199);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(78, 24);
+            this.lblName.Size = new System.Drawing.Size(276, 60);
             this.lblName.TabIndex = 6;
             this.lblName.Text = "???";
             // 
@@ -243,7 +253,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(435, 46);
+            this.label3.Location = new System.Drawing.Point(505, 46);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(99, 24);
             this.label3.TabIndex = 4;
@@ -251,6 +261,7 @@
             // 
             // lblPersonId
             // 
+            this.lblPersonId.Font = new System.Drawing.Font("Myanmar Text", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPersonId.Location = new System.Drawing.Point(197, 73);
             this.lblPersonId.Name = "lblPersonId";
             this.lblPersonId.Size = new System.Drawing.Size(78, 24);
@@ -268,20 +279,20 @@
             this.label1.Text = "Person ID";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // linkLabel1
+            // lnklblEditInfo
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(425, 235);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(118, 24);
-            this.linkLabel1.TabIndex = 1;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Edit Informations";
+            this.lnklblEditInfo.AutoSize = true;
+            this.lnklblEditInfo.Location = new System.Drawing.Point(495, 235);
+            this.lnklblEditInfo.Name = "lnklblEditInfo";
+            this.lnklblEditInfo.Size = new System.Drawing.Size(118, 24);
+            this.lnklblEditInfo.TabIndex = 1;
+            this.lnklblEditInfo.TabStop = true;
+            this.lnklblEditInfo.Text = "Edit Informations";
             // 
             // pbPersonPicture
             // 
             this.pbPersonPicture.Image = global::DVLD.Properties.Resources.icons8_person_100__1_;
-            this.pbPersonPicture.Location = new System.Drawing.Point(409, 73);
+            this.pbPersonPicture.Location = new System.Drawing.Point(479, 73);
             this.pbPersonPicture.Name = "pbPersonPicture";
             this.pbPersonPicture.Size = new System.Drawing.Size(150, 150);
             this.pbPersonPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -294,8 +305,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gbPersonInfo);
             this.Name = "ctrlPersonCard";
-            this.Size = new System.Drawing.Size(577, 492);
-            this.Load += new System.EventHandler(this.ctrlPersonCard_Load);
+            this.Size = new System.Drawing.Size(656, 492);
             this.gbPersonInfo.ResumeLayout(false);
             this.gbPersonInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonPicture)).EndInit();
@@ -306,7 +316,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gbPersonInfo;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel lnklblEditInfo;
         private System.Windows.Forms.PictureBox pbPersonPicture;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblPersonId;

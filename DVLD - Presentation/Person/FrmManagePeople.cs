@@ -31,8 +31,119 @@ namespace DVLD.Person
             DataTable people = clsPerson.GetAllPeople();
             lblRecordsCount.Text = people.Rows.Count.ToString("N0");
             dgvPeople.DataSource = people;
+            ConfigurePeopleGridView();
         }
 
+        private void ConfigurePeopleGridView()
+        {
+            // Basic DataGridView properties
+            dgvPeople.AllowUserToAddRows = false;
+            dgvPeople.AllowUserToDeleteRows = false;
+            dgvPeople.ReadOnly = true;
+            dgvPeople.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvPeople.MultiSelect = false;
+            dgvPeople.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None; // Manual widths
+            dgvPeople.RowHeadersVisible = false;
+            dgvPeople.BackgroundColor = SystemColors.Window;
+            dgvPeople.BorderStyle = BorderStyle.Fixed3D;
+            dgvPeople.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvPeople.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvPeople.EnableHeadersVisualStyles = false;
+
+            // Header style
+            dgvPeople.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(52, 73, 94);
+            dgvPeople.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgvPeople.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            dgvPeople.ColumnHeadersHeight = 40;
+
+            // Rows style
+            dgvPeople.RowsDefaultCellStyle.BackColor = Color.White;
+            dgvPeople.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            dgvPeople.DefaultCellStyle.Font = new Font("Segoe UI", 9);
+            dgvPeople.DefaultCellStyle.ForeColor = Color.Black;
+            dgvPeople.DefaultCellStyle.SelectionBackColor = Color.FromArgb(52, 73, 94);
+            dgvPeople.DefaultCellStyle.SelectionForeColor = Color.White;
+
+            // Configure each column if it exists
+            if (dgvPeople.Columns.Count == 0) return;
+
+            // Set friendly headers
+            SetColumnHeader("Person ID", "ID");
+            SetColumnHeader("Firstname", "First Name");
+            SetColumnHeader("Secondname", "Second Name");
+            SetColumnHeader("Thirdname", "Third Name");
+            SetColumnHeader("Lastname", "Last Name");
+            SetColumnHeader("National Number", "National No.");
+            SetColumnHeader("Date Of Birth", "Date of Birth");
+            SetColumnHeader("Gender", "Gender");
+            SetColumnHeader("Nationality", "Nationality");
+            SetColumnHeader("Address", "Address");
+
+            // Optional columns (if present in DataTable)
+            if (dgvPeople.Columns.Contains("Email"))
+                SetColumnHeader("Email", "Email");
+            if (dgvPeople.Columns.Contains("Phone"))
+                SetColumnHeader("Phone", "Phone");
+
+            // Set display order
+            dgvPeople.Columns["Person ID"].DisplayIndex = 0;
+            dgvPeople.Columns["Firstname"].DisplayIndex = 1;
+            dgvPeople.Columns["Secondname"].DisplayIndex = 2;
+            dgvPeople.Columns["Thirdname"].DisplayIndex = 3;
+            dgvPeople.Columns["Lastname"].DisplayIndex = 4;
+
+            int index = 5;
+            if (dgvPeople.Columns.Contains("Email"))
+                dgvPeople.Columns["Email"].DisplayIndex = index++;
+            if (dgvPeople.Columns.Contains("Phone"))
+                dgvPeople.Columns["Phone"].DisplayIndex = index++;
+
+            dgvPeople.Columns["National Number"].DisplayIndex = index++;
+            dgvPeople.Columns["Date Of Birth"].DisplayIndex = index++;
+            dgvPeople.Columns["Gender"].DisplayIndex = index++;
+            dgvPeople.Columns["Nationality"].DisplayIndex = index++;
+            dgvPeople.Columns["Address"].DisplayIndex = index;
+
+            // Set column widths
+            dgvPeople.Columns["Person ID"].Width = 50;
+            dgvPeople.Columns["Firstname"].Width = 80;
+            dgvPeople.Columns["Secondname"].Width = 80;
+            dgvPeople.Columns["Thirdname"].Width = 80;
+            dgvPeople.Columns["Lastname"].Width = 100;
+
+            if (dgvPeople.Columns.Contains("Email"))
+                dgvPeople.Columns["Email"].Width = 150;
+            if (dgvPeople.Columns.Contains("Phone"))
+                dgvPeople.Columns["Phone"].Width = 100;
+
+            dgvPeople.Columns["National Number"].Width = 100;
+            dgvPeople.Columns["Date Of Birth"].Width = 90;
+            dgvPeople.Columns["Gender"].Width = 60;
+            dgvPeople.Columns["Nationality"].Width = 80;
+            dgvPeople.Columns["Address"].Width = 200;
+
+            // Format date column
+            if (dgvPeople.Columns["Date Of Birth"] is DataGridViewColumn dobCol)
+            {
+                dobCol.DefaultCellStyle.Format = "yyyy-MM-dd";
+                dobCol.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+
+            // Center-align specific columns
+            dgvPeople.Columns["Person ID"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvPeople.Columns["Gender"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvPeople.Columns["National Number"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            if (dgvPeople.Columns.Contains("Phone"))
+                dgvPeople.Columns["Phone"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        }
+
+        // Helper to safely set header text
+        private void SetColumnHeader(string columnName, string headerText)
+        {
+            if (dgvPeople.Columns.Contains(columnName))
+                dgvPeople.Columns[columnName].HeaderText = headerText;
+        }
 
         private void cbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -227,6 +338,24 @@ namespace DVLD.Person
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var SelectedRow = dgvPeople.SelectedRows[0];
+            int SelectedPersonId = Convert.ToInt32(SelectedRow.Cells["Person ID"].Value);
+            FrmPersonDetails frmPersonDetails = new FrmPersonDetails(SelectedPersonId);
+            frmPersonDetails.ShowDialog();
+        }
+
+        private void btnClose_Click_1(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

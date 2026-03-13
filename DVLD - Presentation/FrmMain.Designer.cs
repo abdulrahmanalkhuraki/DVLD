@@ -221,7 +221,7 @@
             // 
             // peopleToolStripMenuItem
             // 
-            this.peopleToolStripMenuItem.Image = global::DVLD.Properties.Resources.users__1_;
+            this.peopleToolStripMenuItem.Image = global::DVLD.Properties.Resources.group1;
             this.peopleToolStripMenuItem.Name = "peopleToolStripMenuItem";
             this.peopleToolStripMenuItem.Size = new System.Drawing.Size(100, 24);
             this.peopleToolStripMenuItem.Text = "People";

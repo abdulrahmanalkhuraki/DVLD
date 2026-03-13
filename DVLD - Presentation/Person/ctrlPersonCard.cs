@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,28 +14,52 @@ namespace DVLD.Person
 {
     public partial class ctrlPersonCard : UserControl
     {
-        clsPerson person;
-        public ctrlPersonCard(int PersonID)
+        public ctrlPersonCard()
         {
             InitializeComponent();
-            person = clsPerson.FindPerson(PersonID);
         }
 
-        private void ctrlPersonCard_Load(object sender, EventArgs e)
+        public void LoadPersonInformation(int PersonID)
         {
-            _LoadPersonInformation();
-        }
+            clsPerson person = clsPerson.FindPerson(PersonID);
 
-        private void _LoadPersonInformation()
-        {
             lblPersonId.Text = person.PersonID.ToString();
             lblNationalNumber.Text = person.NationalNo;
             lblName.Text = person.Fullname;
             lblEmail.Text = string.IsNullOrEmpty(person.Email)? "Unknown" : person.Email;
             lblPhone.Text = person.Phone;
             lblAddress.Text = person.Address;
-            lblDateOfBirth.Text = person.DateOfBirth.ToString("f");
+            lblDateOfBirth.Text = person.DateOfBirth.ToString("yyyy-MM-dd");
             lblCountry.Text = clsCountry.FindCountry(person.NationalityCountryId).CountryName;
+            // loading Gender
+            if(person.Gender)
+            {
+                lblGender.Text = "Male";
+            }
+            else
+            {
+                lblGender.Text = "Female";
+            }
+            // loading person picture
+            if (!string.IsNullOrEmpty(person.ImagePath))
+            {
+                using (FileStream fs = new FileStream(person.ImagePath, FileMode.Open, FileAccess.Read))
+                {
+                    pbPersonPicture.Image = System.Drawing.Image.FromStream(fs);
+                }
+            }
+            else
+            {
+                if (person.Gender)
+                    pbPersonPicture.Image = Properties.Resources.icons8_person_100;
+                else
+                    pbPersonPicture.Image = Properties.Resources.icons8_person_100__1_;
+            }
+        }
+
+        private void lblPhone_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
