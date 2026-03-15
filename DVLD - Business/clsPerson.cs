@@ -11,8 +11,6 @@ namespace DVLD___Business
 
     public class clsPerson
     {
-        public enum enMode { ADD, UPDATE }
-
         public enMode Mode;
         public int PersonID { get; private set; }
         public string NationalNo { get; set; }

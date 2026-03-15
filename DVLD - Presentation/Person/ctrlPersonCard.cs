@@ -34,11 +34,11 @@ namespace DVLD.Person
             // loading Gender
             if(person.Gender)
             {
-                lblGender.Text = "Male";
+                lblGender.Text = "Female";
             }
             else
             {
-                lblGender.Text = "Female";
+                lblGender.Text = "Male";
             }
             // loading person picture
             if (!string.IsNullOrEmpty(person.ImagePath))
@@ -58,6 +58,16 @@ namespace DVLD.Person
         }
 
         private void lblPhone_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblGender_Click(object sender, EventArgs e)
         {
 
         }

@@ -73,9 +73,29 @@ namespace DVLD.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bin {
+            get {
+                object obj = ResourceManager.GetObject("bin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close {
             get {
                 object obj = ResourceManager.GetObject("close", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap close1 {
+            get {
+                object obj = ResourceManager.GetObject("close1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -96,6 +116,16 @@ namespace DVLD.Properties {
         internal static System.Drawing.Bitmap DVLD_application_background {
             get {
                 object obj = ResourceManager.GetObject("DVLD application background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Edit {
+            get {
+                object obj = ResourceManager.GetObject("Edit", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,6 +183,26 @@ namespace DVLD.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_browse_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-browse-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_clear_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-clear-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_close_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8-close-32", resourceCulture);
@@ -203,6 +253,16 @@ namespace DVLD.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_female_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-female-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_gender_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-gender-24", resourceCulture);
@@ -216,6 +276,16 @@ namespace DVLD.Properties {
         internal static System.Drawing.Bitmap icons8_id_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-id-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_male_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-male-24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -283,6 +353,26 @@ namespace DVLD.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_save_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-save-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_search_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-search-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_settings_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-settings-24", resourceCulture);
@@ -336,6 +426,16 @@ namespace DVLD.Properties {
         internal static System.Drawing.Bitmap person_boy__1_ {
             get {
                 object obj = ResourceManager.GetObject("person_boy (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap person_boy__2_ {
+            get {
+                object obj = ResourceManager.GetObject("person_boy (2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

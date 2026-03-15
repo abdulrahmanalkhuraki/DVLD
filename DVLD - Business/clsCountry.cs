@@ -10,7 +10,6 @@ namespace DVLD___Business
 {
     public class clsCountry
     {
-        public enum enMode { ADD,UPDATE }
         private enMode Mode;
         public int CountryID { get; private set; }
         public string CountryName { get; set; }

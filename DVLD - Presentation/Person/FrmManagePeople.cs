@@ -23,7 +23,6 @@ namespace DVLD.Person
             _LoadPeople();
             cbFilterBy.SelectedIndex = 0;
 
-
         }
 
         private void _LoadPeople()
@@ -120,7 +119,7 @@ namespace DVLD.Person
             dgvPeople.Columns["Date Of Birth"].Width = 90;
             dgvPeople.Columns["Gender"].Width = 60;
             dgvPeople.Columns["Nationality"].Width = 80;
-            dgvPeople.Columns["Address"].Width = 200;
+            dgvPeople.Columns["Address"].Width = 155;
 
             // Format date column
             if (dgvPeople.Columns["Date Of Birth"] is DataGridViewColumn dobCol)
@@ -165,6 +164,8 @@ namespace DVLD.Person
              
              */
 
+
+
             int[] ItemsNeedsTextBox = { 1, 2, 3, 4, 5, 6, 8, 9 };
             int[] ItemsNeedsCombo = { 7, 10 };
 
@@ -172,6 +173,7 @@ namespace DVLD.Person
 
             if (ItemsNeedsTextBox.Contains(CurrentSelectedIndex))
             {
+                tbUserInput.Clear();
                 cbUserChoice.Visible = false;
                 tbUserInput.Visible = true;
             }
@@ -227,10 +229,10 @@ namespace DVLD.Person
                 filteredData = peopleData.Select($"Nationality = '{nationality}'");
             }
 
-            UpdateDataGridView(filteredData);
+            UpdateDataGridView(peopleData, filteredData);
         }
 
-        private void UpdateDataGridView(DataRow[] filteredData)
+        private void UpdateDataGridView(DataTable orignalData, DataRow[] filteredData)
         {
             if (filteredData != null && filteredData.Length > 0)
             {
@@ -238,7 +240,7 @@ namespace DVLD.Person
             }
             else
             {
-                DataTable dt = clsPerson.GetAllPeople().Clone();
+                DataTable dt = orignalData.Clone();
                 dgvPeople.DataSource = dt;
             }
         }
@@ -280,41 +282,41 @@ namespace DVLD.Person
                     break;
                 case 2:
                     {
-                        filteredData = peopleData.Select($"[National Number] = '{tbUserInput.Text}'");
+                        filteredData = peopleData.Select($"[National Number] Like '{tbUserInput.Text}%'");
                     }
                     break;
                 case 3:
                     {
-                        filteredData = peopleData.Select($"Firstname = '{tbUserInput.Text}'");
+                        filteredData = peopleData.Select($"Firstname Like '{tbUserInput.Text}%'");
                     }
                     break;
                 case 4:
                     {
-                        filteredData = peopleData.Select($"Secondname = '{tbUserInput.Text}'");
+                        filteredData = peopleData.Select($"Secondname Like '{tbUserInput.Text}%'");
                     }
                     break;
                 case 5:
                     {
-                        filteredData = peopleData.Select($"Thirdname = '{tbUserInput.Text}'");
+                        filteredData = peopleData.Select($"Thirdname Like '{tbUserInput.Text}%'");
                     }
                     break;
                 case 6:
                     {
-                        filteredData = peopleData.Select($"Lastname = '{tbUserInput.Text}'");
+                        filteredData = peopleData.Select($"Lastname Like '{tbUserInput.Text}%'");
                     }
                     break;
                 case 8:
                     {
-                        filteredData = peopleData.Select($"Phone = '{tbUserInput.Text}'");
+                        filteredData = peopleData.Select($"Phone Like '{tbUserInput.Text}%'");
                     }
                     break;
                 case 9:
                     {
-                        filteredData = peopleData.Select($"Email = '{tbUserInput.Text}'");
+                        filteredData = peopleData.Select($"Email Like '{tbUserInput.Text}%'");
                     }
                     break;
             }
-            UpdateDataGridView(filteredData);
+            UpdateDataGridView(peopleData, filteredData);
 
         }
 
@@ -353,9 +355,84 @@ namespace DVLD.Person
             Close();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
+            _DeletePerson();
+        }
 
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _DeletePerson();
+        }
+
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            _AddNewPerson();
+        }
+
+        private void addNewPersonToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _AddNewPerson();
+        }
+
+        private void _DeletePerson()
+        {
+            var SelectedRow = dgvPeople.SelectedRows[0];
+            int SelectedPersonId = Convert.ToInt32(SelectedRow.Cells["Person ID"].Value);
+
+            if (MessageBox.Show("Are You Sure You Want To Delete This Person?",
+                "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question,MessageBoxDefaultButton.Button2) != DialogResult.Yes)
+            {
+                return;
+            }
+
+            if (!clsPerson.DeletePerson(SelectedPersonId))
+            {
+                MessageBox.Show("You Can't Delete this person Because it's releted to other things in the system.",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            MessageBox.Show("Person Was Deleted Successfully.",
+                "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            _LoadPeople();
+        }
+
+        private void _AddNewPerson()
+        {
+            FrmAddEditPerson frm = new FrmAddEditPerson();
+            frm.ShowDialog();
+        }
+        private void _EditPersonInfo()
+        {
+            var SelectedRow = dgvPeople.SelectedRows[0];
+            int SelectedPersonId = Convert.ToInt32(SelectedRow.Cells["Person ID"].Value);
+
+            FrmAddEditPerson frm = new FrmAddEditPerson(SelectedPersonId);
+            frm.ShowDialog();
+        }
+
+        private void sendEmailToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This Feature is not implemented Yet.",
+                    "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void phoneCallToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This Feature is not implemented Yet.",
+            "info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            _EditPersonInfo();
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _EditPersonInfo();
         }
     }
 }

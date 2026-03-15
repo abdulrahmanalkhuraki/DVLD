@@ -10,8 +10,6 @@ namespace DVLD___Business
 {
     public class clsUser
     {
-        public enum enMode { ADD, UPDATE }
-
         public enMode Mode;
         public int UserID { get; private set; }
         public int PersonID { get; set; }

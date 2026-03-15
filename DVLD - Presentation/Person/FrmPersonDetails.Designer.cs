@@ -37,8 +37,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Myanmar Text", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label1.Location = new System.Drawing.Point(232, 43);
+            this.label1.Location = new System.Drawing.Point(232, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(223, 53);
             this.label1.TabIndex = 0;
@@ -46,12 +45,12 @@
             // 
             // btnClose
             // 
-            this.btnClose.Font = new System.Drawing.Font("Berlin Sans FB", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Image = global::DVLD.Properties.Resources.icons8_close_48;
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Image = global::DVLD.Properties.Resources.icons8_close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnClose.Location = new System.Drawing.Point(534, 628);
+            this.btnClose.Location = new System.Drawing.Point(550, 614);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(130, 51);
+            this.btnClose.Size = new System.Drawing.Size(114, 37);
             this.btnClose.TabIndex = 9;
             this.btnClose.Text = "Close";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -60,16 +59,16 @@
             // 
             // ctrlPersonCard1
             // 
-            this.ctrlPersonCard1.Location = new System.Drawing.Point(23, 127);
+            this.ctrlPersonCard1.Location = new System.Drawing.Point(23, 77);
             this.ctrlPersonCard1.Name = "ctrlPersonCard1";
-            this.ctrlPersonCard1.Size = new System.Drawing.Size(641, 492);
+            this.ctrlPersonCard1.Size = new System.Drawing.Size(641, 522);
             this.ctrlPersonCard1.TabIndex = 1;
             // 
             // FrmPersonDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(704, 691);
+            this.ClientSize = new System.Drawing.Size(686, 669);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.ctrlPersonCard1);
             this.Controls.Add(this.label1);
