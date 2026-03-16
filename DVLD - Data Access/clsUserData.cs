@@ -60,6 +60,56 @@ namespace DVLD___Data_Access
             return isFound;
         }
 
+        public static bool GetUserByUsername(string Username, ref int UserID, ref int PersonID, ref string Password, ref bool IsActive)
+        {
+            bool isFound = false;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = "SELECT * FROM Users WHERE Username = @Username";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@Username", Username);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    // The record was found
+                    isFound = true;
+
+                    UserID = (int)reader["UserID"];
+                    PersonID = (int)reader["PersonID"];
+                    Password = (string)reader["Password"];
+                    IsActive = (bool)reader["IsActive"];
+
+                }
+                else
+                {
+                    // The record was not found
+                    isFound = false;
+                }
+
+                reader.Close();
+
+
+            }
+            catch
+            {
+                isFound = false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return isFound;
+        }
+
         public static int AddNewUser(int PersonID, string Username, string Password, bool IsActive)
         {
             // This function will return the new User id if succeeded and -1 if not.
@@ -229,6 +279,7 @@ namespace DVLD___Data_Access
 
             return isFound;
         }
+
 
     }
 }

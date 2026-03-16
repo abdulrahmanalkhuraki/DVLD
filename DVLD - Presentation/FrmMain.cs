@@ -33,5 +33,10 @@ namespace DVLD
             FrmManagePeople frm = new FrmManagePeople();
             frm.ShowDialog();
         }
+
+        private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
     }
 }
