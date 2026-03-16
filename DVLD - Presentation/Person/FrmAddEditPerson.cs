@@ -57,7 +57,7 @@ namespace DVLD.Person
             {
                 errorProvider1.SetError(sender as TextBox, "This Field Can't Be Empty");
             }
-            else if(clsPerson.IsPersonExists((sender as TextBox).Text))
+            else if(!Person.NationalNo.Equals(tbNationalNumber.Text) && clsPerson.IsPersonExists((sender as TextBox).Text))
             {
                 errorProvider1.SetError(sender as TextBox, "This National Number Is set For another Person");
             }
@@ -104,21 +104,10 @@ namespace DVLD.Person
                     pbPersonPhoto.Image = null;
                 }
 
-                if (!string.IsNullOrEmpty(CurrentSavedImagePath) && File.Exists(CurrentSavedImagePath))
-                {
-                    File.Delete(CurrentSavedImagePath);
-                }
-
-                Guid filename = Guid.NewGuid();
-                string destinationPath = Path.Combine(PhotosStoragePath, filename.ToString());
-
-                File.Copy(selectedFile, destinationPath, true);
-
-                using (FileStream fs = new FileStream(destinationPath, FileMode.Open, FileAccess.Read))
+                using (FileStream fs = new FileStream(selectedFile, FileMode.Open, FileAccess.Read))
                 {
                     pbPersonPhoto.Image = Image.FromStream(fs);
                 }
-                CurrentSavedImagePath = destinationPath;
                 pbPersonPhoto.Tag = true;
                 btnClearImage.Visible = true;
             }
@@ -163,12 +152,35 @@ namespace DVLD.Person
             Person.Phone = tbPhone.Text;
             Person.DateOfBirth = dtpDateOfBirth.Value;
             Person.Address = tbAddress.Text;
-            Person.ImagePath = CurrentSavedImagePath;
+            _SaveImage();
             if (Person.Save())
             {
                 MessageBox.Show("Person Record Has Been Saved Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 _ClearForm();
             }
+        }
+
+        private void _SaveImage()
+        {
+            if(!Convert.ToBoolean(pbPersonPhoto.Tag))
+            {
+                return;
+            }
+
+            string selectedFile = ofdPersonPhoto.FileName;
+
+            if (!string.IsNullOrEmpty(CurrentSavedImagePath) && File.Exists(CurrentSavedImagePath))
+            {
+                File.Delete(CurrentSavedImagePath);
+            }
+
+
+            string filename = Guid.NewGuid().ToString()+Path.GetFileName(selectedFile.Substring(selectedFile.Length-4));
+            string destinationPath = Path.Combine(PhotosStoragePath, filename);
+
+            File.Copy(selectedFile, destinationPath, true);
+            CurrentSavedImagePath = destinationPath;
+            Person.ImagePath = CurrentSavedImagePath;
         }
 
         private void tbFirstname_Enter(object sender, EventArgs e)
@@ -236,6 +248,7 @@ namespace DVLD.Person
         private void _LoadPersonInfo()
         {
             lblPersonId.Text = Person.PersonID.ToString();
+            tbNationalNumber.Text = Person.NationalNo;
             tbFirstname.Text = Person.FirstName;
             tbSecondname.Text = Person.SecondName;
             tbThirdname.Text = Person.ThirdName;
@@ -245,6 +258,7 @@ namespace DVLD.Person
             tbEmail.Text = Person.Email;
             tbPhone.Text = Person.Phone;
             tbAddress.Text = Person.Address;
+            dtpDateOfBirth.Value = Person.DateOfBirth;
             _LoadPersonPhoto(Person.ImagePath);
         }
 
@@ -307,7 +321,7 @@ namespace DVLD.Person
                 ErrorMessage("National Number Shouldn't Be Empty.");
                 return false;
             }
-            if (clsPerson.IsPersonExists(tbNationalNumber.Text))
+            if (!Person.NationalNo.Equals(tbNationalNumber.Text) && clsPerson.IsPersonExists(tbNationalNumber.Text))
             {
                 ErrorMessage("National Number Is Set By Another Person.");
                 return false;

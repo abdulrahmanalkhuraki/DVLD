@@ -313,6 +313,16 @@ namespace DVLD.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_password_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-password-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_person_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-person-100", resourceCulture);
@@ -376,6 +386,36 @@ namespace DVLD.Properties {
         internal static System.Drawing.Bitmap icons8_settings_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-settings-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_user_login_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-user-login-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_user_login_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-user-login-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_username_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-username-24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

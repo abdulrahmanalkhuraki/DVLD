@@ -403,6 +403,7 @@ namespace DVLD.Person
         {
             FrmAddEditPerson frm = new FrmAddEditPerson();
             frm.ShowDialog();
+            _LoadPeople();
         }
         private void _EditPersonInfo()
         {
@@ -411,6 +412,7 @@ namespace DVLD.Person
 
             FrmAddEditPerson frm = new FrmAddEditPerson(SelectedPersonId);
             frm.ShowDialog();
+            _LoadPeople();
         }
 
         private void sendEmailToolStripMenuItem_Click(object sender, EventArgs e)
