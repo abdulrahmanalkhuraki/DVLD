@@ -157,7 +157,6 @@
             this.lblPhone.Size = new System.Drawing.Size(235, 24);
             this.lblPhone.TabIndex = 14;
             this.lblPhone.Text = "???";
-            this.lblPhone.Click += new System.EventHandler(this.lblPhone_Click);
             // 
             // label13
             // 
@@ -200,7 +199,6 @@
             this.lblGender.Size = new System.Drawing.Size(78, 24);
             this.lblGender.TabIndex = 10;
             this.lblGender.Text = "???";
-            this.lblGender.Click += new System.EventHandler(this.lblGender_Click);
             // 
             // label9
             // 
@@ -213,7 +211,6 @@
             this.label9.TabIndex = 9;
             this.label9.Text = "Gender";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // lblNationalNumber
             // 
@@ -288,6 +285,7 @@
             this.lnklblEditInfo.TabIndex = 1;
             this.lnklblEditInfo.TabStop = true;
             this.lnklblEditInfo.Text = "Edit Informations";
+            this.lnklblEditInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnklblEditInfo_LinkClicked);
             // 
             // pbPersonPicture
             // 

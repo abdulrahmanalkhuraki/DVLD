@@ -16,10 +16,9 @@ namespace DVLD.Person
     public partial class FrmAddEditPerson : Form
     {
         private string PhotosStoragePath = Path.Combine(Application.StartupPath, "People_Photos");
-        private string CurrentSavedImagePath = string.Empty;
+        private string CurrentShowedImagePath = string.Empty;
         private bool IsPersonInfoEdited = false;
         private clsPerson Person;
-
 
         public FrmAddEditPerson()
         {
@@ -32,8 +31,6 @@ namespace DVLD.Person
 
             Person = new clsPerson();
             _ConfigureComponents(Person.Mode);
-
-
         }
 
         public FrmAddEditPerson(int PersonID)
@@ -70,6 +67,9 @@ namespace DVLD.Person
 
         private void rbMale_CheckedChanged(object sender, EventArgs e)
         {
+            IsPersonInfoEdited = true;
+
+
             if (Convert.ToBoolean(pbPersonPhoto.Tag)) // check if there is an image
             {
                 return;
@@ -85,10 +85,7 @@ namespace DVLD.Person
             }
         }
 
-        private void btnClearForm_Click(object sender, EventArgs e)
-        {
-            _ClearForm();
-        }
+        private void btnClearForm_Click(object sender, EventArgs e) => _ClearForm();
 
         private void btnBrowse_Click(object sender, EventArgs e)
         {
@@ -108,6 +105,7 @@ namespace DVLD.Person
                 {
                     pbPersonPhoto.Image = Image.FromStream(fs);
                 }
+                CurrentShowedImagePath = selectedFile;
                 pbPersonPhoto.Tag = true;
                 btnClearImage.Visible = true;
             }
@@ -115,12 +113,12 @@ namespace DVLD.Person
 
         private void btnClearImage_Click(object sender, EventArgs e)
         {
-            IsPersonInfoEdited = true;
-
             if (!Convert.ToBoolean(pbPersonPhoto.Tag))
             {
                 return;
             }
+
+            IsPersonInfoEdited = true;
 
             if (pbPersonPhoto.Image != null)
             {
@@ -130,11 +128,12 @@ namespace DVLD.Person
 
             }
 
+            CurrentShowedImagePath = string.Empty;
             btnClearImage.Visible = false;
             pbPersonPhoto.Tag = false;
         }
 
-        private void btnSaveRecord_Click(object sender, EventArgs e)
+         private void btnSaveRecord_Click(object sender, EventArgs e)
         {
             if (!_IsInputValid())
             {
@@ -157,30 +156,8 @@ namespace DVLD.Person
             {
                 MessageBox.Show("Person Record Has Been Saved Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 _ClearForm();
+                _ConfigureComponents(Person.Mode);
             }
-        }
-
-        private void _SaveImage()
-        {
-            if(!Convert.ToBoolean(pbPersonPhoto.Tag))
-            {
-                return;
-            }
-
-            string selectedFile = ofdPersonPhoto.FileName;
-
-            if (!string.IsNullOrEmpty(CurrentSavedImagePath) && File.Exists(CurrentSavedImagePath))
-            {
-                File.Delete(CurrentSavedImagePath);
-            }
-
-
-            string filename = Guid.NewGuid().ToString()+Path.GetFileName(selectedFile.Substring(selectedFile.Length-4));
-            string destinationPath = Path.Combine(PhotosStoragePath, filename);
-
-            File.Copy(selectedFile, destinationPath, true);
-            CurrentSavedImagePath = destinationPath;
-            Person.ImagePath = CurrentSavedImagePath;
         }
 
         private void tbFirstname_Enter(object sender, EventArgs e)
@@ -202,8 +179,27 @@ namespace DVLD.Person
 
         #endregion
 
-
         #region Helpers
+        private void _SaveImage()
+        {
+            if (!string.IsNullOrEmpty(Person.ImagePath) && File.Exists(Person.ImagePath))
+            {
+                if(Person.ImagePath != CurrentShowedImagePath)
+                    File.Delete(Person.ImagePath);
+            }
+
+            if (!Convert.ToBoolean(pbPersonPhoto.Tag))
+            {
+                Person.ImagePath = string.Empty;
+                return;
+            }
+
+            string filename = Guid.NewGuid().ToString() + Path.GetFileName(CurrentShowedImagePath.Substring(CurrentShowedImagePath.Length - 4));
+            string destinationPath = Path.Combine(PhotosStoragePath, filename);
+
+            File.Copy(CurrentShowedImagePath, destinationPath, true);
+            Person.ImagePath = destinationPath;
+        }
 
         private void _LoadCountries()
         {
@@ -264,6 +260,7 @@ namespace DVLD.Person
 
         private void _ClearForm()
         {
+            IsPersonInfoEdited = false;
             DateTime MaxDate = DateTime.Now.Subtract(new TimeSpan(6574, 12, 0, 0));
             tbFirstname.Clear();
             tbSecondname.Clear();
@@ -299,12 +296,11 @@ namespace DVLD.Person
             using (FileStream fs = new FileStream(imagePath, FileMode.Open, FileAccess.Read))
             {
                 pbPersonPhoto.Image = Image.FromStream(fs);
-                CurrentSavedImagePath = imagePath;
+                CurrentShowedImagePath = imagePath;
             }
             pbPersonPhoto.Tag = true;// there is an image 
 
         }
-
 
         private bool _IsInputValid()
         {
@@ -379,10 +375,7 @@ namespace DVLD.Person
         {
             MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-
-
         #endregion
-
 
     }
 }

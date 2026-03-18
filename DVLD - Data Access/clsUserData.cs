@@ -192,7 +192,14 @@ namespace DVLD___Data_Access
             DataTable dt = new DataTable();
             SqlConnection sqlConnection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string Query = "select * from Users";
+            string Query = @"SELECT 
+                                UserID,
+                                Users.PersonID,
+                                People.FirstName + ' ' + People.SecondName + ' ' + People.ThirdName + ' ' + People.LastName AS Fullname,
+                                UserName,
+                                IsActive 
+                            FROM Users 
+                            JOIN People ON Users.PersonID = People.PersonID";
             SqlCommand sqlCommand = new SqlCommand(Query, sqlConnection);
             try
             {

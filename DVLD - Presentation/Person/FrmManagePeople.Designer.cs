@@ -101,7 +101,7 @@
             this.sendEmailToolStripMenuItem,
             this.phoneCallToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(215, 212);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 184);
             // 
             // toolStripMenuItem1
             // 
@@ -286,7 +286,7 @@
             // 
             this.editToolStripMenuItem.Image = global::DVLD.Properties.Resources.Edit;
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(214, 28);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(210, 28);
             this.editToolStripMenuItem.Text = "Edit";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 

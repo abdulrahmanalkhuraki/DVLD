@@ -1,4 +1,5 @@
 ﻿using DVLD.Person;
+using DVLD.User;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -37,6 +38,12 @@ namespace DVLD
         private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Restart();
+        }
+
+        private void usersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmManageUsers frm = new FrmManageUsers();
+            frm.ShowDialog();
         }
     }
 }

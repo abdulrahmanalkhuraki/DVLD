@@ -255,15 +255,16 @@ namespace DVLD___Data_Access
 
             SqlCommand command = new SqlCommand(query, connection);
 
+            command.Parameters.AddWithValue("@PersonID", PersonID);
             command.Parameters.AddWithValue("@NationalNo", NationalNo);
-            command.Parameters.AddWithValue("@FirstName", NationalNo);
-            command.Parameters.AddWithValue("@SecondName", NationalNo);
-            command.Parameters.AddWithValue("@LastName", NationalNo);
-            command.Parameters.AddWithValue("@DateOfBirth", NationalNo);
-            command.Parameters.AddWithValue("@Gendor", NationalNo);
-            command.Parameters.AddWithValue("@Address", NationalNo);
-            command.Parameters.AddWithValue("@Phone", NationalNo);
-            command.Parameters.AddWithValue("@NationalityCountryId", NationalNo);
+            command.Parameters.AddWithValue("@FirstName", FirstName);
+            command.Parameters.AddWithValue("@SecondName", SecondName);
+            command.Parameters.AddWithValue("@LastName", LastName);
+            command.Parameters.AddWithValue("@DateOfBirth", DateOfBirth);
+            command.Parameters.AddWithValue("@Gendor", Gender);
+            command.Parameters.AddWithValue("@Address", Address);
+            command.Parameters.AddWithValue("@Phone", Phone);
+            command.Parameters.AddWithValue("@NationalityCountryId", NationalityCountryId);
 
 
             // --Handle Null Values--//

@@ -19,6 +19,25 @@ namespace DVLD.Person
             InitializeComponent();
         }
 
+        #region Event Handlers
+
+        private void lnklblEditInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            int personId;
+            if(!int.TryParse(lblPersonId.Text, out personId))
+            {
+                MessageBox.Show("No Person Information To Edit.","Faild",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return;
+            }
+            FrmAddEditPerson updateForm = new FrmAddEditPerson(personId);
+            updateForm.ShowDialog();
+            LoadPersonInformation(personId);
+        }
+
+        #endregion
+
+        #region Helpers
+
         public void LoadPersonInformation(int PersonID)
         {
             clsPerson person = clsPerson.FindPerson(PersonID);
@@ -57,19 +76,6 @@ namespace DVLD.Person
             }
         }
 
-        private void lblPhone_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblGender_Click(object sender, EventArgs e)
-        {
-
-        }
+        #endregion
     }
 }
