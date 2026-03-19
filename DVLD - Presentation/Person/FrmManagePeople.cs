@@ -44,7 +44,9 @@ namespace DVLD.Person
              
              */
 
-
+            DataTable allPeople = clsPerson.GetAllPeople();
+            dgvPeople.DataSource = allPeople;
+            ConfigurePeopleGridView();
 
             int[] ItemsNeedsTextBox = { 1, 2, 3, 4, 5, 6, 8, 9 };
             int[] ItemsNeedsCombo = { 7, 10 };
@@ -86,7 +88,6 @@ namespace DVLD.Person
             {
                 tbUserInput.Visible = false;
                 cbUserChoice.Visible = false;
-                dgvPeople.DataSource = clsPerson.GetAllPeople();
             }
         }
 

@@ -63,7 +63,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Myanmar Text", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(149, 39);
+            this.label1.Location = new System.Drawing.Point(149, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(272, 66);
             this.label1.TabIndex = 3;
@@ -153,10 +153,12 @@
             // 
             // lblRecordsCount
             // 
-            this.lblRecordsCount.Font = new System.Drawing.Font("Myanmar Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRecordsCount.AutoSize = true;
+            this.lblRecordsCount.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRecordsCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(58)))), ((int)(((byte)(183)))));
             this.lblRecordsCount.Location = new System.Drawing.Point(108, 556);
             this.lblRecordsCount.Name = "lblRecordsCount";
-            this.lblRecordsCount.Size = new System.Drawing.Size(78, 19);
+            this.lblRecordsCount.Size = new System.Drawing.Size(20, 23);
             this.lblRecordsCount.TabIndex = 21;
             this.lblRecordsCount.Text = "0";
             // 
@@ -164,6 +166,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Myanmar Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label3.Location = new System.Drawing.Point(12, 556);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 30);
@@ -172,6 +175,7 @@
             // 
             // cbUserChoice
             // 
+            this.cbUserChoice.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbUserChoice.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbUserChoice.FormattingEnabled = true;
             this.cbUserChoice.Items.AddRange(new object[] {
@@ -202,6 +206,7 @@
             // 
             // cbFilterBy
             // 
+            this.cbFilterBy.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbFilterBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFilterBy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbFilterBy.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -238,6 +243,7 @@
             // 
             // btnDelete
             // 
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.Font = new System.Drawing.Font("Myanmar Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDelete.ImageIndex = 1;
@@ -253,6 +259,7 @@
             // 
             // btnEdit
             // 
+            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit.Font = new System.Drawing.Font("Myanmar Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEdit.ImageIndex = 2;
@@ -268,16 +275,17 @@
             // 
             // btnClose
             // 
-            this.btnClose.Font = new System.Drawing.Font("Myanmar Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.Image = global::DVLD.Properties.Resources.icons8_close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnClose.Location = new System.Drawing.Point(1052, 553);
+            this.btnClose.Location = new System.Drawing.Point(1032, 556);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(92, 36);
+            this.btnClose.Size = new System.Drawing.Size(110, 40);
             this.btnClose.TabIndex = 22;
             this.btnClose.Text = "Close";
-            this.btnClose.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label2
@@ -294,6 +302,7 @@
             // 
             // btnNew
             // 
+            this.btnNew.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNew.Font = new System.Drawing.Font("Myanmar Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNew.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNew.ImageIndex = 0;
@@ -311,7 +320,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::DVLD.Properties.Resources.user__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 15);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(117, 121);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -322,7 +331,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1156, 597);
+            this.ClientSize = new System.Drawing.Size(1156, 602);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnClose);

@@ -173,7 +173,7 @@ namespace DVLD.User
             dgvUsers.MultiSelect = false;
             dgvUsers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
             dgvUsers.RowHeadersVisible = false;
-            dgvUsers.BackgroundColor = SystemColors.Window;
+            dgvUsers.BackgroundColor = Color.White; // or Color.FromArgb(245, 245, 245)
             dgvUsers.BorderStyle = BorderStyle.Fixed3D;
             dgvUsers.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvUsers.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -182,20 +182,19 @@ namespace DVLD.User
             // Set row height
             dgvUsers.RowTemplate.Height = 50;
 
-            // Header style
-            dgvUsers.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(52, 73, 94);
+            // Header style - Purple
+            dgvUsers.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(103, 58, 183);  // Deep purple
             dgvUsers.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dgvUsers.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
             dgvUsers.ColumnHeadersHeight = 40;
 
-            // Rows style
+            // Rows style - Soft purple alternating
             dgvUsers.RowsDefaultCellStyle.BackColor = Color.White;
-            dgvUsers.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            dgvUsers.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(243, 239, 249);  // Light lavender
             dgvUsers.DefaultCellStyle.Font = new Font("Segoe UI", 9);
-            dgvUsers.DefaultCellStyle.ForeColor = Color.Black;
-            dgvUsers.DefaultCellStyle.SelectionBackColor = Color.FromArgb(52, 73, 94);
+            dgvUsers.DefaultCellStyle.ForeColor = Color.FromArgb(33, 33, 33);
+            dgvUsers.DefaultCellStyle.SelectionBackColor = Color.FromArgb(81, 45, 168);  // Darker purple
             dgvUsers.DefaultCellStyle.SelectionForeColor = Color.White;
-
             dgvUsers.DefaultCellStyle.Padding = new Padding(5);
 
             // Set column headers and visibility
@@ -220,23 +219,32 @@ namespace DVLD.User
 
             // Set column widths
             if (dgvUsers.Columns.Contains("UserID"))
-                dgvUsers.Columns["UserID"].Width = 156;
+                dgvUsers.Columns["UserID"].Width = 157;
             if (dgvUsers.Columns.Contains("PersonID"))
-                dgvUsers.Columns["PersonID"].Width = 176;
+                dgvUsers.Columns["PersonID"].Width = 177;
             if (dgvUsers.Columns.Contains("FullName"))
-                dgvUsers.Columns["FullName"].Width = 376;
+                dgvUsers.Columns["FullName"].Width = 377;
             if (dgvUsers.Columns.Contains("UserName"))
-                dgvUsers.Columns["UserName"].Width = 256;
+                dgvUsers.Columns["UserName"].Width = 257;
             if (dgvUsers.Columns.Contains("IsActive"))
-                dgvUsers.Columns["IsActive"].Width = 156;
+                dgvUsers.Columns["IsActive"].Width = 157;
 
             // Center alignment for ID columns and IsActive
             if (dgvUsers.Columns.Contains("UserID"))
+            {
                 dgvUsers.Columns["UserID"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvUsers.Columns["UserID"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
             if (dgvUsers.Columns.Contains("PersonID"))
+            {
                 dgvUsers.Columns["PersonID"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvUsers.Columns["PersonID"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
             if (dgvUsers.Columns.Contains("IsActive"))
+            {
                 dgvUsers.Columns["IsActive"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvUsers.Columns["IsActive"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
 
             // Convert IsActive column to checkbox
             if (dgvUsers.Columns.Contains("IsActive") && !(dgvUsers.Columns["IsActive"] is DataGridViewCheckBoxColumn))
@@ -247,7 +255,7 @@ namespace DVLD.User
                 int width = oldCol.Width;
                 bool visible = oldCol.Visible;
 
-                // Create checkbox column with custom style for better visibility
+                // Create checkbox column with custom style
                 DataGridViewCheckBoxColumn newCol = new DataGridViewCheckBoxColumn
                 {
                     Name = "IsActive",
@@ -257,12 +265,13 @@ namespace DVLD.User
                     DataPropertyName = "IsActive",
                     ReadOnly = true,
                     ThreeState = false,
-                    // Center the checkbox in the cell
                     CellTemplate = new DataGridViewCheckBoxCell
                     {
                         Style = new DataGridViewCellStyle
                         {
-                            Alignment = DataGridViewContentAlignment.MiddleCenter
+                            Alignment = DataGridViewContentAlignment.MiddleCenter,
+                            BackColor = Color.White,
+                            SelectionBackColor = Color.FromArgb(52, 152, 219)
                         }
                     }
                 };
