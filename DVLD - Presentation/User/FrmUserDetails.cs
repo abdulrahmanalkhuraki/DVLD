@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DVLD___Business;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,16 +13,20 @@ namespace DVLD.User
 {
     public partial class FrmUserDetails : Form
     {
-        private int userId;
+        private clsUser User;
 
-        public FrmUserDetails()
+        public FrmUserDetails(int UserId)
         {
             InitializeComponent();
+            this.User = clsUser.FindUser(UserId);
         }
 
-        public FrmUserDetails(int userId)
+        private void FrmUserDetails_Load(object sender, EventArgs e)
         {
-            this.userId = userId;
+            if (User != null)
+            {
+                ctrlUserCard1.LoadUserInformation(User.UserID);
+            }
         }
     }
 }

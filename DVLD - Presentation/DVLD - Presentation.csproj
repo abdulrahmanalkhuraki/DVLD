@@ -151,6 +151,9 @@
     <EmbeddedResource Include="User\FrmManageUsers.resx">
       <DependentUpon>FrmManageUsers.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User\FrmUserDetails.resx">
+      <DependentUpon>FrmUserDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
