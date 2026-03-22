@@ -15,6 +15,10 @@ namespace DVLD.Person
 {
     public partial class FrmAddEditPerson : Form
     {
+        public delegate void DataBackEventHandler(object sender, int PersonID);
+
+        public event DataBackEventHandler DataBack;
+
         private string PhotosStoragePath = Path.Combine(Application.StartupPath, "People_Photos");
         private string CurrentShowedImagePath = string.Empty;
         private bool IsPersonInfoEdited = false;
@@ -175,6 +179,11 @@ namespace DVLD.Person
             {
                 errorProvider1.SetError(sender as TextBox, "");
             }
+        }
+
+        private void FrmAddEditPerson_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DataBack?.Invoke(this, Person.PersonID);
         }
 
         #endregion
@@ -376,6 +385,7 @@ namespace DVLD.Person
             MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         #endregion
+
 
     }
 }

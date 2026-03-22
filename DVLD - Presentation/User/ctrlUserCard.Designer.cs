@@ -55,7 +55,7 @@
             this.groupBox1.Controls.Add(this.lblUserId);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(0, 543);
+            this.groupBox1.Location = new System.Drawing.Point(0, 530);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(656, 149);
             this.groupBox1.TabIndex = 1;
@@ -132,7 +132,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ctrlPersonCard1);
             this.Name = "ctrlUserCard";
-            this.Size = new System.Drawing.Size(659, 701);
+            this.Size = new System.Drawing.Size(659, 684);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
