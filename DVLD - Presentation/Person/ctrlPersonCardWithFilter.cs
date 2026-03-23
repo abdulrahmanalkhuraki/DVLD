@@ -96,5 +96,10 @@ namespace DVLD.Person
                 ctrlPersonCard1.LoadPersonInformation(PersonID);
             }
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

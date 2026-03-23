@@ -313,6 +313,16 @@ namespace DVLD.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_next_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-next-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_password_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-password-24", resourceCulture);
@@ -386,6 +396,16 @@ namespace DVLD.Properties {
         internal static System.Drawing.Bitmap icons8_settings_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-settings-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_status_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-status-24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

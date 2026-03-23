@@ -40,7 +40,7 @@
             // 
             // ctrlPersonCard1
             // 
-            this.ctrlPersonCard1.Location = new System.Drawing.Point(0, 105);
+            this.ctrlPersonCard1.Location = new System.Drawing.Point(0, 78);
             this.ctrlPersonCard1.Name = "ctrlPersonCard1";
             this.ctrlPersonCard1.Size = new System.Drawing.Size(656, 527);
             this.ctrlPersonCard1.TabIndex = 0;
@@ -55,15 +55,16 @@
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(650, 100);
+            this.groupBox1.Size = new System.Drawing.Size(650, 73);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filter";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btnAddNewPerson
             // 
             this.btnAddNewPerson.Image = global::DVLD.Properties.Resources.person_boy__1_;
-            this.btnAddNewPerson.Location = new System.Drawing.Point(561, 41);
+            this.btnAddNewPerson.Location = new System.Drawing.Point(562, 23);
             this.btnAddNewPerson.Name = "btnAddNewPerson";
             this.btnAddNewPerson.Size = new System.Drawing.Size(48, 37);
             this.btnAddNewPerson.TabIndex = 11;
@@ -73,7 +74,7 @@
             // btnSearch
             // 
             this.btnSearch.Image = global::DVLD.Properties.Resources.icons8_search_24;
-            this.btnSearch.Location = new System.Drawing.Point(511, 41);
+            this.btnSearch.Location = new System.Drawing.Point(512, 23);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(48, 37);
             this.btnSearch.TabIndex = 10;
@@ -83,7 +84,7 @@
             // tbSearchText
             // 
             this.tbSearchText.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSearchText.Location = new System.Drawing.Point(312, 41);
+            this.tbSearchText.Location = new System.Drawing.Point(313, 24);
             this.tbSearchText.Name = "tbSearchText";
             this.tbSearchText.Size = new System.Drawing.Size(186, 35);
             this.tbSearchText.TabIndex = 8;
@@ -100,7 +101,7 @@
             "Person ID",
             "National Number",
             "Full Name"});
-            this.cbSearchBy.Location = new System.Drawing.Point(120, 41);
+            this.cbSearchBy.Location = new System.Drawing.Point(121, 24);
             this.cbSearchBy.Name = "cbSearchBy";
             this.cbSearchBy.Size = new System.Drawing.Size(186, 35);
             this.cbSearchBy.TabIndex = 7;
@@ -111,7 +112,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Myanmar Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label2.Location = new System.Drawing.Point(21, 46);
+            this.label2.Location = new System.Drawing.Point(22, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 30);
             this.label2.TabIndex = 6;
@@ -125,7 +126,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ctrlPersonCard1);
             this.Name = "ctrlPersonCardWithFilter";
-            this.Size = new System.Drawing.Size(656, 638);
+            this.Size = new System.Drawing.Size(656, 610);
             this.Load += new System.EventHandler(this.ctrlPersonCardWithFilter_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
