@@ -14,9 +14,12 @@ namespace DVLD.Person
 {
     public partial class ctrlPersonCard : UserControl
     {
+        public clsPerson person { get; set; }
+
         public ctrlPersonCard()
         {
             InitializeComponent();
+            person = new clsPerson();
         }
 
         #region Event Handlers
@@ -40,7 +43,10 @@ namespace DVLD.Person
 
         public void LoadPersonInformation(int PersonID)
         {
-            clsPerson person = clsPerson.FindPerson(PersonID);
+            if (PersonID <= 0)
+                return;
+
+            person = clsPerson.FindPerson(PersonID);
 
             lblPersonId.Text = person.PersonID.ToString();
             lblNationalNumber.Text = person.NationalNo;

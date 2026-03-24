@@ -287,6 +287,64 @@ namespace DVLD___Data_Access
             return isFound;
         }
 
+        public static bool IsUserExists(string Username)
+        {
+            bool isFound = false;
 
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = "SELECT 1 FROM Users WHERE Username = @Username";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@Username", Username);
+
+            try
+            {
+                connection.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    isFound = reader.HasRows;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log the exception
+                Console.WriteLine("Error checking user existence: " + ex.Message);
+                isFound = false;
+            }
+
+            return isFound;
+        }
+
+        public static bool IsPersonConnectedToUser(int personID)
+        {
+            bool isFound = false;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = "SELECT 1 FROM Users WHERE PersonID = @personID";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@personID", personID);
+
+            try
+            {
+                connection.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    isFound = reader.HasRows;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log the exception
+                Console.WriteLine("Error checking user existence: " + ex.Message);
+                isFound = false;
+            }
+
+            return isFound;
+        }
     }
 }

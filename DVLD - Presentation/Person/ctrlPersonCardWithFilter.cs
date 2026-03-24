@@ -6,9 +6,20 @@ namespace DVLD.Person
 {
     public partial class ctrlPersonCardWithFilter : UserControl
     {
+        public event Action<int> OnPersonSelected;
+
         public ctrlPersonCardWithFilter()
         {
             InitializeComponent();
+        }
+
+        protected virtual void PersonSelected(int PersonID)
+        {
+            Action<int> handler = OnPersonSelected;
+            if (handler != null)
+            {
+                handler(PersonID);
+            }
         }
 
         private void ctrlPersonCardWithFilter_Load(object sender, EventArgs e)
@@ -16,23 +27,14 @@ namespace DVLD.Person
             string[] SearchByItems = new string[] { "Person ID", "National No." };
             cbSearchBy.Items.Clear();
             cbSearchBy.Items.AddRange(SearchByItems);
-            cbSearchBy.SelectedIndex = 0;
-        }
-
-        private void cbSearchBy_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbSearchBy.SelectedIndex == 0)
-            {
-                tbSearchText.KeyPress += tbSearchText_KeyPress;
-            }
-            else
-            {
-                tbSearchText.KeyPress -= tbSearchText_KeyPress;
-            }
+            cbSearchBy.SelectedIndex = 1;
         }
 
         private void tbSearchText_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (cbSearchBy.SelectedIndex == 1)
+                return;
+
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
                 e.Handled = true;
         }
@@ -42,10 +44,10 @@ namespace DVLD.Person
             if (string.IsNullOrWhiteSpace(tbSearchText.Text))
             {
                 MessageBox.Show("Person Not Found.", "Search Faild", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
             }
             else
             {
+                bool IsPersonFound = false;
                 switch (cbSearchBy.SelectedIndex)
                 {
                     case 0: // Person ID
@@ -56,6 +58,7 @@ namespace DVLD.Person
                                 if (Person != null)
                                 {
                                     ctrlPersonCard1.LoadPersonInformation(Person.PersonID);
+                                    IsPersonFound = true;
                                 }
                                 else
                                 {
@@ -70,6 +73,7 @@ namespace DVLD.Person
                             if (Person != null)
                             {
                                 ctrlPersonCard1.LoadPersonInformation(Person.PersonID);
+                                IsPersonFound = true;
                             }
                             else
                             {
@@ -77,9 +81,14 @@ namespace DVLD.Person
                             }
                         }
                         break;
+
+                }
+
+                if (OnPersonSelected != null && IsPersonFound)
+                {
+                    OnPersonSelected(ctrlPersonCard1.person.PersonID);
                 }
             }
-
         }
 
         private void btnAddNewPerson_Click(object sender, EventArgs e)
@@ -94,12 +103,17 @@ namespace DVLD.Person
             if (PersonID > 0)
             {
                 ctrlPersonCard1.LoadPersonInformation(PersonID);
+
+                if (OnPersonSelected != null)
+                {
+                    OnPersonSelected(ctrlPersonCard1.person.PersonID);
+                }
             }
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        public void LoadPerson(int PersonID)
         {
-
+            ctrlPersonCard1.LoadPersonInformation(PersonID);
         }
     }
 }

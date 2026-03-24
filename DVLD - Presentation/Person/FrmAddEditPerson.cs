@@ -139,7 +139,7 @@ namespace DVLD.Person
 
          private void btnSaveRecord_Click(object sender, EventArgs e)
         {
-            if (!_IsInputValid())
+            if (!_AreInputsValid())
             {
                 return;
             }
@@ -183,7 +183,10 @@ namespace DVLD.Person
 
         private void FrmAddEditPerson_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DataBack?.Invoke(this, Person.PersonID);
+            if (Person.PersonID > 0)
+            {
+                DataBack?.Invoke(this, Person.PersonID);
+            }
         }
 
         #endregion
@@ -311,7 +314,7 @@ namespace DVLD.Person
 
         }
 
-        private bool _IsInputValid()
+        private bool _AreInputsValid()
         {
             if (!IsPersonInfoEdited)
             {

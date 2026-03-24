@@ -115,6 +115,10 @@ namespace DVLD___Business
         {
             return clsUserData.IsUserExists(UserID);
         }
+        public static bool IsUserExists(string Username)
+        {
+            return clsUserData.IsUserExists(Username);
+        }
 
         public static bool DeleteUser(int UserID)
         {
@@ -126,6 +130,11 @@ namespace DVLD___Business
             {
                 return false;
             }
+        }
+
+        public static bool IsPersonConnectedToUser(int personID)
+        {
+           return clsUserData.IsPersonConnectedToUser(personID);
         }
     }
 }

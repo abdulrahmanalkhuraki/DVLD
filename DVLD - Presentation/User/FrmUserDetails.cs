@@ -28,5 +28,8 @@ namespace DVLD.User
                 ctrlUserCard1.LoadUserInformation(User.UserID);
             }
         }
+
+        private void btnClose_Click(object sender, EventArgs e) => Close();
+
     }
 }
