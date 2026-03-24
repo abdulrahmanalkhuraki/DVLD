@@ -147,6 +147,15 @@ namespace DVLD.User
             MessageBox.Show("This feature is not implemented yet.", "Info",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgvUsers.SelectedRows.Count == 0) return;
+            int userId = Convert.ToInt32(dgvUsers.SelectedRows[0].Cells["UserID"].Value);
+            FrmChangePassword frm = new FrmChangePassword(userId);
+            frm.ShowDialog();
+        }
+
         #endregion
 
         #endregion
@@ -334,5 +343,6 @@ namespace DVLD.User
         }
 
         #endregion
+
     }
 }

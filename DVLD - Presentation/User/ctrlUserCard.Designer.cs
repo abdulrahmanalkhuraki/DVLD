@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DVLD___Business.clsPerson clsPerson1 = new DVLD___Business.clsPerson();
             this.ctrlPersonCard1 = new DVLD.Person.ctrlPersonCard();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblUserStatus = new System.Windows.Forms.Label();
@@ -43,6 +44,19 @@
             // 
             this.ctrlPersonCard1.Location = new System.Drawing.Point(0, 0);
             this.ctrlPersonCard1.Name = "ctrlPersonCard1";
+            clsPerson1.Address = "";
+            clsPerson1.DateOfBirth = new System.DateTime(2026, 3, 25, 0, 1, 27, 281);
+            clsPerson1.Email = "";
+            clsPerson1.FirstName = "";
+            clsPerson1.Gender = false;
+            clsPerson1.ImagePath = "";
+            clsPerson1.LastName = "";
+            clsPerson1.NationalityCountryId = -1;
+            clsPerson1.NationalNo = "";
+            clsPerson1.Phone = "";
+            clsPerson1.SecondName = "";
+            clsPerson1.ThirdName = "";
+            this.ctrlPersonCard1.person = clsPerson1;
             this.ctrlPersonCard1.Size = new System.Drawing.Size(656, 527);
             this.ctrlPersonCard1.TabIndex = 0;
             // 
@@ -74,7 +88,7 @@
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Image = global::DVLD.Properties.Resources.icons8_username_24;
+            this.label4.Image = global::DVLD.Properties.Resources.icons8_status_24;
             this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label4.Location = new System.Drawing.Point(29, 114);
             this.label4.Name = "label4";

@@ -96,6 +96,12 @@
     <Compile Include="User\FrmAddEditUser.Designer.cs">
       <DependentUpon>FrmAddEditUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="User\FrmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\FrmChangePassword.Designer.cs">
+      <DependentUpon>FrmChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="User\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User\FrmAddEditUser.resx">
       <DependentUpon>FrmAddEditUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\FrmChangePassword.resx">
+      <DependentUpon>FrmChangePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
