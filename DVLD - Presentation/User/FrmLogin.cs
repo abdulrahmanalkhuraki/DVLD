@@ -76,8 +76,8 @@ namespace DVLD.User
             {
                 _ClearRememberMeCredentials();
             }
-
-                DialogResult = DialogResult.OK;
+            clsGlobalSettings.CurrentUser = clsUser.FindUser(tbUsername.Text);
+            DialogResult = DialogResult.OK;
             Close();
         }
 
