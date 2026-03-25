@@ -181,24 +181,25 @@ namespace DVLD.User
         {
             if (User.PersonID == -1)
             {
-                MessageBox.Show("You Should Select A Person To Connect her/him with this User.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ErrorMessage("You Should Select A Person To Connect her/him with this User.");
                 return false;
             }
+
             if (User.PersonID == -2)
             {
-                MessageBox.Show("The Person You Selected Is Already A User In the System, Try Select Another Person.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ErrorMessage("The Person You Selected Is Already A User In the System, Try Select Another Person.");
                 return false;
             }
 
             if (string.IsNullOrWhiteSpace(tbUsername.Text))
             {
-                MessageBox.Show("Username Shouldn't be Empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ErrorMessage("Username Shouldn't be Empty.");
                 return false;
             }
 
             if (clsUser.IsUserExists(tbUsername.Text) && !User.Username.Equals(tbUsername.Text))
             {
-                MessageBox.Show("Sorry, This Username is used Before.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ErrorMessage("Sorry, This Username is used Before.");
                 return false;
             }
 
@@ -206,18 +207,22 @@ namespace DVLD.User
             {
                 if (string.IsNullOrWhiteSpace(tbPassword.Text))
                 {
-                    MessageBox.Show("Password Shouldn't be Empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ErrorMessage("Password Shouldn't be Empty.");
                     return false;
                 }
 
                 if (!tbPassword.Text.Equals(tbConfirmPassword.Text))
                 {
-                    MessageBox.Show("Password and confirm password doesn't match.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ErrorMessage("Password and confirm password doesn't match.");
                     return false;
                 }
             }
 
             return true;
+        }
+        private void ErrorMessage(string message)
+        {
+            MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         #endregion
 

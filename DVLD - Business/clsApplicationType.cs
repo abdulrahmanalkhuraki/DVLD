@@ -10,15 +10,15 @@ namespace DVLD___Business
 {
     public class clsApplicationType
     { 
-        public int ApplicationTypeID { get;private set; }
-        public string ApplicationTypeTitle { get; set; }
-        public decimal ApplicationFees { get; set; }
+        public int ID { get;private set; }
+        public string Title { get; set; }
+        public decimal Fees { get; set; }
 
         public clsApplicationType(int applicationTypeID, string applicationTypeTitle, decimal applicationFees)
         {
-            ApplicationTypeID = applicationTypeID;
-            ApplicationTypeTitle = applicationTypeTitle;
-            ApplicationFees = applicationFees;
+            ID = applicationTypeID;
+            Title = applicationTypeTitle;
+            Fees = applicationFees;
         }
 
         public static clsApplicationType FindApplicationType(int ApplicationTypeID)
@@ -43,7 +43,7 @@ namespace DVLD___Business
 
         public bool Save()
         {
-           return clsApplicationTypeData.UpdateApplicationType(ApplicationTypeID,ApplicationTypeTitle,ApplicationFees);
+           return clsApplicationTypeData.UpdateApplicationType(ID,Title,Fees);
         }
 
     }

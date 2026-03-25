@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application Types\FrmEditApplicationType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application Types\FrmEditApplicationType.Designer.cs">
+      <DependentUpon>FrmEditApplicationType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Application Types\FrmManageApplicationTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application Types\FrmManageApplicationTypes.Designer.cs">
+      <DependentUpon>FrmManageApplicationTypes.cs</DependentUpon>
+    </Compile>
     <Compile Include="clsGlobalSettings.cs" />
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
@@ -121,6 +133,12 @@
     <Compile Include="User\FrmUserDetails.Designer.cs">
       <DependentUpon>FrmUserDetails.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Application Types\FrmEditApplicationType.resx">
+      <DependentUpon>FrmEditApplicationType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Application Types\FrmManageApplicationTypes.resx">
+      <DependentUpon>FrmManageApplicationTypes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -350,6 +368,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\group %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-title-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-fees-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profiles.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -277,9 +277,7 @@ namespace DVLD.Person
             dgvPeople.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvPeople.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dgvPeople.EnableHeadersVisualStyles = false;
-
-            // Set row height
-            dgvPeople.RowTemplate.Height = 50;
+;
 
             // Header style
             dgvPeople.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(52, 73, 94);
@@ -297,8 +295,6 @@ namespace DVLD.Person
 
             // Configure each column if it exists
             if (dgvPeople.Columns.Count == 0) return;
-
-            dgvPeople.DefaultCellStyle.Padding = new Padding(5);
 
             // Set friendly headers
             SetColumnHeader("Person ID", "ID");
@@ -353,7 +349,7 @@ namespace DVLD.Person
             dgvPeople.Columns["Date Of Birth"].Width = 90;
             dgvPeople.Columns["Gender"].Width = 60;
             dgvPeople.Columns["Nationality"].Width = 80;
-            dgvPeople.Columns["Address"].Width = 157;
+            dgvPeople.Columns["Address"].Width = 155;
 
             // Format date column
             if (dgvPeople.Columns["Date Of Birth"] is DataGridViewColumn dobCol)
@@ -371,7 +367,6 @@ namespace DVLD.Person
                 dgvPeople.Columns["Phone"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
-        // Helper to safely set header text
         private void SetColumnHeader(string columnName, string headerText)
         {
             if (dgvPeople.Columns.Contains(columnName))
@@ -429,5 +424,6 @@ namespace DVLD.Person
             _LoadPeople();
         }
         #endregion
+
     }
 }

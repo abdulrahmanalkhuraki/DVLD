@@ -283,6 +283,16 @@ namespace DVLD.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_fees_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-fees-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_female_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-female-24", resourceCulture);
@@ -443,6 +453,16 @@ namespace DVLD.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_title_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-title-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_user_login_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-user-login-100", resourceCulture);
@@ -536,6 +556,16 @@ namespace DVLD.Properties {
         internal static System.Drawing.Bitmap plus {
             get {
                 object obj = ResourceManager.GetObject("plus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap profiles {
+            get {
+                object obj = ResourceManager.GetObject("profiles", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

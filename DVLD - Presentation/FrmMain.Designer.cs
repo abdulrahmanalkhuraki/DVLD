@@ -211,9 +211,11 @@
             // manageApplicationsToolStripMenuItem1
             // 
             this.manageApplicationsToolStripMenuItem1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.manageApplicationsToolStripMenuItem1.Image = global::DVLD.Properties.Resources.profiles;
             this.manageApplicationsToolStripMenuItem1.Name = "manageApplicationsToolStripMenuItem1";
             this.manageApplicationsToolStripMenuItem1.Size = new System.Drawing.Size(264, 26);
             this.manageApplicationsToolStripMenuItem1.Text = "Manage Application Types";
+            this.manageApplicationsToolStripMenuItem1.Click += new System.EventHandler(this.manageApplicationsToolStripMenuItem1_Click);
             // 
             // manageTestsTypesToolStripMenuItem
             // 
@@ -262,7 +264,7 @@
             this.currentUserInfoToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.currentUserInfoToolStripMenuItem.Image = global::DVLD.Properties.Resources.user1;
             this.currentUserInfoToolStripMenuItem.Name = "currentUserInfoToolStripMenuItem";
-            this.currentUserInfoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.currentUserInfoToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
             this.currentUserInfoToolStripMenuItem.Text = "Current User Info";
             this.currentUserInfoToolStripMenuItem.Click += new System.EventHandler(this.currentUserInfoToolStripMenuItem_Click);
             // 
@@ -271,21 +273,21 @@
             this.changePasswordToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.changePasswordToolStripMenuItem.Image = global::DVLD.Properties.Resources.icons8_password_24;
             this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
-            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
             this.changePasswordToolStripMenuItem.Text = "Change Password";
             this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(221, 6);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(211, 6);
             // 
             // signOutToolStripMenuItem
             // 
             this.signOutToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.signOutToolStripMenuItem.Image = global::DVLD.Properties.Resources.closeAccount;
             this.signOutToolStripMenuItem.Name = "signOutToolStripMenuItem";
-            this.signOutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.signOutToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
             this.signOutToolStripMenuItem.Text = "Sign Out";
             this.signOutToolStripMenuItem.Click += new System.EventHandler(this.signOutToolStripMenuItem_Click);
             // 

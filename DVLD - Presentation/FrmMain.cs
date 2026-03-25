@@ -1,4 +1,5 @@
-﻿using DVLD.Person;
+﻿using DVLD.Application_Types;
+using DVLD.Person;
 using DVLD.User;
 using System;
 using System.Collections.Generic;
@@ -19,15 +20,24 @@ namespace DVLD
             InitializeComponent();
         }
 
-        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        #region Applications
         private void drivingLicenseToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void manageApplicationsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmManageApplicationTypes frm = new FrmManageApplicationTypes();
+            frm.ShowDialog();
+        }
+
+        #endregion
+
+        #region Drivers
+        #endregion
+
+        #region People
 
         private void peopleToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -35,15 +45,22 @@ namespace DVLD
             frm.ShowDialog();
         }
 
-        private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Restart();
-        }
+        #endregion
+
+        #region Users
 
         private void usersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmManageUsers frm = new FrmManageUsers();
             frm.ShowDialog();
+        }
+
+        #endregion
+
+        #region Account Settings
+        private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
 
         private void currentUserInfoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -57,5 +74,8 @@ namespace DVLD
             FrmChangePassword frm = new FrmChangePassword(clsGlobalSettings.CurrentUser.UserID);
             frm.ShowDialog();
         }
+
+        #endregion
+
     }
 }

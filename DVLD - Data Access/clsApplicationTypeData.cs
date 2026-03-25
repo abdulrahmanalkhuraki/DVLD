@@ -95,7 +95,7 @@ namespace DVLD___Data_Access
 
             string query = @"UPDATE ApplicationTypes SET 
                                         ApplicationTypeTitle = @ApplicationTypeTitle,
-                                        ApplicationFees = @ApplicationFees,
+                                        ApplicationFees = @ApplicationFees
                                         WHERE ApplicationTypeID = @ApplicationTypeID";
 
             SqlCommand command = new SqlCommand(query, connection);
