@@ -220,9 +220,11 @@
             // manageTestsTypesToolStripMenuItem
             // 
             this.manageTestsTypesToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.manageTestsTypesToolStripMenuItem.Image = global::DVLD.Properties.Resources.exam;
             this.manageTestsTypesToolStripMenuItem.Name = "manageTestsTypesToolStripMenuItem";
             this.manageTestsTypesToolStripMenuItem.Size = new System.Drawing.Size(264, 26);
             this.manageTestsTypesToolStripMenuItem.Text = "Manage Test Types";
+            this.manageTestsTypesToolStripMenuItem.Click += new System.EventHandler(this.manageTestsTypesToolStripMenuItem_Click);
             // 
             // peopleToolStripMenuItem
             // 

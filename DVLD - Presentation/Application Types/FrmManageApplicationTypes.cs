@@ -27,6 +27,17 @@ namespace DVLD.Application_Types
 
         private void btnClose_Click(object sender, EventArgs e) => Close();
 
+        private void editApplicationTypeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgvApplicationTypes.SelectedRows.Count == 0) return;
+            var SelectedRow = dgvApplicationTypes.SelectedRows[0];
+            int SelectedApplicationTypeId = Convert.ToInt32(SelectedRow.Cells["ApplicationTypeID"].Value);
+
+            FrmEditApplicationType frm = new FrmEditApplicationType(SelectedApplicationTypeId);
+            frm.ShowDialog();
+            _LoadApplicationTypes();
+        }
+
         #endregion
 
         #region Helpers
@@ -110,15 +121,6 @@ namespace DVLD.Application_Types
 
         #endregion
 
-        private void editApplicationTypeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (dgvApplicationTypes.SelectedRows.Count == 0) return;
-            var SelectedRow = dgvApplicationTypes.SelectedRows[0];
-            int SelectedApplicationTypeId = Convert.ToInt32(SelectedRow.Cells["ApplicationTypeID"].Value);
 
-            FrmEditApplicationType frm = new FrmEditApplicationType(SelectedApplicationTypeId);
-            frm.ShowDialog();
-            _LoadApplicationTypes();
-        }
     }
 }

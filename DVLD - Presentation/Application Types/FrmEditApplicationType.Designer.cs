@@ -38,13 +38,15 @@
             this.btnSaveRecord = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblApplicationTypeID = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudFees)).BeginInit();
             this.SuspendLayout();
             // 
             // tbTitle
             // 
             this.tbTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTitle.Location = new System.Drawing.Point(175, 18);
+            this.tbTitle.Location = new System.Drawing.Point(176, 64);
             this.tbTitle.MaxLength = 20;
             this.tbTitle.Name = "tbTitle";
             this.tbTitle.Size = new System.Drawing.Size(282, 27);
@@ -54,7 +56,7 @@
             // 
             this.nudFees.Cursor = System.Windows.Forms.Cursors.Hand;
             this.nudFees.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudFees.Location = new System.Drawing.Point(175, 53);
+            this.nudFees.Location = new System.Drawing.Point(176, 102);
             this.nudFees.Maximum = new decimal(new int[] {
             9999,
             0,
@@ -98,7 +100,7 @@
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::DVLD.Properties.Resources.icons8_close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnClose.Location = new System.Drawing.Point(185, 103);
+            this.btnClose.Location = new System.Drawing.Point(186, 152);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(114, 43);
             this.btnClose.TabIndex = 21;
@@ -139,7 +141,7 @@
             this.btnSaveRecord.ForeColor = System.Drawing.Color.White;
             this.btnSaveRecord.Image = global::DVLD.Properties.Resources.icons8_save_24;
             this.btnSaveRecord.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSaveRecord.Location = new System.Drawing.Point(305, 103);
+            this.btnSaveRecord.Location = new System.Drawing.Point(306, 152);
             this.btnSaveRecord.Name = "btnSaveRecord";
             this.btnSaveRecord.Size = new System.Drawing.Size(152, 43);
             this.btnSaveRecord.TabIndex = 17;
@@ -153,7 +155,7 @@
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Image = global::DVLD.Properties.Resources.icons8_fees_24;
             this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label7.Location = new System.Drawing.Point(12, 54);
+            this.label7.Location = new System.Drawing.Point(13, 103);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(143, 24);
             this.label7.TabIndex = 14;
@@ -165,18 +167,44 @@
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Image = global::DVLD.Properties.Resources.icons8_title_24;
             this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label5.Location = new System.Drawing.Point(12, 19);
+            this.label5.Location = new System.Drawing.Point(13, 65);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(143, 24);
             this.label5.TabIndex = 13;
             this.label5.Text = "Title";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Image = global::DVLD.Properties.Resources.icons8_id_24;
+            this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label3.Location = new System.Drawing.Point(13, 27);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(143, 24);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "ID";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblApplicationTypeID
+            // 
+            this.lblApplicationTypeID.AutoSize = true;
+            this.lblApplicationTypeID.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApplicationTypeID.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblApplicationTypeID.Location = new System.Drawing.Point(176, 27);
+            this.lblApplicationTypeID.Name = "lblApplicationTypeID";
+            this.lblApplicationTypeID.Size = new System.Drawing.Size(70, 20);
+            this.lblApplicationTypeID.TabIndex = 23;
+            this.lblApplicationTypeID.Text = "Unknown";
+            this.lblApplicationTypeID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // FrmEditApplicationType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 158);
+            this.ClientSize = new System.Drawing.Size(482, 210);
+            this.Controls.Add(this.lblApplicationTypeID);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.tbNationalNumber);
             this.Controls.Add(this.textBox1);
@@ -213,5 +241,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnSaveRecord;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblApplicationTypeID;
     }
 }

@@ -56,7 +56,7 @@ namespace DVLD.Application_Types
         #region Helpers
         private void _LoadApplicationTypeInformation()
         {
-            Tag = ApplicationType.ID;
+            lblApplicationTypeID.Text = ApplicationType.ID.ToString();
             tbTitle.Text = ApplicationType.Title;
             nudFees.Value = ApplicationType.Fees;
         }
