@@ -59,6 +59,12 @@
       <DependentUpon>FrmManageApplicationTypes.cs</DependentUpon>
     </Compile>
     <Compile Include="clsGlobalSettings.cs" />
+    <Compile Include="FrmAddEditLocalDrivingLicenseApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddEditLocalDrivingLicenseApplication.Designer.cs">
+      <DependentUpon>FrmAddEditLocalDrivingLicenseApplication.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Application Types\FrmManageApplicationTypes.resx">
       <DependentUpon>FrmManageApplicationTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddEditLocalDrivingLicenseApplication.resx">
+      <DependentUpon>FrmAddEditLocalDrivingLicenseApplication.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
@@ -401,6 +410,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-description-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\id %289%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\id %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\id %2810%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\id %289%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\id %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\id %288%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\id %2811%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\id %286%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\id %2812%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\id %282%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
