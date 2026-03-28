@@ -220,6 +220,7 @@ namespace DVLD.User
 
             return true;
         }
+
         private void ErrorMessage(string message)
         {
             MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

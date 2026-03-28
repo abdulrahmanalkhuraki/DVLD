@@ -30,9 +30,8 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tbPersonInfo = new System.Windows.Forms.TabPage();
-            this.ctrlPersonCardWithFilter1 = new DVLD.Person.ctrlPersonCardWithFilter();
             this.btnNext = new System.Windows.Forms.Button();
-            this.tbLoginInfo = new System.Windows.Forms.TabPage();
+            this.tbApplicationInfo = new System.Windows.Forms.TabPage();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSaveRecord = new System.Windows.Forms.Button();
@@ -48,9 +47,10 @@
             this.lblPassword = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ctrlPersonCardWithFilter1 = new DVLD.Person.ctrlPersonCardWithFilter();
             this.tabControl1.SuspendLayout();
             this.tbPersonInfo.SuspendLayout();
-            this.tbLoginInfo.SuspendLayout();
+            this.tbApplicationInfo.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +58,7 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tbPersonInfo);
-            this.tabControl1.Controls.Add(this.tbLoginInfo);
+            this.tabControl1.Controls.Add(this.tbApplicationInfo);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
@@ -80,16 +80,6 @@
             this.tbPersonInfo.Text = "Person Info";
             this.tbPersonInfo.UseVisualStyleBackColor = true;
             // 
-            // ctrlPersonCardWithFilter1
-            // 
-            this.ctrlPersonCardWithFilter1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctrlPersonCardWithFilter1.Location = new System.Drawing.Point(3, 7);
-            this.ctrlPersonCardWithFilter1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ctrlPersonCardWithFilter1.Name = "ctrlPersonCardWithFilter1";
-            this.ctrlPersonCardWithFilter1.Size = new System.Drawing.Size(660, 560);
-            this.ctrlPersonCardWithFilter1.TabIndex = 6;
-            this.ctrlPersonCardWithFilter1.OnPersonSelected += new System.Action<int>(this.ctrlPersonCardWithFilter1_OnPersonSelected);
-            // 
             // btnNext
             // 
             this.btnNext.Enabled = false;
@@ -103,20 +93,21 @@
             this.btnNext.Text = "Next";
             this.btnNext.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
-            // tbLoginInfo
+            // tbApplicationInfo
             // 
-            this.tbLoginInfo.Controls.Add(this.btnBack);
-            this.tbLoginInfo.Controls.Add(this.btnClose);
-            this.tbLoginInfo.Controls.Add(this.btnSaveRecord);
-            this.tbLoginInfo.Controls.Add(this.panel1);
-            this.tbLoginInfo.Location = new System.Drawing.Point(4, 26);
-            this.tbLoginInfo.Name = "tbLoginInfo";
-            this.tbLoginInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.tbLoginInfo.Size = new System.Drawing.Size(670, 629);
-            this.tbLoginInfo.TabIndex = 1;
-            this.tbLoginInfo.Text = "Login Info";
-            this.tbLoginInfo.UseVisualStyleBackColor = true;
+            this.tbApplicationInfo.Controls.Add(this.btnBack);
+            this.tbApplicationInfo.Controls.Add(this.btnClose);
+            this.tbApplicationInfo.Controls.Add(this.btnSaveRecord);
+            this.tbApplicationInfo.Controls.Add(this.panel1);
+            this.tbApplicationInfo.Location = new System.Drawing.Point(4, 26);
+            this.tbApplicationInfo.Name = "tbApplicationInfo";
+            this.tbApplicationInfo.Padding = new System.Windows.Forms.Padding(3);
+            this.tbApplicationInfo.Size = new System.Drawing.Size(670, 629);
+            this.tbApplicationInfo.TabIndex = 1;
+            this.tbApplicationInfo.Text = "Application Info";
+            this.tbApplicationInfo.UseVisualStyleBackColor = true;
             // 
             // btnBack
             // 
@@ -130,6 +121,7 @@
             this.btnBack.Text = "Back";
             this.btnBack.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnClose
             // 
@@ -143,6 +135,7 @@
             this.btnClose.Text = "Close";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnSaveRecord
             // 
@@ -156,6 +149,7 @@
             this.btnSaveRecord.Text = "Save Application";
             this.btnSaveRecord.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSaveRecord.UseVisualStyleBackColor = false;
+            this.btnSaveRecord.Click += new System.EventHandler(this.btnSaveRecord_Click);
             // 
             // panel1
             // 
@@ -197,10 +191,11 @@
             // 
             // cbLicenseClass
             // 
+            this.cbLicenseClass.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLicenseClass.FormattingEnabled = true;
-            this.cbLicenseClass.Location = new System.Drawing.Point(238, 246);
+            this.cbLicenseClass.Location = new System.Drawing.Point(238, 243);
             this.cbLicenseClass.Name = "cbLicenseClass";
-            this.cbLicenseClass.Size = new System.Drawing.Size(315, 25);
+            this.cbLicenseClass.Size = new System.Drawing.Size(315, 31);
             this.cbLicenseClass.TabIndex = 41;
             // 
             // lblApplicationDate
@@ -293,6 +288,16 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // ctrlPersonCardWithFilter1
+            // 
+            this.ctrlPersonCardWithFilter1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctrlPersonCardWithFilter1.Location = new System.Drawing.Point(3, 7);
+            this.ctrlPersonCardWithFilter1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ctrlPersonCardWithFilter1.Name = "ctrlPersonCardWithFilter1";
+            this.ctrlPersonCardWithFilter1.Size = new System.Drawing.Size(660, 560);
+            this.ctrlPersonCardWithFilter1.TabIndex = 6;
+            this.ctrlPersonCardWithFilter1.OnPersonSelected += new System.Action<int>(this.ctrlPersonCardWithFilter1_OnPersonSelected);
+            // 
             // FrmAddEditLocalDrivingLicenseApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -309,7 +314,7 @@
             this.Text = "AddEditLocalDrivingLicenseApplication";
             this.tabControl1.ResumeLayout(false);
             this.tbPersonInfo.ResumeLayout(false);
-            this.tbLoginInfo.ResumeLayout(false);
+            this.tbApplicationInfo.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -323,7 +328,7 @@
         private System.Windows.Forms.TabPage tbPersonInfo;
         private Person.ctrlPersonCardWithFilter ctrlPersonCardWithFilter1;
         private System.Windows.Forms.Button btnNext;
-        private System.Windows.Forms.TabPage tbLoginInfo;
+        private System.Windows.Forms.TabPage tbApplicationInfo;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnSaveRecord;

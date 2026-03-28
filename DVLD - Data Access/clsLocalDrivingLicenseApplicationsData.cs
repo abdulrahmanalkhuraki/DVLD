@@ -5,12 +5,13 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace DVLD___Data_Access
 {
     public class clsLocalDrivingLicenseApplicationsData
     {
-        public static bool GetLocalDrivingLicenseApplications(int LocalDrivingLicenseApplicationID, ref int ApplicationID, ref int LicenseClassID)
+        public static bool GetLocalDrivingLicenseApplication(int LocalDrivingLicenseApplicationID, ref int ApplicationID, ref int LicenseClassID)
         {
             bool isFound = false;
 
@@ -53,7 +54,7 @@ namespace DVLD___Data_Access
             return isFound;
         }
 
-        public static int AddNewLocalDrivingLicenseApplications(int ApplicationID, int LicenseClassID)
+        public static int AddNewLocalDrivingLicenseApplication(int ApplicationID, int LicenseClassID)
         {
             int LocalDrivingLicenseApplicationID = -1;
 
@@ -90,7 +91,7 @@ namespace DVLD___Data_Access
             return LocalDrivingLicenseApplicationID;
         }
 
-        public static bool UpdateLocalDrivingLicenseApplications(int LocalDrivingLicenseApplicationID, int ApplicationID, int LicenseClassID)
+        public static bool UpdateLocalDrivingLicenseApplication(int LocalDrivingLicenseApplicationID, int ApplicationID, int LicenseClassID)
         {
             int rowsAffected = 0;
 
@@ -153,7 +154,7 @@ namespace DVLD___Data_Access
             return dt;
         }
 
-        public static bool DeleteLocalDrivingLicenseApplications(int LocalDrivingLicenseApplicationID)
+        public static bool DeleteLocalDrivingLicenseApplication(int LocalDrivingLicenseApplicationID)
         {
             int rowsAffected = 0;
 
@@ -182,7 +183,7 @@ namespace DVLD___Data_Access
             return (rowsAffected > 0);
         }
 
-        public static bool IsLocalDrivingLicenseApplicationsExists(int LocalDrivingLicenseApplicationID)
+        public static bool IsLocalDrivingLicenseApplicationExists(int LocalDrivingLicenseApplicationID)
         {
             bool isFound = false;
 
@@ -213,6 +214,47 @@ namespace DVLD___Data_Access
             }
 
             return isFound;
+        }
+
+        public static int IsThereActiveOrderBefore(int PersonID, int LicenseClassID)
+        {
+            int ApplicationID = -1;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = @"select LocalDrivingLicenseApplicationID from LocalDrivingLicenseApplications 
+                                join Applications on 
+                                LocalDrivingLicenseApplications.ApplicationID = Applications.ApplicationID
+                                where Applications.ApplicantPersonID = @PersonID 
+                                and LocalDrivingLicenseApplications.LicenseClassID = @LicenseClassID 
+                                and Applications.ApplicationStatus = 1;";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@PersonID", PersonID);
+            command.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
+
+            try
+            {
+                connection.Open();
+                object result = command.ExecuteScalar();
+
+                if (result != null && int.TryParse(result.ToString(), out int FoundApplicationID))
+                {
+                    ApplicationID = FoundApplicationID;
+                }
+
+            }
+            catch
+            {
+                return -1;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return ApplicationID;
         }
     }
 }
