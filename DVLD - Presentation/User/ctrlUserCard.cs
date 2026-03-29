@@ -16,7 +16,6 @@ namespace DVLD.User
         public ctrlUserCard()
         {
             InitializeComponent();
-            IsPersonEdited = false;
         }
 
         public void LoadUserInformation(int UserID)

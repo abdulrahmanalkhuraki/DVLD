@@ -136,5 +136,13 @@ namespace DVLD___Business
             return clsLocalDrivingLicenseApplicationsData.IsThereActiveOrderBefore(personID, LicenseClassID);
 
         }
+
+        public static int GetPassedTests(int ApplicationID)
+        {
+            DataRow[] row = GetAllLocalDrivingLicenseApplications().Select($"LocalDrivingLicenseApplicationID = {ApplicationID}");
+            if (int.TryParse(row[0]["PassedTestCount"].ToString(),out int passedTestsCount))
+                return passedTestsCount;
+            else return -1;
+        }
     }
 }

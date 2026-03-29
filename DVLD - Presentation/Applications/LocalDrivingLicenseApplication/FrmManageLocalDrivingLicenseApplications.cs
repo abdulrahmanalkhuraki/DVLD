@@ -143,6 +143,36 @@ namespace DVLD.LocalDrivingLicenseApplication
         private void editToolStripMenuItem_Click(object sender, EventArgs e) => _EditApplication();
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e) => _DeleteApplication();
+
+        private void CancelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgvApplications.SelectedRows.Count == 0) return;
+
+            if (MessageBox.Show("Are You Sure You Want To Cancel This Application?", "Confirm Cancel", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) != DialogResult.Yes)
+                return;
+
+            int appId = Convert.ToInt32(dgvApplications.SelectedRows[0].Cells["LocalDrivingLicenseApplicationID"].Value);
+
+            if (clsLocalDrivingLicenseApplication.Exists(appId)) // check if Local Driving License Application Exists
+            {
+                appId = clsLocalDrivingLicenseApplication.Find(appId).ApplicationID; // get the application ID from Local Driving License Application
+            }
+
+            if (clsApplication.Cancel(appId))
+            {
+                MessageBox.Show("The Application Has Been Canceled Successfully.", "Success", MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+                _LoadApplications();
+            }
+            else
+            {
+                MessageBox.Show("Something went wrong when Trying to cancel the application you selected.",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
         #endregion
 
         #endregion
@@ -305,7 +335,7 @@ namespace DVLD.LocalDrivingLicenseApplication
 
         #endregion
 
-        private void contextMenuStrip1_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        private void writtenToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

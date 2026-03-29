@@ -233,6 +233,16 @@ namespace DVLD.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_classification_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-classification-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_clear_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-clear-24", resourceCulture);
@@ -286,6 +296,16 @@ namespace DVLD.Properties {
         internal static System.Drawing.Bitmap icons8_description_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-description-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_driving_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-driving-100", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -483,6 +503,16 @@ namespace DVLD.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_task_completed_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-task-completed-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_title_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-title-24", resourceCulture);
@@ -516,6 +546,26 @@ namespace DVLD.Properties {
         internal static System.Drawing.Bitmap icons8_username_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-username-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_vision__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-vision (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_writing_skills_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-writing-skills-100", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

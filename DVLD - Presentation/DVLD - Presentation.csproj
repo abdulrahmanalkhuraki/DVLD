@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>DVLD.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,23 +49,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Application Types\FrmEditApplicationType.cs">
+    <Compile Include="Applications\Application Types\FrmEditApplicationType.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Application Types\FrmEditApplicationType.Designer.cs">
+    <Compile Include="Applications\Application Types\FrmEditApplicationType.Designer.cs">
       <DependentUpon>FrmEditApplicationType.cs</DependentUpon>
     </Compile>
-    <Compile Include="Application Types\FrmManageApplicationTypes.cs">
+    <Compile Include="Applications\Application Types\FrmManageApplicationTypes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Application Types\FrmManageApplicationTypes.Designer.cs">
+    <Compile Include="Applications\Application Types\FrmManageApplicationTypes.Designer.cs">
       <DependentUpon>FrmManageApplicationTypes.cs</DependentUpon>
     </Compile>
-    <Compile Include="clsGlobalSettings.cs" />
-    <Compile Include="LocalDrivingLicenseApplication\FrmAddEditLocalDrivingLicenseApplication.cs">
+    <Compile Include="Applications\ctrlApplicationCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Applications\ctrlApplicationCard.Designer.cs">
+      <DependentUpon>ctrlApplicationCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\FrmApplicationDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LocalDrivingLicenseApplication\FrmAddEditLocalDrivingLicenseApplication.Designer.cs">
+    <Compile Include="Applications\FrmApplicationDetails.Designer.cs">
+      <DependentUpon>FrmApplicationDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clsGlobalSettings.cs" />
+    <Compile Include="Applications\LocalDrivingLicenseApplication\FrmAddEditLocalDrivingLicenseApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\LocalDrivingLicenseApplication\FrmAddEditLocalDrivingLicenseApplication.Designer.cs">
       <DependentUpon>FrmAddEditLocalDrivingLicenseApplication.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMain.cs">
@@ -71,10 +86,10 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="LocalDrivingLicenseApplication\FrmManageLocalDrivingLicenseApplications.cs">
+    <Compile Include="Applications\LocalDrivingLicenseApplication\FrmManageLocalDrivingLicenseApplications.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LocalDrivingLicenseApplication\FrmManageLocalDrivingLicenseApplications.Designer.cs">
+    <Compile Include="Applications\LocalDrivingLicenseApplication\FrmManageLocalDrivingLicenseApplications.Designer.cs">
       <DependentUpon>FrmManageLocalDrivingLicenseApplications.cs</DependentUpon>
     </Compile>
     <Compile Include="Person\ctrlPersonCard.cs">
@@ -157,19 +172,25 @@
     <Compile Include="User\FrmUserDetails.Designer.cs">
       <DependentUpon>FrmUserDetails.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Application Types\FrmEditApplicationType.resx">
+    <EmbeddedResource Include="Applications\Application Types\FrmEditApplicationType.resx">
       <DependentUpon>FrmEditApplicationType.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Application Types\FrmManageApplicationTypes.resx">
+    <EmbeddedResource Include="Applications\Application Types\FrmManageApplicationTypes.resx">
       <DependentUpon>FrmManageApplicationTypes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LocalDrivingLicenseApplication\FrmAddEditLocalDrivingLicenseApplication.resx">
+    <EmbeddedResource Include="Applications\ctrlApplicationCard.resx">
+      <DependentUpon>ctrlApplicationCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\FrmApplicationDetails.resx">
+      <DependentUpon>FrmApplicationDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\LocalDrivingLicenseApplication\FrmAddEditLocalDrivingLicenseApplication.resx">
       <DependentUpon>FrmAddEditLocalDrivingLicenseApplication.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LocalDrivingLicenseApplication\FrmManageLocalDrivingLicenseApplications.resx">
+    <EmbeddedResource Include="Applications\LocalDrivingLicenseApplication\FrmManageLocalDrivingLicenseApplications.resx">
       <DependentUpon>FrmManageLocalDrivingLicenseApplications.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Person\ctrlPersonCard.resx">
@@ -458,6 +479,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\international License.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DVLD.ico" />
+    <None Include="Resources\icons8-classification-24.png" />
+    <None Include="Resources\icons8-task-completed-24.png" />
+    <None Include="Resources\icons8-driving-100.png" />
+    <None Include="Resources\icons8-writing-skills-100.png" />
+    <None Include="Resources\icons8-vision %281%29.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

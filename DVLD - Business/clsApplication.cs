@@ -154,5 +154,15 @@ namespace DVLD___Business
 
             return false;
         }
+
+        public static bool Cancel(int applicationID)
+        {
+            if (Exists(applicationID))
+            {
+                return clsApplicationData.CancelApplication(applicationID);
+            }
+            return false;
+        }
+
     }
 }

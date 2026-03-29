@@ -38,9 +38,18 @@
             this.cbFilterBy = new System.Windows.Forms.ComboBox();
             this.dgvApplications = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.showDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.addNewPersonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.CancelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.scadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.visionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.writtenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.streetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tbUserInput = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -48,12 +57,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnNew = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.showDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addNewPersonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.scadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvApplications)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -171,27 +174,98 @@
             this.editToolStripMenuItem,
             this.deleteToolStripMenuItem,
             this.toolStripMenuItem2,
-            this.toolStripMenuItem3,
+            this.CancelToolStripMenuItem,
             this.toolStripSeparator1,
             this.scadToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 190);
-            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(215, 218);
+            // 
+            // showDetailsToolStripMenuItem
+            // 
+            this.showDetailsToolStripMenuItem.Image = global::DVLD.Properties.Resources.icons8_name_24;
+            this.showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
+            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(214, 28);
+            this.showDetailsToolStripMenuItem.Text = "Show Details";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(211, 6);
             // 
+            // addNewPersonToolStripMenuItem
+            // 
+            this.addNewPersonToolStripMenuItem.Image = global::DVLD.Properties.Resources.plus;
+            this.addNewPersonToolStripMenuItem.Name = "addNewPersonToolStripMenuItem";
+            this.addNewPersonToolStripMenuItem.Size = new System.Drawing.Size(214, 28);
+            this.addNewPersonToolStripMenuItem.Text = "Add New Person";
+            this.addNewPersonToolStripMenuItem.Click += new System.EventHandler(this.addNewApplicationToolStripMenuItem_Click);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Image = global::DVLD.Properties.Resources.Edit;
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(214, 28);
+            this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Image = global::DVLD.Properties.Resources.bin;
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(214, 28);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(211, 6);
             // 
+            // CancelToolStripMenuItem
+            // 
+            this.CancelToolStripMenuItem.Image = global::DVLD.Properties.Resources.icons8_close_32;
+            this.CancelToolStripMenuItem.Name = "CancelToolStripMenuItem";
+            this.CancelToolStripMenuItem.Size = new System.Drawing.Size(214, 28);
+            this.CancelToolStripMenuItem.Text = "Cancle";
+            this.CancelToolStripMenuItem.Click += new System.EventHandler(this.CancelToolStripMenuItem_Click);
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(211, 6);
+            // 
+            // scadToolStripMenuItem
+            // 
+            this.scadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.visionToolStripMenuItem,
+            this.writtenToolStripMenuItem,
+            this.streetToolStripMenuItem});
+            this.scadToolStripMenuItem.Image = global::DVLD.Properties.Resources.icons8_schedule_48;
+            this.scadToolStripMenuItem.Name = "scadToolStripMenuItem";
+            this.scadToolStripMenuItem.Size = new System.Drawing.Size(214, 28);
+            this.scadToolStripMenuItem.Text = "Schedule Tests";
+            // 
+            // visionToolStripMenuItem
+            // 
+            this.visionToolStripMenuItem.Image = global::DVLD.Properties.Resources.icons8_vision__1_;
+            this.visionToolStripMenuItem.Name = "visionToolStripMenuItem";
+            this.visionToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.visionToolStripMenuItem.Text = "Vision Test";
+            // 
+            // writtenToolStripMenuItem
+            // 
+            this.writtenToolStripMenuItem.Image = global::DVLD.Properties.Resources.icons8_writing_skills_100;
+            this.writtenToolStripMenuItem.Name = "writtenToolStripMenuItem";
+            this.writtenToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.writtenToolStripMenuItem.Text = "Written Test";
+            this.writtenToolStripMenuItem.Click += new System.EventHandler(this.writtenToolStripMenuItem_Click);
+            // 
+            // streetToolStripMenuItem
+            // 
+            this.streetToolStripMenuItem.Image = global::DVLD.Properties.Resources.icons8_driving_100;
+            this.streetToolStripMenuItem.Name = "streetToolStripMenuItem";
+            this.streetToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.streetToolStripMenuItem.Text = "Street Test";
             // 
             // tbUserInput
             // 
@@ -288,51 +362,6 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // showDetailsToolStripMenuItem
-            // 
-            this.showDetailsToolStripMenuItem.Image = global::DVLD.Properties.Resources.icons8_name_24;
-            this.showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
-            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(214, 28);
-            this.showDetailsToolStripMenuItem.Text = "Show Details";
-            // 
-            // addNewPersonToolStripMenuItem
-            // 
-            this.addNewPersonToolStripMenuItem.Image = global::DVLD.Properties.Resources.plus;
-            this.addNewPersonToolStripMenuItem.Name = "addNewPersonToolStripMenuItem";
-            this.addNewPersonToolStripMenuItem.Size = new System.Drawing.Size(210, 28);
-            this.addNewPersonToolStripMenuItem.Text = "Add New Person";
-            this.addNewPersonToolStripMenuItem.Click += new System.EventHandler(this.addNewApplicationToolStripMenuItem_Click);
-            // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.Image = global::DVLD.Properties.Resources.Edit;
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(210, 28);
-            this.editToolStripMenuItem.Text = "Edit";
-            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
-            // 
-            // deleteToolStripMenuItem
-            // 
-            this.deleteToolStripMenuItem.Image = global::DVLD.Properties.Resources.bin;
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(210, 28);
-            this.deleteToolStripMenuItem.Text = "Delete";
-            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.Image = global::DVLD.Properties.Resources.icons8_close_32;
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(214, 28);
-            this.toolStripMenuItem3.Text = "Cancle";
-            // 
-            // scadToolStripMenuItem
-            // 
-            this.scadToolStripMenuItem.Image = global::DVLD.Properties.Resources.icons8_schedule_48;
-            this.scadToolStripMenuItem.Name = "scadToolStripMenuItem";
-            this.scadToolStripMenuItem.Size = new System.Drawing.Size(214, 28);
-            this.scadToolStripMenuItem.Text = "Schedule Tests";
-            // 
             // FrmManageLocalDrivingLicenseApplications
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -389,9 +418,12 @@
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem CancelToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem scadToolStripMenuItem;
         private System.Windows.Forms.TextBox tbUserInput;
+        private System.Windows.Forms.ToolStripMenuItem visionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem writtenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem streetToolStripMenuItem;
     }
 }
