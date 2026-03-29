@@ -15,11 +15,12 @@ namespace DVLD.Person
     public partial class ctrlPersonCard : UserControl
     {
         public clsPerson person { get; set; }
-
+        public bool IsPersonEdited { get;private set; }
         public ctrlPersonCard()
         {
             InitializeComponent();
             person = new clsPerson();
+            IsPersonEdited = false;
         }
 
         #region Event Handlers
@@ -34,6 +35,7 @@ namespace DVLD.Person
             }
             FrmAddEditPerson updateForm = new FrmAddEditPerson(personId);
             updateForm.ShowDialog();
+            IsPersonEdited = true;
             LoadPersonInformation(personId);
         }
 

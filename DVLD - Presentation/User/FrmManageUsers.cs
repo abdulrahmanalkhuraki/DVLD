@@ -128,6 +128,10 @@ namespace DVLD.User
             int userId = Convert.ToInt32(dgvUsers.SelectedRows[0].Cells["UserID"].Value);
             FrmUserDetails frm = new FrmUserDetails(userId);
             frm.ShowDialog();
+            if (frm.IsUserEdited())
+            {
+                _LoadUsers();
+            }
         }
 
         private void addNewUserToolStripMenuItem_Click(object sender, EventArgs e) => _AddNewUser();
@@ -188,8 +192,6 @@ namespace DVLD.User
             dgvUsers.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dgvUsers.EnableHeadersVisualStyles = false;
 
-            // Set row height
-            dgvUsers.RowTemplate.Height = 50;
 
             // Header style - Purple
             dgvUsers.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(103, 58, 183);  // Deep purple
@@ -204,7 +206,6 @@ namespace DVLD.User
             dgvUsers.DefaultCellStyle.ForeColor = Color.FromArgb(33, 33, 33);
             dgvUsers.DefaultCellStyle.SelectionBackColor = Color.FromArgb(81, 45, 168);  // Darker purple
             dgvUsers.DefaultCellStyle.SelectionForeColor = Color.White;
-            dgvUsers.DefaultCellStyle.Padding = new Padding(5);
 
             // Set column headers and visibility
             _SetColumnHeader("UserID", "User ID");
@@ -289,6 +290,7 @@ namespace DVLD.User
                 dgvUsers.Columns.Insert(colIndex, newCol);
             }
         }
+
         private void _SetColumnHeader(string columnName, string headerText)
         {
             if (dgvUsers.Columns.Contains(columnName))
@@ -301,7 +303,8 @@ namespace DVLD.User
                 dgvUsers.DataSource = filteredRows.CopyToDataTable();
             else
                 dgvUsers.DataSource = originalData.Clone();
-            _ConfigureDataGridView(); // Reapply configuration after data change
+            lblRecordsCount.Text = dgvUsers.RowCount.ToString("N0");
+            _ConfigureDataGridView(); 
         }
 
         private void _AddNewUser()

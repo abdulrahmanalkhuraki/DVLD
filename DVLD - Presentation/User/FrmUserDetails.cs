@@ -21,6 +21,7 @@ namespace DVLD.User
             this.User = clsUser.FindUser(UserId);
         }
 
+        #region Event Handlers
         private void FrmUserDetails_Load(object sender, EventArgs e)
         {
             if (User != null)
@@ -31,5 +32,11 @@ namespace DVLD.User
 
         private void btnClose_Click(object sender, EventArgs e) => Close();
 
+        #endregion
+
+        public bool IsUserEdited()
+        {
+            return ctrlUserCard1.IsPersonEdited();
+        }
     }
 }

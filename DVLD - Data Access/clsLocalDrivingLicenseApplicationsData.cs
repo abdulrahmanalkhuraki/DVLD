@@ -130,7 +130,7 @@ namespace DVLD___Data_Access
             DataTable dt = new DataTable();
             SqlConnection sqlConnection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string Query = @"SELECT * FROM LocalDrivingLicenseApplications";
+            string Query = @"SELECT * FROM LocalDrivingLicenseApplications_View";
 
             SqlCommand sqlCommand = new SqlCommand(Query, sqlConnection);
             try

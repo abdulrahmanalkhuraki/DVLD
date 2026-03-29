@@ -46,7 +46,7 @@ namespace DVLD.Person
 
             DataTable allPeople = clsPerson.GetAllPeople();
             dgvPeople.DataSource = allPeople;
-            ConfigurePeopleGridView();
+            _ConfigureDataGridView();
 
             int[] ItemsNeedsTextBox = { 1, 2, 3, 4, 5, 6, 8, 9 };
             int[] ItemsNeedsCombo = { 7, 10 };
@@ -110,7 +110,7 @@ namespace DVLD.Person
                 filteredData = peopleData.Select($"Nationality = '{nationality}'");
             }
 
-            UpdateDataGridView(peopleData, filteredData);
+            _UpdateDataGridView(peopleData, filteredData);
         }
 
         private void tbUserInput_TextChanged(object sender, EventArgs e)
@@ -184,7 +184,7 @@ namespace DVLD.Person
                     }
                     break;
             }
-            UpdateDataGridView(peopleData, filteredData);
+            _UpdateDataGridView(peopleData, filteredData);
 
         }
 
@@ -211,6 +211,9 @@ namespace DVLD.Person
             int SelectedPersonId = Convert.ToInt32(SelectedRow.Cells["Person ID"].Value);
             FrmPersonDetails frmPersonDetails = new FrmPersonDetails(SelectedPersonId);
             frmPersonDetails.ShowDialog();
+
+            if(frmPersonDetails.IsPersonEdited())
+                _LoadPeople();
         }
 
         private void btnClose_Click_1(object sender, EventArgs e) => Close();
@@ -241,17 +244,14 @@ namespace DVLD.Person
         #endregion
 
         #region Helpers
-        private void UpdateDataGridView(DataTable orignalData, DataRow[] filteredData)
+        private void _UpdateDataGridView(DataTable originalData, DataRow[] filteredRows)
         {
-            if (filteredData != null && filteredData.Length > 0)
-            {
-                dgvPeople.DataSource = filteredData.CopyToDataTable();
-            }
+            if (filteredRows != null && filteredRows.Length > 0)
+                dgvPeople.DataSource = filteredRows.CopyToDataTable();
             else
-            {
-                DataTable dt = orignalData.Clone();
-                dgvPeople.DataSource = dt;
-            }
+                dgvPeople.DataSource = originalData.Clone();
+            lblRecordsCount.Text = dgvPeople.RowCount.ToString("N0");
+            _ConfigureDataGridView();
         }
 
         private void _LoadPeople()
@@ -259,10 +259,10 @@ namespace DVLD.Person
             DataTable people = clsPerson.GetAllPeople();
             lblRecordsCount.Text = people.Rows.Count.ToString("N0");
             dgvPeople.DataSource = people;
-            ConfigurePeopleGridView();
+            _ConfigureDataGridView();
         }
 
-        private void ConfigurePeopleGridView()
+        private void _ConfigureDataGridView()
         {
             // Basic DataGridView properties
             dgvPeople.AllowUserToAddRows = false;
@@ -424,6 +424,5 @@ namespace DVLD.Person
             _LoadPeople();
         }
         #endregion
-
     }
 }

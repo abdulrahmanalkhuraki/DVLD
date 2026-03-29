@@ -18,15 +18,18 @@ namespace DVLD.Person
             InitializeComponent();
             this.PersonID = PersonID;
         }
-
+        #region Event Handlers
         private void FrmPersonDetails_Load(object sender, EventArgs e)
         {
             ctrlPersonCard1.LoadPersonInformation(PersonID);
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e) => Close();
+        #endregion
+        
+        public bool IsPersonEdited()
         {
-            Close();
+            return ctrlPersonCard1.IsPersonEdited;
         }
     }
 }

@@ -16,6 +16,7 @@ namespace DVLD.User
         public ctrlUserCard()
         {
             InitializeComponent();
+            IsPersonEdited = false;
         }
 
         public void LoadUserInformation(int UserID)
@@ -44,5 +45,9 @@ namespace DVLD.User
 
         }
 
+        public bool IsPersonEdited()
+        {
+            return ctrlPersonCard1.IsPersonEdited;
+        }
     }
 }

@@ -113,7 +113,7 @@ namespace DVLD
             ctrlPersonCardWithFilter1.LoadPerson(LocalDrivingLicenseApplication.PersonID);
             lblApplicationID.Text = LocalDrivingLicenseApplication.LocalDrivingLicenseApplicationID.ToString();
             lblApplicationDate.Text = LocalDrivingLicenseApplication.ApplicationDate.ToString("yyyy-MM-dd");
-            cbLicenseClass.SelectedIndex = LocalDrivingLicenseApplication.LicenseClassID;
+            cbLicenseClass.SelectedIndex = LocalDrivingLicenseApplication.LicenseClassID - 1; // cbLicenseClass index Starts from zero
             lblCreatedBy.Text = LocalDrivingLicenseApplication.CreatedByUserID.ToString();
         }
 
@@ -136,7 +136,7 @@ namespace DVLD
             }
 
             int existsApplicationID = clsLocalDrivingLicenseApplication.IsThereActiveOrderBefore(LocalDrivingLicenseApplication.PersonID,
-                LocalDrivingLicenseApplication.LicenseClassID);
+                cbLicenseClass.SelectedIndex + 1);
 
             if (existsApplicationID != -1)  
             {
@@ -153,10 +153,7 @@ namespace DVLD
             MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-
         #endregion
-
-
 
     }
 }

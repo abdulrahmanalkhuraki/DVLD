@@ -443,6 +443,16 @@ namespace DVLD.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_schedule_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-schedule-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_search_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-search-24", resourceCulture);
@@ -553,6 +563,16 @@ namespace DVLD.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap id__13_ {
+            get {
+                object obj = ResourceManager.GetObject("id (13)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap id__2_ {
             get {
                 object obj = ResourceManager.GetObject("id (2)", resourceCulture);
@@ -626,6 +646,16 @@ namespace DVLD.Properties {
         internal static System.Drawing.Bitmap id_config {
             get {
                 object obj = ResourceManager.GetObject("id_config", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap international_License {
+            get {
+                object obj = ResourceManager.GetObject("international License", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
