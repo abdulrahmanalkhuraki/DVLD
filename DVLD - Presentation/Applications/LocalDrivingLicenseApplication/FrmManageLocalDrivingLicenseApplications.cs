@@ -3,6 +3,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using DVLD.Applications;
 using DVLD___Business;
 
 namespace DVLD.LocalDrivingLicenseApplication
@@ -133,9 +134,8 @@ namespace DVLD.LocalDrivingLicenseApplication
         {
             if (dgvApplications.SelectedRows.Count == 0) return;
             int appId = Convert.ToInt32(dgvApplications.SelectedRows[0].Cells["LocalDrivingLicenseApplicationID"].Value);
-            // Replace with actual details form
-            //FrmLocalDrivingLicenseApplicationDetails frm = new FrmLocalDrivingLicenseApplicationDetails(appId);
-            //frm.ShowDialog();
+            FrmApplicationDetails frm = new FrmApplicationDetails(appId);
+            frm.ShowDialog();
         }
 
         private void addNewApplicationToolStripMenuItem_Click(object sender, EventArgs e) => _AddNewApplication();

@@ -34,8 +34,8 @@ namespace DVLD___Data_Access
 
                     ClassName = reader["ClassName"].ToString();
                     ClassDescription = reader["ClassDescription"].ToString();
-                    MinimumAllowedAge = (int)reader["MinimumAllowedAge"];
-                    DefaultValidityLength = (int)reader["DefaultValidityLength"];
+                    MinimumAllowedAge = Convert.ToInt16(reader["MinimumAllowedAge"]);
+                    DefaultValidityLength = Convert.ToInt16(reader["DefaultValidityLength"]);
                     ClassFees = (decimal)reader["ClassFees"];
                 }
                 else

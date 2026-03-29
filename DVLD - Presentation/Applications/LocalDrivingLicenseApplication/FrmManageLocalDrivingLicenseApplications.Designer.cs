@@ -186,6 +186,7 @@
             this.showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
             this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(214, 28);
             this.showDetailsToolStripMenuItem.Text = "Show Details";
+            this.showDetailsToolStripMenuItem.Click += new System.EventHandler(this.showDetailsToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -249,14 +250,14 @@
             // 
             this.visionToolStripMenuItem.Image = global::DVLD.Properties.Resources.icons8_vision__1_;
             this.visionToolStripMenuItem.Name = "visionToolStripMenuItem";
-            this.visionToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.visionToolStripMenuItem.Size = new System.Drawing.Size(185, 28);
             this.visionToolStripMenuItem.Text = "Vision Test";
             // 
             // writtenToolStripMenuItem
             // 
             this.writtenToolStripMenuItem.Image = global::DVLD.Properties.Resources.icons8_writing_skills_100;
             this.writtenToolStripMenuItem.Name = "writtenToolStripMenuItem";
-            this.writtenToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.writtenToolStripMenuItem.Size = new System.Drawing.Size(185, 28);
             this.writtenToolStripMenuItem.Text = "Written Test";
             this.writtenToolStripMenuItem.Click += new System.EventHandler(this.writtenToolStripMenuItem_Click);
             // 
@@ -264,7 +265,7 @@
             // 
             this.streetToolStripMenuItem.Image = global::DVLD.Properties.Resources.icons8_driving_100;
             this.streetToolStripMenuItem.Name = "streetToolStripMenuItem";
-            this.streetToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.streetToolStripMenuItem.Size = new System.Drawing.Size(185, 28);
             this.streetToolStripMenuItem.Text = "Street Test";
             // 
             // tbUserInput
