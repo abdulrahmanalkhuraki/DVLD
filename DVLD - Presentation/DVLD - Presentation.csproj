@@ -73,6 +73,18 @@
     <Compile Include="Applications\FrmApplicationDetails.Designer.cs">
       <DependentUpon>FrmApplicationDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Applications\FrmTakeTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\FrmTakeTest.Designer.cs">
+      <DependentUpon>FrmTakeTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\FrmScheduleVisionTestAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\FrmScheduleVisionTestAppointment.Designer.cs">
+      <DependentUpon>FrmScheduleVisionTestAppointment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Applications\FrmVisionTestAppointments.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,6 +201,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\FrmApplicationDetails.resx">
       <DependentUpon>FrmApplicationDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\FrmScheduleVisionTestAppointment.resx">
+      <DependentUpon>FrmScheduleVisionTestAppointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\FrmTakeTest.resx">
+      <DependentUpon>FrmTakeTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\FrmVisionTestAppointments.resx">
       <DependentUpon>FrmVisionTestAppointments.cs</DependentUpon>
@@ -491,6 +509,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DVLD.ico" />
+    <None Include="Resources\icons8-notes-24.png" />
+    <None Include="Resources\icons8-result-24.png" />
+    <None Include="Resources\icons8-trial-24.png" />
+    <None Include="Resources\icons8-history-100.png" />
     <None Include="Resources\icons8-vision-100.png" />
     <None Include="Resources\icons8-classification-24.png" />
     <None Include="Resources\icons8-task-completed-24.png" />

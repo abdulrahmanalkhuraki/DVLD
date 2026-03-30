@@ -141,14 +141,14 @@ namespace DVLD___Data_Access
             DataTable dt = new DataTable();
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = @"select ApplicationID,AppointmentDate,PaidFees,IsLocked from (
-	                select R2.*,Applications.ApplicantPersonID from (
-		                select TestAppointmentID as 'Appointment ID',AppointmentDate,
-			                PaidFees,IsLocked,LocalDrivingLicenseApplications.ApplicationID from TestAppointments_View 
-			                join LocalDrivingLicenseApplications 
-		                on TestAppointments_View.LocalDrivingLicenseApplicationID = LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID)R2
-	                join Applications on Applications.ApplicationID = R2.ApplicationID
-                )R1 where ApplicantPersonID = 1 order by AppointmentDate desc;";
+            string query = @"select TestAppointmentID,AppointmentDate,PaidFees,IsLocked from (
+	select R2.*,Applications.ApplicantPersonID from (
+		select TestAppointmentID,AppointmentDate,
+			PaidFees,IsLocked,LocalDrivingLicenseApplications.ApplicationID from TestAppointments_View 
+			join LocalDrivingLicenseApplications 
+		on TestAppointments_View.LocalDrivingLicenseApplicationID = LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID)R2
+	join Applications on Applications.ApplicationID = R2.ApplicationID
+)R1 where ApplicantPersonID = 1 order by AppointmentDate desc;";
 
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@PersonID", PersonID);

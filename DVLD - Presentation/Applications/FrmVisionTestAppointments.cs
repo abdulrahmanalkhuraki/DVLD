@@ -84,14 +84,14 @@ namespace DVLD.Applications
             dgvAppointments.DefaultCellStyle.SelectionBackColor = Color.FromArgb(52, 73, 94);
             dgvAppointments.DefaultCellStyle.SelectionForeColor = Color.White;
 
-            _SetColumnHeader("ApplicationID", "Application ID");
+            _SetColumnHeader("TestAppointmentID", "Appointment ID");
             _SetColumnHeader("AppointmentDate", "Appointment Date");
             _SetColumnHeader("PaidFees", "Paid Fees");
             _SetColumnHeader("IsLocked", "Is Locked");
 
             int index = 0;
-            if (dgvAppointments.Columns.Contains("ApplicationID"))
-                dgvAppointments.Columns["ApplicationID"].DisplayIndex = index++;
+            if (dgvAppointments.Columns.Contains("TestAppointmentID"))
+                dgvAppointments.Columns["TestAppointmentID"].DisplayIndex = index++;
             if (dgvAppointments.Columns.Contains("AppointmentDate"))
                 dgvAppointments.Columns["AppointmentDate"].DisplayIndex = index++;
             if (dgvAppointments.Columns.Contains("PaidFees"))
@@ -99,8 +99,8 @@ namespace DVLD.Applications
             if (dgvAppointments.Columns.Contains("IsLocked"))
                 dgvAppointments.Columns["IsLocked"].DisplayIndex = index++;
 
-            if (dgvAppointments.Columns.Contains("ApplicationID"))
-                dgvAppointments.Columns["ApplicationID"].Width = 90;
+            if (dgvAppointments.Columns.Contains("TestAppointmentID"))
+                dgvAppointments.Columns["TestAppointmentID"].Width = 90;
             if (dgvAppointments.Columns.Contains("AppointmentDate"))
                 dgvAppointments.Columns["AppointmentDate"].Width = 120;
             if (dgvAppointments.Columns.Contains("PaidFees"))
@@ -108,10 +108,10 @@ namespace DVLD.Applications
             if (dgvAppointments.Columns.Contains("IsLocked"))
                 dgvAppointments.Columns["IsLocked"].Width = 70;
 
-            if (dgvAppointments.Columns.Contains("ApplicationID"))
+            if (dgvAppointments.Columns.Contains("TestAppointmentID"))
             {
-                dgvAppointments.Columns["ApplicationID"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                dgvAppointments.Columns["ApplicationID"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvAppointments.Columns["TestAppointmentID"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgvAppointments.Columns["TestAppointmentID"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
             if (dgvAppointments.Columns.Contains("PaidFees"))
             {
@@ -164,8 +164,23 @@ namespace DVLD.Applications
                 dgvAppointments.Columns[columnName].HeaderText = headerText;
         }
 
+
         #endregion
 
+        private void TakeTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgvAppointments.SelectedRows.Count == 0) return;
+            int AppointmentID = Convert.ToInt32(dgvAppointments.SelectedRows[0].Cells["AppointmentID"].Value);
+            FrmTakeTest test = new FrmTakeTest(AppointmentID);
+            test.ShowDialog();
+        }
 
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgvAppointments.SelectedRows.Count == 0) return;
+            int AppointmentID = Convert.ToInt32(dgvAppointments.SelectedRows[0].Cells["AppointmentID"].Value);
+            FrmScheduleVisionTestAppointment frm = new FrmScheduleVisionTestAppointment(AppointmentID);
+            frm.ShowDialog();
+        }
     }
 }

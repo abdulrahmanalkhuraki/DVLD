@@ -6,9 +6,7 @@ namespace DVLD___Business
 {
     public class clsTestAppointment
     {
-        public enum enMode { ADD = 0, UPDATE = 1 };
         public enMode Mode { get; private set; }
-
         public int AppointmentID { get; private set; }
         public int TestTypeID { get; set; }
         public int LocalDrivingLicenseApplicationID { get; set; }
