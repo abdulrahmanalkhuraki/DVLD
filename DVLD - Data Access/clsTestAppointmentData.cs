@@ -136,15 +136,22 @@ namespace DVLD___Data_Access
             return (rowsAffected > 0);
         }
 
-        public static DataTable GetAllAppointments()
+        public static DataTable GetAllAppointments(int PersonID)
         {
             DataTable dt = new DataTable();
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = @"select TestAppointmentID as 'Appointment ID',AppointmentDate as 'Appointment Date',
-PaidFees as 'Paid Fees',IsLocked from TestAppointments_View order by [Appointment Date] desc";
+            string query = @"select ApplicationID,AppointmentDate,PaidFees,IsLocked from (
+	                select R2.*,Applications.ApplicantPersonID from (
+		                select TestAppointmentID as 'Appointment ID',AppointmentDate,
+			                PaidFees,IsLocked,LocalDrivingLicenseApplications.ApplicationID from TestAppointments_View 
+			                join LocalDrivingLicenseApplications 
+		                on TestAppointments_View.LocalDrivingLicenseApplicationID = LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID)R2
+	                join Applications on Applications.ApplicationID = R2.ApplicationID
+                )R1 where ApplicantPersonID = 1 order by AppointmentDate desc;";
 
             SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@PersonID", PersonID);
 
             try
             {
@@ -223,5 +230,8 @@ PaidFees as 'Paid Fees',IsLocked from TestAppointments_View order by [Appointmen
 
             return isFound;
         }
+
+        
+
     }
 }

@@ -339,5 +339,52 @@ namespace DVLD.LocalDrivingLicenseApplication
         {
 
         }
+
+        private void visionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgvApplications.SelectedRows.Count == 0) return;
+            int appId = Convert.ToInt32(dgvApplications.SelectedRows[0].Cells["LocalDrivingLicenseApplicationID"].Value);
+            FrmVisionTestAppointments frm = new FrmVisionTestAppointments(appId);
+            frm.ShowDialog();
+            _LoadApplications();
+        }
+
+        private void scadToolStripMenuItem_DropDownOpening(object sender, EventArgs e)
+        {
+            if (dgvApplications.SelectedRows.Count == 0) return;
+            int appId = Convert.ToInt32(dgvApplications.SelectedRows[0].Cells["LocalDrivingLicenseApplicationID"].Value);
+
+            if (!clsLocalDrivingLicenseApplication.Exists(appId))
+            {
+                return;
+            }
+
+            int passedTests = clsLocalDrivingLicenseApplication.GetPassedTests(appId);
+            switch (passedTests)
+            {
+                case 0:
+                    {
+                        visionToolStripMenuItem.Enabled = true;
+                        writtenToolStripMenuItem.Enabled = false;
+                        streetToolStripMenuItem.Enabled = false;
+                    }break;
+                case 1:
+                    {
+                        visionToolStripMenuItem.Enabled = false;
+                        writtenToolStripMenuItem.Enabled = true;
+                        streetToolStripMenuItem.Enabled = false;
+                    }
+                    break;
+                case 2:
+                    {
+                        visionToolStripMenuItem.Enabled = false;
+                        writtenToolStripMenuItem.Enabled = false;
+                        streetToolStripMenuItem.Enabled = true;
+                    }
+                    break;
+                default: break;
+            }
+
+        }
     }
 }

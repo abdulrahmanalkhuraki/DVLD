@@ -105,11 +105,6 @@ namespace DVLD___Business
             return null;
         }
 
-        public static DataTable GetAllAppointments()
-        {
-            return clsTestAppointmentData.GetAllAppointments();
-        }
-
         public static bool Exists(int AppointmentID)
         {
             return clsTestAppointmentData.IsAppointmentExists(AppointmentID);

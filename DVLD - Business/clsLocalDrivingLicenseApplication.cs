@@ -81,6 +81,11 @@ namespace DVLD___Business
             return clsLocalDrivingLicenseApplicationsData.GetAllLocalDrivingLicenseApplications();
         }
 
+        public DataTable GetAllAppointments()
+        {
+            return clsTestAppointmentData.GetAllAppointments(this.PersonID);
+        }
+
         public static clsLocalDrivingLicenseApplication Find(int localDrivingLicenseApplicationID)
         {
             int applicationID = -1;
