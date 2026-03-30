@@ -56,17 +56,17 @@ namespace DVLD___Business
             switch (this.Mode)
             {
                 case enMode.ADD:
-                    return AddNewApplication();
+                    return _AddNewApplication();
 
                 case enMode.UPDATE:
-                    return UpdateApplication();
+                    return _UpdateApplication();
 
                 default:
                     return false;
             }
         }
 
-        private bool AddNewApplication()
+        private bool _AddNewApplication()
         {
             this.ApplicationID = clsApplicationData.AddNewApplication(
                 this.PersonID,
@@ -86,7 +86,7 @@ namespace DVLD___Business
             return false;
         }
 
-        private bool UpdateApplication()
+        private bool _UpdateApplication()
         {
             return clsApplicationData.UpdateApplication(
                 this.ApplicationID,

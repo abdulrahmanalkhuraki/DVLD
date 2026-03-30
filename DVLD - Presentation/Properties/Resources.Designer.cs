@@ -563,6 +563,16 @@ namespace DVLD.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_vision_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-vision-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_writing_skills_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-writing-skills-100", resourceCulture);

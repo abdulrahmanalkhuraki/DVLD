@@ -73,6 +73,12 @@
     <Compile Include="Applications\FrmApplicationDetails.Designer.cs">
       <DependentUpon>FrmApplicationDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Applications\FrmVisionTestAppointments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\FrmVisionTestAppointments.Designer.cs">
+      <DependentUpon>FrmVisionTestAppointments.cs</DependentUpon>
+    </Compile>
     <Compile Include="clsGlobalSettings.cs" />
     <Compile Include="Applications\LocalDrivingLicenseApplication\FrmAddEditLocalDrivingLicenseApplication.cs">
       <SubType>Form</SubType>
@@ -183,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\FrmApplicationDetails.resx">
       <DependentUpon>FrmApplicationDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\FrmVisionTestAppointments.resx">
+      <DependentUpon>FrmVisionTestAppointments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\LocalDrivingLicenseApplication\FrmAddEditLocalDrivingLicenseApplication.resx">
       <DependentUpon>FrmAddEditLocalDrivingLicenseApplication.cs</DependentUpon>
@@ -482,6 +491,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DVLD.ico" />
+    <None Include="Resources\icons8-vision-100.png" />
     <None Include="Resources\icons8-classification-24.png" />
     <None Include="Resources\icons8-task-completed-24.png" />
     <None Include="Resources\icons8-driving-100.png" />
