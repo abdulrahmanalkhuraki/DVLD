@@ -1,6 +1,7 @@
 ﻿using DVLD___Data_Access;
 using System;
 using System.Data;
+using System.Runtime.InteropServices;
 
 namespace DVLD___Business
 {
@@ -81,9 +82,24 @@ namespace DVLD___Business
             return clsLocalDrivingLicenseApplicationsData.GetAllLocalDrivingLicenseApplications();
         }
 
-        public DataTable GetAllAppointments()
+        public DataTable GetAllAppointments(int TestTypeID)
         {
-            return clsTestAppointmentData.GetAllAppointments(this.PersonID);
+            return clsTestAppointmentData.GetAllAppointments(this.PersonID,TestTypeID);
+        }
+
+        public bool IsThereUnlockedAppointments(int TestTypeID)
+        {
+            DataTable dt = GetAllAppointments(TestTypeID);
+            if (dt.Rows.Count == 0)
+            {
+                return false;
+            }
+
+            DataRow[] unlockedAppointments = dt.Select("IsLocked = 0");
+            if (unlockedAppointments != null && unlockedAppointments.Length > 0)
+                return true;
+            else 
+                return false;
         }
 
         public static clsLocalDrivingLicenseApplication Find(int localDrivingLicenseApplicationID)
@@ -145,9 +161,14 @@ namespace DVLD___Business
         public static int GetPassedTests(int ApplicationID)
         {
             DataRow[] row = GetAllLocalDrivingLicenseApplications().Select($"LocalDrivingLicenseApplicationID = {ApplicationID}");
-            if (int.TryParse(row[0]["PassedTestCount"].ToString(),out int passedTestsCount))
+            if (int.TryParse(row[0]["PassedTestCount"].ToString(), out int passedTestsCount))
                 return passedTestsCount;
             else return -1;
+        }
+
+        public bool IsTherePassedTest(int TestTypeID)
+        {
+            return clsTestData.IsTherePassedTest(TestTypeID,LocalDrivingLicenseApplicationID);
         }
     }
 }

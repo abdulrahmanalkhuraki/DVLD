@@ -79,17 +79,17 @@
     <Compile Include="Applications\FrmTakeTest.Designer.cs">
       <DependentUpon>FrmTakeTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="Applications\FrmScheduleVisionTestAppointment.cs">
+    <Compile Include="Applications\FrmAddEditAppointment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Applications\FrmScheduleVisionTestAppointment.Designer.cs">
-      <DependentUpon>FrmScheduleVisionTestAppointment.cs</DependentUpon>
+    <Compile Include="Applications\FrmAddEditAppointment.Designer.cs">
+      <DependentUpon>FrmAddEditAppointment.cs</DependentUpon>
     </Compile>
-    <Compile Include="Applications\FrmVisionTestAppointments.cs">
+    <Compile Include="Applications\FrmTestAppointments.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Applications\FrmVisionTestAppointments.Designer.cs">
-      <DependentUpon>FrmVisionTestAppointments.cs</DependentUpon>
+    <Compile Include="Applications\FrmTestAppointments.Designer.cs">
+      <DependentUpon>FrmTestAppointments.cs</DependentUpon>
     </Compile>
     <Compile Include="clsGlobalSettings.cs" />
     <Compile Include="Applications\LocalDrivingLicenseApplication\FrmAddEditLocalDrivingLicenseApplication.cs">
@@ -109,6 +109,12 @@
     </Compile>
     <Compile Include="Applications\LocalDrivingLicenseApplication\FrmManageLocalDrivingLicenseApplications.Designer.cs">
       <DependentUpon>FrmManageLocalDrivingLicenseApplications.cs</DependentUpon>
+    </Compile>
+    <Compile Include="License\FrmIssueDrivingLicenseForFirstTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="License\FrmIssueDrivingLicenseForFirstTime.Designer.cs">
+      <DependentUpon>FrmIssueDrivingLicenseForFirstTime.cs</DependentUpon>
     </Compile>
     <Compile Include="Person\ctrlPersonCard.cs">
       <SubType>UserControl</SubType>
@@ -202,14 +208,14 @@
     <EmbeddedResource Include="Applications\FrmApplicationDetails.resx">
       <DependentUpon>FrmApplicationDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Applications\FrmScheduleVisionTestAppointment.resx">
-      <DependentUpon>FrmScheduleVisionTestAppointment.cs</DependentUpon>
+    <EmbeddedResource Include="Applications\FrmAddEditAppointment.resx">
+      <DependentUpon>FrmAddEditAppointment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\FrmTakeTest.resx">
       <DependentUpon>FrmTakeTest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Applications\FrmVisionTestAppointments.resx">
-      <DependentUpon>FrmVisionTestAppointments.cs</DependentUpon>
+    <EmbeddedResource Include="Applications\FrmTestAppointments.resx">
+      <DependentUpon>FrmTestAppointments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\LocalDrivingLicenseApplication\FrmAddEditLocalDrivingLicenseApplication.resx">
       <DependentUpon>FrmAddEditLocalDrivingLicenseApplication.cs</DependentUpon>
@@ -219,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\LocalDrivingLicenseApplication\FrmManageLocalDrivingLicenseApplications.resx">
       <DependentUpon>FrmManageLocalDrivingLicenseApplications.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="License\FrmIssueDrivingLicenseForFirstTime.resx">
+      <DependentUpon>FrmIssueDrivingLicenseForFirstTime.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Person\ctrlPersonCard.resx">
       <DependentUpon>ctrlPersonCard.cs</DependentUpon>

@@ -1,6 +1,6 @@
 ﻿namespace DVLD.Applications
 {
-    partial class FrmVisionTestAppointments
+    partial class FrmTestAppointments
     {
         /// <summary>
         /// Required designer variable.
@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DVLD___Business.clsLocalDrivingLicenseApplication clsLocalDrivingLicenseApplication3 = new DVLD___Business.clsLocalDrivingLicenseApplication();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVisionTestAppointments));
+            DVLD___Business.clsLocalDrivingLicenseApplication clsLocalDrivingLicenseApplication2 = new DVLD___Business.clsLocalDrivingLicenseApplication();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTestAppointments));
             this.ctrlApplicationCard1 = new DVLD.Applications.ctrlApplicationCard();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.pbTestTypeIcon = new System.Windows.Forms.PictureBox();
             this.dgvAppointments = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.TakeTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,26 +44,26 @@
             this.btnNew = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTestTypeIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ctrlApplicationCard1
             // 
-            clsLocalDrivingLicenseApplication3.ApplicationDate = new System.DateTime(2026, 3, 30, 10, 35, 55, 824);
-            clsLocalDrivingLicenseApplication3.ApplicationStatus = DVLD___Business.enApplicationStatus.New;
-            clsLocalDrivingLicenseApplication3.ApplicationTypeID = 1;
-            clsLocalDrivingLicenseApplication3.CreatedByUserID = -1;
-            clsLocalDrivingLicenseApplication3.LastStatusDate = new System.DateTime(2026, 3, 30, 10, 35, 55, 824);
-            clsLocalDrivingLicenseApplication3.LicenseClassID = -1;
-            clsLocalDrivingLicenseApplication3.PaidFees = new decimal(new int[] {
+            clsLocalDrivingLicenseApplication2.ApplicationDate = new System.DateTime(2026, 3, 30, 10, 35, 55, 824);
+            clsLocalDrivingLicenseApplication2.ApplicationStatus = DVLD___Business.enApplicationStatus.New;
+            clsLocalDrivingLicenseApplication2.ApplicationTypeID = 1;
+            clsLocalDrivingLicenseApplication2.CreatedByUserID = -1;
+            clsLocalDrivingLicenseApplication2.LastStatusDate = new System.DateTime(2026, 3, 30, 10, 35, 55, 824);
+            clsLocalDrivingLicenseApplication2.LicenseClassID = -1;
+            clsLocalDrivingLicenseApplication2.PaidFees = new decimal(new int[] {
             15,
             0,
             0,
             0});
-            clsLocalDrivingLicenseApplication3.PersonID = -1;
-            this.ctrlApplicationCard1.application = clsLocalDrivingLicenseApplication3;
+            clsLocalDrivingLicenseApplication2.PersonID = -1;
+            this.ctrlApplicationCard1.application = clsLocalDrivingLicenseApplication2;
             this.ctrlApplicationCard1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ctrlApplicationCard1.Location = new System.Drawing.Point(12, 140);
             this.ctrlApplicationCard1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -71,27 +71,27 @@
             this.ctrlApplicationCard1.Size = new System.Drawing.Size(731, 506);
             this.ctrlApplicationCard1.TabIndex = 0;
             // 
-            // label1
+            // lblTitle
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Myanmar Text", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(144, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(476, 66);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Vision Test Appointments";
+            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Myanmar Text", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(144, 42);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(476, 66);
+            this.lblTitle.TabIndex = 5;
+            this.lblTitle.Text = "Vision Test Appointments";
             // 
-            // pictureBox1
+            // pbTestTypeIcon
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Image = global::DVLD.Properties.Resources.icons8_vision_100;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 15);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(117, 121);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.pbTestTypeIcon.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbTestTypeIcon.Image = global::DVLD.Properties.Resources.icons8_writing_skills_100;
+            this.pbTestTypeIcon.Location = new System.Drawing.Point(12, 15);
+            this.pbTestTypeIcon.Name = "pbTestTypeIcon";
+            this.pbTestTypeIcon.Size = new System.Drawing.Size(117, 121);
+            this.pbTestTypeIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbTestTypeIcon.TabIndex = 4;
+            this.pbTestTypeIcon.TabStop = false;
             // 
             // dgvAppointments
             // 
@@ -119,13 +119,14 @@
             this.TakeTestToolStripMenuItem,
             this.editToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(215, 88);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(152, 60);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // TakeTestToolStripMenuItem
             // 
             this.TakeTestToolStripMenuItem.Image = global::DVLD.Properties.Resources.exam;
             this.TakeTestToolStripMenuItem.Name = "TakeTestToolStripMenuItem";
-            this.TakeTestToolStripMenuItem.Size = new System.Drawing.Size(214, 28);
+            this.TakeTestToolStripMenuItem.Size = new System.Drawing.Size(151, 28);
             this.TakeTestToolStripMenuItem.Text = "Take Test";
             this.TakeTestToolStripMenuItem.Click += new System.EventHandler(this.TakeTestToolStripMenuItem_Click);
             // 
@@ -133,7 +134,7 @@
             // 
             this.editToolStripMenuItem.Image = global::DVLD.Properties.Resources.Edit;
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(214, 28);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(151, 28);
             this.editToolStripMenuItem.Text = "Edit";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
@@ -208,7 +209,7 @@
             this.label2.TabIndex = 27;
             this.label2.Text = "Appointments";
             // 
-            // FrmVisionTestAppointments
+            // FrmTestAppointments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -219,19 +220,19 @@
             this.Controls.Add(this.lblRecordsCount);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dgvAppointments);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.pbTestTypeIcon);
             this.Controls.Add(this.ctrlApplicationCard1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmVisionTestAppointments";
+            this.Name = "FrmTestAppointments";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Vision Test Appointments";
             this.Load += new System.EventHandler(this.FrmVisionTestAppointments_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTestTypeIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -242,8 +243,8 @@
         #endregion
 
         private ctrlApplicationCard ctrlApplicationCard1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.PictureBox pbTestTypeIcon;
         private System.Windows.Forms.DataGridView dgvAppointments;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label lblRecordsCount;

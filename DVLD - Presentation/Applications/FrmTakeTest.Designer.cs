@@ -50,6 +50,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblTestID = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +60,7 @@
             // 
             this.lblFees.AutoSize = true;
             this.lblFees.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFees.Location = new System.Drawing.Point(177, 347);
+            this.lblFees.Location = new System.Drawing.Point(177, 344);
             this.lblFees.Name = "lblFees";
             this.lblFees.Size = new System.Drawing.Size(30, 20);
             this.lblFees.TabIndex = 58;
@@ -68,7 +70,7 @@
             // 
             this.lblTrials.AutoSize = true;
             this.lblTrials.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTrials.Location = new System.Drawing.Point(177, 278);
+            this.lblTrials.Location = new System.Drawing.Point(177, 276);
             this.lblTrials.Name = "lblTrials";
             this.lblTrials.Size = new System.Drawing.Size(30, 20);
             this.lblTrials.TabIndex = 55;
@@ -109,17 +111,17 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(155, 123);
+            this.label1.Location = new System.Drawing.Point(188, 123);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 36);
+            this.label1.Size = new System.Drawing.Size(106, 36);
             this.label1.TabIndex = 47;
-            this.label1.Text = "Schedule Test";
+            this.label1.Text = "Take Test";
             // 
             // lblDate
             // 
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(177, 314);
+            this.lblDate.Location = new System.Drawing.Point(177, 310);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(30, 20);
             this.lblDate.TabIndex = 59;
@@ -133,7 +135,7 @@
             this.groupBox1.Controls.Add(this.tbNotes);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Location = new System.Drawing.Point(17, 398);
+            this.groupBox1.Location = new System.Drawing.Point(17, 427);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(444, 176);
             this.groupBox1.TabIndex = 60;
@@ -197,10 +199,11 @@
             // 
             // btnClose
             // 
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::DVLD.Properties.Resources.icons8_close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnClose.Location = new System.Drawing.Point(151, 580);
+            this.btnClose.Location = new System.Drawing.Point(151, 609);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(114, 40);
             this.btnClose.TabIndex = 62;
@@ -216,7 +219,7 @@
             this.btnSaveRecord.ForeColor = System.Drawing.Color.White;
             this.btnSaveRecord.Image = global::DVLD.Properties.Resources.icons8_save_24;
             this.btnSaveRecord.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSaveRecord.Location = new System.Drawing.Point(266, 580);
+            this.btnSaveRecord.Location = new System.Drawing.Point(266, 609);
             this.btnSaveRecord.Name = "btnSaveRecord";
             this.btnSaveRecord.Size = new System.Drawing.Size(195, 40);
             this.btnSaveRecord.TabIndex = 61;
@@ -230,7 +233,7 @@
             this.label10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Image = global::DVLD.Properties.Resources.icons8_fees_24;
             this.label10.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label10.Location = new System.Drawing.Point(13, 345);
+            this.label10.Location = new System.Drawing.Point(12, 342);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(136, 24);
             this.label10.TabIndex = 57;
@@ -242,7 +245,7 @@
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Image = global::DVLD.Properties.Resources.icons8_date_24;
             this.label8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label8.Location = new System.Drawing.Point(13, 312);
+            this.label8.Location = new System.Drawing.Point(12, 308);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(136, 24);
             this.label8.TabIndex = 56;
@@ -254,7 +257,7 @@
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Image = global::DVLD.Properties.Resources.icons8_trial_24;
             this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label4.Location = new System.Drawing.Point(13, 276);
+            this.label4.Location = new System.Drawing.Point(12, 274);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(136, 24);
             this.label4.TabIndex = 54;
@@ -266,7 +269,7 @@
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Image = global::DVLD.Properties.Resources.icons8_name_24;
             this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label5.Location = new System.Drawing.Point(13, 240);
+            this.label5.Location = new System.Drawing.Point(12, 240);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(136, 24);
             this.label5.TabIndex = 52;
@@ -278,7 +281,7 @@
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Image = global::DVLD.Properties.Resources.id__12_;
             this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label3.Location = new System.Drawing.Point(13, 206);
+            this.label3.Location = new System.Drawing.Point(12, 206);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(136, 24);
             this.label3.TabIndex = 50;
@@ -290,7 +293,7 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Image = global::DVLD.Properties.Resources.icons8_id_24;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label2.Location = new System.Drawing.Point(13, 172);
+            this.label2.Location = new System.Drawing.Point(12, 172);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(136, 24);
             this.label2.TabIndex = 48;
@@ -308,12 +311,38 @@
             this.pictureBox1.TabIndex = 46;
             this.pictureBox1.TabStop = false;
             // 
+            // lblTestID
+            // 
+            this.lblTestID.AutoSize = true;
+            this.lblTestID.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTestID.Location = new System.Drawing.Point(177, 378);
+            this.lblTestID.Name = "lblTestID";
+            this.lblTestID.Size = new System.Drawing.Size(30, 20);
+            this.lblTestID.TabIndex = 64;
+            this.lblTestID.Text = "???";
+            // 
+            // label11
+            // 
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Image = global::DVLD.Properties.Resources.icons8_id_24;
+            this.label11.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label11.Location = new System.Drawing.Point(12, 376);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(136, 24);
+            this.label11.TabIndex = 63;
+            this.label11.Text = "Test ID";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // FrmTakeTest
             // 
+            this.AcceptButton = this.btnSaveRecord;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(473, 628);
+            this.CancelButton = this.btnClose;
+            this.ClientSize = new System.Drawing.Size(473, 659);
+            this.Controls.Add(this.lblTestID);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSaveRecord);
             this.Controls.Add(this.groupBox1);
@@ -331,6 +360,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmTakeTest";
@@ -371,5 +401,7 @@
         private System.Windows.Forms.RadioButton rbFail;
         private System.Windows.Forms.RadioButton rbPass;
         private System.Windows.Forms.TextBox tbNotes;
+        private System.Windows.Forms.Label lblTestID;
+        private System.Windows.Forms.Label label11;
     }
 }

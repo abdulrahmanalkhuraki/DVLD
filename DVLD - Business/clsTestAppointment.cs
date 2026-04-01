@@ -40,6 +40,11 @@ namespace DVLD___Business
             this.IsLocked = IsLocked;
         }
 
+        public static DataTable GetAllAppointments()
+        {
+            return clsTestAppointmentData.GetAllAppointments();
+        }
+
         private bool _AddNewAppointment()
         {
             this.AppointmentID = clsTestAppointmentData.AddNewAppointment(
@@ -111,6 +116,12 @@ namespace DVLD___Business
         public static bool Delete(int AppointmentID)
         {
             return clsTestAppointmentData.DeleteAppointment(AppointmentID);
+        }
+
+        public bool IsForRetakeTest()
+        {
+            int renewApplicationTypeID = 2;
+            return clsLocalDrivingLicenseApplication.Find(LocalDrivingLicenseApplicationID).ApplicationTypeID == renewApplicationTypeID;
         }
     }
 }

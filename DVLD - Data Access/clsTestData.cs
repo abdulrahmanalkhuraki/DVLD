@@ -406,5 +406,90 @@ namespace DVLD___Data_Access
 
             return dt;
         }
+
+        public static DataTable GetTestsByPersonIDAndTestTypeID(int PersonID, int TestTypeID)
+        {
+            DataTable dt = new DataTable();
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = @"SELECT 
+                                    T.TestID,
+                                    T.TestAppointmentID,
+                                    T.TestResult,
+                                    T.Notes,
+                                    T.CreatedByUserID 
+                                FROM Tests T
+                                INNER JOIN TestAppointments TA 
+                                    ON T.TestAppointmentID = TA.TestAppointmentID
+                                INNER JOIN LocalDrivingLicenseApplications L 
+                                    ON TA.LocalDrivingLicenseApplicationID = L.LocalDrivingLicenseApplicationID
+                                INNER JOIN Applications A 
+                                    ON L.ApplicationID = A.ApplicationID
+                                WHERE 
+                                    A.ApplicantPersonID = @PersonID 
+                                    AND TA.TestTypeID = @TestTypeID;";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@PersonID", PersonID);
+            command.Parameters.AddWithValue("@TestTypeID", TestTypeID);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.HasRows)
+                {
+                    dt.Load(reader);
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return dt;
+        }
+
+        public static bool IsTherePassedTest(int testTypeID, int localDrivingLicenseApplicationID)
+        {
+            bool isFound = false;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = @"select distinct 1 from Tests join TestAppointments on 
+                                TestAppointments.TestAppointmentID = Tests.TestAppointmentID 
+                                where LocalDrivingLicenseApplicationID = @ApplicationID and TestTypeID = @TestTypeID and TestResult = 1;";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@ApplicationID", localDrivingLicenseApplicationID);
+            command.Parameters.AddWithValue("@TestTypeID", testTypeID);
+
+            try
+            {
+                connection.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    isFound = reader.HasRows;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error checking test existence: " + ex.Message);
+                isFound = false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return isFound;
+        }
     }
 }

@@ -35,7 +35,7 @@ namespace DVLD.LocalDrivingLicenseApplication
         private void cbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Indices for which we show a text box
-            int[] textBoxIndices = { 1, 2, 3}; // L.D.L Application ID, National No, Full Name
+            int[] textBoxIndices = { 1, 2, 3 }; // L.D.L Application ID, National No, Full Name
             // Index for which we show a combo box
             int[] comboIndices = { 4 }; // status
 
@@ -59,7 +59,7 @@ namespace DVLD.LocalDrivingLicenseApplication
                 cbUserChoice.Items.Clear();
                 string[] statuses = { "New", "Canceled", "Completed" };
                 cbUserChoice.Items.Add("All");
-                cbUserChoice.Items.AddRange (statuses);
+                cbUserChoice.Items.AddRange(statuses);
                 cbUserChoice.SelectedIndex = 0;
             }
             else // None
@@ -173,6 +173,97 @@ namespace DVLD.LocalDrivingLicenseApplication
 
         }
 
+        private void visionToolStripMenuItem_Click(object sender, EventArgs e) => _ShowTestAppointmentsForm(1);
+        private void writtenToolStripMenuItem_Click(object sender, EventArgs e) => _ShowTestAppointmentsForm(2);
+        private void streetToolStripMenuItem_Click(object sender, EventArgs e) => _ShowTestAppointmentsForm(3);
+
+        private void scadToolStripMenuItem_DropDownOpening(object sender, EventArgs e)
+        {
+            if (dgvApplications.SelectedRows.Count == 0) return;
+            int appId = Convert.ToInt32(dgvApplications.SelectedRows[0].Cells["LocalDrivingLicenseApplicationID"].Value);
+
+            if (!clsLocalDrivingLicenseApplication.Exists(appId))
+            {
+                return;
+            }
+
+            int passedTests = clsLocalDrivingLicenseApplication.GetPassedTests(appId);
+            switch (passedTests)
+            {
+                case 0:
+                    {
+                        visionToolStripMenuItem.Enabled = true;
+                        writtenToolStripMenuItem.Enabled = false;
+                        streetToolStripMenuItem.Enabled = false;
+                    }
+                    break;
+                case 1:
+                    {
+                        visionToolStripMenuItem.Enabled = false;
+                        writtenToolStripMenuItem.Enabled = true;
+                        streetToolStripMenuItem.Enabled = false;
+                    }
+                    break;
+                case 2:
+                    {
+                        visionToolStripMenuItem.Enabled = false;
+                        writtenToolStripMenuItem.Enabled = false;
+                        streetToolStripMenuItem.Enabled = true;
+                    }
+                    break;
+                default: break;
+            }
+
+        }
+
+        private void contextMenuStrip1_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (dgvApplications.SelectedRows.Count == 0)
+            {
+                showDetailsToolStripMenuItem.Enabled = false;
+                editToolStripMenuItem.Enabled = false;
+                deleteToolStripMenuItem.Enabled = false;
+                CancelToolStripMenuItem.Enabled = false;
+                scadToolStripMenuItem.Enabled = false;
+                issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = false;
+                showLicenseToolStripMenuItem.Enabled = false;
+                showPersonLicenseHistoryToolStripMenuItem.Enabled = false;
+                return;
+            }
+
+            int appId = Convert.ToInt32(dgvApplications.SelectedRows[0].Cells["LocalDrivingLicenseApplicationID"].Value);
+            clsLocalDrivingLicenseApplication app = clsLocalDrivingLicenseApplication.Find(appId);
+            clsPerson person = clsPerson.FindPerson(app.PersonID);
+
+            showDetailsToolStripMenuItem.Enabled = true;
+            showLicenseToolStripMenuItem.Enabled = true;
+            showPersonLicenseHistoryToolStripMenuItem.Enabled = true;
+            addNewApplicationToolStripMenuItem.Enabled = true;
+            editToolStripMenuItem.Enabled = true;
+            deleteToolStripMenuItem.Enabled = true;
+            CancelToolStripMenuItem.Enabled = true;
+            scadToolStripMenuItem.Enabled = true;
+            issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = true;
+
+
+            if (app.ApplicationStatus == enApplicationStatus.Completed)
+            {
+                addNewApplicationToolStripMenuItem.Enabled = false;
+                editToolStripMenuItem.Enabled = false;
+                deleteToolStripMenuItem .Enabled = false;
+                CancelToolStripMenuItem.Enabled = false;
+                scadToolStripMenuItem.Enabled = false;
+                issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = false;
+                return;
+            }
+
+            if (!person.HasLicense() && clsLocalDrivingLicenseApplication.GetPassedTests(appId) == 3)
+            {
+                scadToolStripMenuItem.Enabled = false;
+                showLicenseToolStripMenuItem.Enabled = false;
+            }
+
+        }
         #endregion
 
         #endregion
@@ -335,56 +426,21 @@ namespace DVLD.LocalDrivingLicenseApplication
 
         #endregion
 
-        private void writtenToolStripMenuItem_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void visionToolStripMenuItem_Click(object sender, EventArgs e)
+        private void _ShowTestAppointmentsForm(byte TestTypeID)
         {
             if (dgvApplications.SelectedRows.Count == 0) return;
             int appId = Convert.ToInt32(dgvApplications.SelectedRows[0].Cells["LocalDrivingLicenseApplicationID"].Value);
-            FrmVisionTestAppointments frm = new FrmVisionTestAppointments(appId);
+            FrmTestAppointments frm = new FrmTestAppointments(appId, TestTypeID);
             frm.ShowDialog();
             _LoadApplications();
         }
 
-        private void scadToolStripMenuItem_DropDownOpening(object sender, EventArgs e)
+        private void issueDrivingLicenseFirstTimeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (dgvApplications.SelectedRows.Count == 0) return;
             int appId = Convert.ToInt32(dgvApplications.SelectedRows[0].Cells["LocalDrivingLicenseApplicationID"].Value);
-
-            if (!clsLocalDrivingLicenseApplication.Exists(appId))
-            {
-                return;
-            }
-
-            int passedTests = clsLocalDrivingLicenseApplication.GetPassedTests(appId);
-            switch (passedTests)
-            {
-                case 0:
-                    {
-                        visionToolStripMenuItem.Enabled = true;
-                        writtenToolStripMenuItem.Enabled = false;
-                        streetToolStripMenuItem.Enabled = false;
-                    }break;
-                case 1:
-                    {
-                        visionToolStripMenuItem.Enabled = false;
-                        writtenToolStripMenuItem.Enabled = true;
-                        streetToolStripMenuItem.Enabled = false;
-                    }
-                    break;
-                case 2:
-                    {
-                        visionToolStripMenuItem.Enabled = false;
-                        writtenToolStripMenuItem.Enabled = false;
-                        streetToolStripMenuItem.Enabled = true;
-                    }
-                    break;
-                default: break;
-            }
-
         }
     }
 }

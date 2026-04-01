@@ -22,7 +22,6 @@ namespace DVLD.Applications
         }
 
         #region Event Handlers
-
         private void lnklblShowLicenseInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
@@ -54,8 +53,12 @@ namespace DVLD.Applications
             lblType.Text = clsApplicationType.FindApplicationType(application.ApplicationTypeID).Title;
             lblApplicant.Text = clsPerson.FindPerson(application.PersonID).Fullname;
             lblCreatedBy.Text = clsUser.FindUser(application.CreatedByUserID).Username;
-        }
 
+            if (clsPerson.FindPerson(application.PersonID).HasLicense())
+                lnklblShowLicenseInfo.Enabled = true;
+            else
+                lnklblShowLicenseInfo.Enabled = false;
+        }
 
     }
 }

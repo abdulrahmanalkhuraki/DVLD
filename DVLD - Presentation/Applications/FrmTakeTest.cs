@@ -22,6 +22,11 @@ namespace DVLD.Applications
 
         private void btnSaveRecord_Click(object sender, EventArgs e)
         {
+            if(MessageBox.Show("Are You Sure You Want To Save? After That You Can't Change Test Result!","Confirm",
+                MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation) != DialogResult.Yes)
+                { return; }
+
+
             clsTest test = new clsTest();
             test.TestAppointmentID = appointment.AppointmentID;
             test.TestResult = rbPass.Checked;
@@ -29,6 +34,7 @@ namespace DVLD.Applications
             if(!string.IsNullOrWhiteSpace(tbNotes.Text))
                 test.Notes = tbNotes.Text;
             test.CreatedByUserID = clsGlobalSettings.CurrentUser.UserID;
+
 
             if (test.Save())
             {
@@ -54,6 +60,7 @@ namespace DVLD.Applications
         private void _LoadApplicationInfo()
         {
             clsLocalDrivingLicenseApplication app = clsLocalDrivingLicenseApplication.Find(appointment.LocalDrivingLicenseApplicationID);
+
             if (app == null)
             {
                 return;
@@ -64,7 +71,20 @@ namespace DVLD.Applications
             lblName.Text = clsPerson.FindPerson(app.PersonID).Fullname;
             lblTrials.Text = "0";
             lblDate.Text = appointment.AppointmentDate.ToString("yyyy-MM-dd");
-            lblFees.Text = app.PaidFees.ToString("N2");
+            lblFees.Text = clsTestType.FindTestType(appointment.TestTypeID).Fees.ToString("N2");
+            lblTestID.Text = "Not Taken Yet";
+            _LoadPicture();
+        }
+
+        private void _LoadPicture()
+        {
+            switch (appointment.TestTypeID)
+            {
+                case 1: pictureBox1.Image = Properties.Resources.icons8_vision__1_; break;
+                case 2: pictureBox1.Image = Properties.Resources.icons8_writing_skills_100; break;
+                case 3: pictureBox1.Image = Properties.Resources.icons8_driving_100; break;
+                default: break;
+            }
         }
     }
 }

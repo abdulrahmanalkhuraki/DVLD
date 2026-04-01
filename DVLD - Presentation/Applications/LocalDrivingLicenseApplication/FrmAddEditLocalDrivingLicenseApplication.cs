@@ -114,7 +114,7 @@ namespace DVLD
             lblApplicationID.Text = LocalDrivingLicenseApplication.LocalDrivingLicenseApplicationID.ToString();
             lblApplicationDate.Text = LocalDrivingLicenseApplication.ApplicationDate.ToString("yyyy-MM-dd");
             cbLicenseClass.SelectedIndex = LocalDrivingLicenseApplication.LicenseClassID - 1; // cbLicenseClass index Starts from zero
-            lblCreatedBy.Text = LocalDrivingLicenseApplication.CreatedByUserID.ToString();
+            lblCreatedBy.Text = clsUser.FindUser(LocalDrivingLicenseApplication.CreatedByUserID).Username;
         }
 
         private void _LoadLicenseClasses()

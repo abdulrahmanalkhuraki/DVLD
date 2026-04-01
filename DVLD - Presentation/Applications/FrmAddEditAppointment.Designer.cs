@@ -1,6 +1,6 @@
 ﻿namespace DVLD.Applications
 {
-    partial class FrmScheduleVisionTestAppointment
+    partial class FrmAddEditAppointment
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.lblLicenseClass = new System.Windows.Forms.Label();
             this.lblDrivingLicenseApplicationID = new System.Windows.Forms.Label();
@@ -39,7 +39,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.lblRetakeTestApplicationID = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.lblRetakeApplicationID = new System.Windows.Forms.Label();
+            this.lblRetakeFees = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSaveRecord = new System.Windows.Forms.Button();
@@ -51,21 +51,21 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblAppointmentLockedInformation = new System.Windows.Forms.Label();
             this.gbRetakeTest.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lblTitle
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(154, 112);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 36);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Schedule Test";
+            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(118, 112);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(231, 36);
+            this.lblTitle.TabIndex = 6;
+            this.lblTitle.Text = "Schedule Appointment";
             // 
             // lblName
             // 
@@ -123,7 +123,7 @@
             this.gbRetakeTest.Controls.Add(this.label14);
             this.gbRetakeTest.Controls.Add(this.lblRetakeTestApplicationID);
             this.gbRetakeTest.Controls.Add(this.label12);
-            this.gbRetakeTest.Controls.Add(this.lblRetakeApplicationID);
+            this.gbRetakeTest.Controls.Add(this.lblRetakeFees);
             this.gbRetakeTest.Controls.Add(this.label16);
             this.gbRetakeTest.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbRetakeTest.Location = new System.Drawing.Point(12, 394);
@@ -179,15 +179,15 @@
             this.label12.Text = "R.Test App ID";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lblRetakeApplicationID
+            // lblRetakeFees
             // 
-            this.lblRetakeApplicationID.AutoSize = true;
-            this.lblRetakeApplicationID.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRetakeApplicationID.Location = new System.Drawing.Point(193, 99);
-            this.lblRetakeApplicationID.Name = "lblRetakeApplicationID";
-            this.lblRetakeApplicationID.Size = new System.Drawing.Size(30, 20);
-            this.lblRetakeApplicationID.TabIndex = 5;
-            this.lblRetakeApplicationID.Text = "???";
+            this.lblRetakeFees.AutoSize = true;
+            this.lblRetakeFees.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRetakeFees.Location = new System.Drawing.Point(193, 99);
+            this.lblRetakeFees.Name = "lblRetakeFees";
+            this.lblRetakeFees.Size = new System.Drawing.Size(30, 20);
+            this.lblRetakeFees.TabIndex = 5;
+            this.lblRetakeFees.Text = "???";
             // 
             // label16
             // 
@@ -203,6 +203,8 @@
             // 
             // btnClose
             // 
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = global::DVLD.Properties.Resources.icons8_close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -218,6 +220,7 @@
             // btnSaveRecord
             // 
             this.btnSaveRecord.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(130)))), ((int)(((byte)(100)))));
+            this.btnSaveRecord.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSaveRecord.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveRecord.ForeColor = System.Drawing.Color.White;
             this.btnSaveRecord.Image = global::DVLD.Properties.Resources.icons8_save_24;
@@ -229,6 +232,7 @@
             this.btnSaveRecord.Text = "Save Appointment";
             this.btnSaveRecord.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSaveRecord.UseVisualStyleBackColor = false;
+            this.btnSaveRecord.Click += new System.EventHandler(this.btnSaveRecord_Click);
             // 
             // label10
             // 
@@ -306,7 +310,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = global::DVLD.Properties.Resources.icons8_vision__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(176, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(182, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(102, 91);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -316,33 +320,36 @@
             // dtpDate
             // 
             this.dtpDate.CustomFormat = "yyyy-MM-dd";
+            this.dtpDate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDate.Location = new System.Drawing.Point(176, 312);
+            this.dtpDate.Location = new System.Drawing.Point(176, 311);
             this.dtpDate.MaxDate = new System.DateTime(2100, 1, 1, 0, 0, 0, 0);
             this.dtpDate.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(285, 25);
+            this.dtpDate.Size = new System.Drawing.Size(285, 27);
             this.dtpDate.TabIndex = 45;
             // 
-            // label6
+            // lblAppointmentLockedInformation
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(62, 138);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(331, 20);
-            this.label6.TabIndex = 46;
-            this.label6.Text = "Person Already Sat For test, Appointment Locked";
-            this.label6.Visible = false;
+            this.lblAppointmentLockedInformation.AutoSize = true;
+            this.lblAppointmentLockedInformation.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAppointmentLockedInformation.ForeColor = System.Drawing.Color.Red;
+            this.lblAppointmentLockedInformation.Location = new System.Drawing.Point(85, 138);
+            this.lblAppointmentLockedInformation.Name = "lblAppointmentLockedInformation";
+            this.lblAppointmentLockedInformation.Size = new System.Drawing.Size(331, 20);
+            this.lblAppointmentLockedInformation.TabIndex = 46;
+            this.lblAppointmentLockedInformation.Text = "Person Already Sat For test, Appointment Locked";
+            this.lblAppointmentLockedInformation.Visible = false;
             // 
-            // FrmScheduleVisionTestAppointment
+            // FrmAddEditAppointment
             // 
+            this.AcceptButton = this.btnSaveRecord;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(473, 603);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblAppointmentLockedInformation);
             this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSaveRecord);
@@ -358,18 +365,17 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblDrivingLicenseApplicationID);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmScheduleVisionTestAppointment";
+            this.Name = "FrmAddEditAppointment";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Schedule Vision Test Appointment";
-            this.Load += new System.EventHandler(this.FrmScheduleVisionTestAppointment_Load);
             this.gbRetakeTest.ResumeLayout(false);
             this.gbRetakeTest.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -381,7 +387,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblLicenseClass;
@@ -396,13 +402,13 @@
         private System.Windows.Forms.GroupBox gbRetakeTest;
         private System.Windows.Forms.Label lblRetakeTestApplicationID;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label lblRetakeApplicationID;
+        private System.Windows.Forms.Label lblRetakeFees;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label lblTotalFees;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnSaveRecord;
         private System.Windows.Forms.DateTimePicker dtpDate;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblAppointmentLockedInformation;
     }
 }

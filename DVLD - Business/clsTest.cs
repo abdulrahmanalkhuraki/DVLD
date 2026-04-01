@@ -143,5 +143,23 @@ namespace DVLD___Business
         {
             return clsTestData.GetTestsByResult(TestResult);
         }
+
+        public static DataTable GetTestsByPersonIDAndTestTypeID(int PersonID, int TestTypeID)
+        {
+            return clsTestData.GetTestsByPersonIDAndTestTypeID(PersonID, TestTypeID);
+        }
+
+        public static bool IsThereFaildTestsTakenBefore(int PersonID, int TestTypeID)
+        {
+           DataTable dt = GetTestsByPersonIDAndTestTypeID(PersonID,TestTypeID);
+
+            if(dt.Rows.Count == 0)
+                return false;
+
+           DataRow[] faildTests = dt.Select("TestResult = 0");
+           return faildTests.Length > 0; 
+        }
+
+
     }
 }

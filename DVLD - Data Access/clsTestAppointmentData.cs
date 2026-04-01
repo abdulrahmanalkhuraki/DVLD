@@ -136,22 +136,23 @@ namespace DVLD___Data_Access
             return (rowsAffected > 0);
         }
 
-        public static DataTable GetAllAppointments(int PersonID)
+        public static DataTable GetAllAppointments(int PersonID,int TestTypeID)
         {
             DataTable dt = new DataTable();
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = @"select TestAppointmentID,AppointmentDate,PaidFees,IsLocked from (
+            string query = @"select TestAppointmentID,AppointmentDate,TestTypeID,PaidFees,IsLocked from (
 	select R2.*,Applications.ApplicantPersonID from (
-		select TestAppointmentID,AppointmentDate,
-			PaidFees,IsLocked,LocalDrivingLicenseApplications.ApplicationID from TestAppointments_View 
+		select TestAppointmentID,AppointmentDate,TestTypeID,
+			PaidFees,IsLocked,LocalDrivingLicenseApplications.ApplicationID from TestAppointments 
 			join LocalDrivingLicenseApplications 
-		on TestAppointments_View.LocalDrivingLicenseApplicationID = LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID)R2
+		on TestAppointments.LocalDrivingLicenseApplicationID = LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID)R2
 	join Applications on Applications.ApplicationID = R2.ApplicationID
-)R1 where ApplicantPersonID = 1 order by AppointmentDate desc;";
+)R1 where ApplicantPersonID = @PersonID and TestTypeID = @TestTypeID order by AppointmentDate desc;";
 
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@PersonID", PersonID);
+            command.Parameters.AddWithValue("@TestTypeID", TestTypeID);
 
             try
             {
@@ -173,6 +174,37 @@ namespace DVLD___Data_Access
                 connection.Close();
             }
 
+            return dt;
+        }
+
+        public static DataTable GetAllAppointments()
+        {
+            DataTable dt = new DataTable();
+            SqlConnection sqlConnection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string Query = @"select TestAppointmentID,AppointmentDate,
+	PaidFees,IsLocked from TestAppointments_View ";
+
+            SqlCommand sqlCommand = new SqlCommand(Query, sqlConnection);
+            try
+            {
+                sqlConnection.Open();
+                SqlDataReader reader = sqlCommand.ExecuteReader();
+                while (reader.HasRows)
+                {
+                    dt.Load(reader);
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                //
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
             return dt;
         }
 
@@ -231,7 +263,6 @@ namespace DVLD___Data_Access
             return isFound;
         }
 
-        
 
     }
 }
