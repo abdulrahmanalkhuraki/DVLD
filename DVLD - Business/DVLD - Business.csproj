@@ -44,6 +44,9 @@
     <Compile Include="clsApplication.cs" />
     <Compile Include="clsApplicationType.cs" />
     <Compile Include="clsCountry.cs" />
+    <Compile Include="clsDetainedLicense.cs" />
+    <Compile Include="clsDriver.cs" />
+    <Compile Include="clsLicense.cs" />
     <Compile Include="clsLicenseClass.cs" />
     <Compile Include="clsLocalDrivingLicenseApplication.cs" />
     <Compile Include="clsPerson.cs" />
@@ -51,8 +54,10 @@
     <Compile Include="clsTestAppointment.cs" />
     <Compile Include="clsTestType.cs" />
     <Compile Include="clsUser.cs" />
-    <Compile Include="enApplicationStatus.cs" />
-    <Compile Include="enMode.cs" />
+    <Compile Include="Enums\enApplicationStatus.cs" />
+    <Compile Include="Enums\enIssueReason.cs" />
+    <Compile Include="Enums\enLicenseClass.cs" />
+    <Compile Include="Enums\enMode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

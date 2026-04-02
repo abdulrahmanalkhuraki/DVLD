@@ -139,16 +139,6 @@ namespace DVLD___Business
             return clsPersonData.DoesPersonHasLicense(this.PersonID);
         }
 
-        //public bool IsReadyForIssuingLocalLicense(int LocalDrivingLicenseApplicationID)
-        //{
-        //    if (HasLicense())
-        //    {
-        //        return false;
-        //    }
-
-        //    return clsPersonData.IsPersonReadyForIssuingLocalDivingLicense(this.PersonID,LocalDrivingLicenseApplicationID);
-        //}
-
         public bool Save()
         {
             switch (this.Mode)

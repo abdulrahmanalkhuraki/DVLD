@@ -501,47 +501,5 @@ namespace DVLD___Data_Access
 
             return HasLicense;
         }
-
-        //public static bool IsPersonReadyForIssuingLocalDivingLicense(int PersonID, int LocalDrivingLicenseApplicationID)
-        //{
-        //    bool isReady = false;
-
-        //    SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-
-        //    string query = @"select distinct 1 from (
-        //                    select distinct * from (
-        //                    select TestID,TestTypeID,TestResult from Tests join TestAppointments
-        //                    on Tests.TestAppointmentID = TestAppointments.TestAppointmentID join LocalDrivingLicenseApplications
-        //                    on TestAppointments.LocalDrivingLicenseApplicationID = LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID
-        //                    join Applications on LocalDrivingLicenseApplications.ApplicationID = Applications.ApplicationID
-        //                    where ApplicantPersonID = 1 and 
-        //                    TestAppointments.LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID)R1
-        //                    where TestResult = 1)R2 where TestTypeID in (1,2,3);";
-
-        //    SqlCommand command = new SqlCommand(query, connection);
-
-        //    command.Parameters.AddWithValue("@PersonID", PersonID);
-        //    command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
-
-        //    try
-        //    {
-        //        connection.Open();
-        //        using (SqlDataReader reader = command.ExecuteReader())
-        //        {
-        //            isReady = reader.HasRows;
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine("Error checking test existence: " + ex.Message);
-        //        isReady = false;
-        //    }
-        //    finally
-        //    {
-        //        connection.Close();
-        //    }
-
-        //    return isReady;
-        //}
     }
 }
