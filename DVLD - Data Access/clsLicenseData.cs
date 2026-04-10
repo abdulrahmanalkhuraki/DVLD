@@ -35,7 +35,7 @@ namespace DVLD___Data_Access
                         Notes = reader["Notes"] != DBNull.Value ? (string)reader["Notes"] : string.Empty;
                         PaidFees = (decimal)reader["PaidFees"];
                         IsActive = (bool)reader["IsActive"];
-                        IssueReason = (int)reader["IssueReason"];
+                        IssueReason = Convert.ToInt32(reader["IssueReason"]);
                         CreatedByUserID = (int)reader["CreatedByUserID"];
                     }
                     reader.Close();
@@ -77,7 +77,7 @@ namespace DVLD___Data_Access
                         Notes = reader["Notes"] != DBNull.Value ? (string)reader["Notes"] : string.Empty;
                         PaidFees = (decimal)reader["PaidFees"];
                         IsActive = (bool)reader["IsActive"];
-                        IssueReason = (int)reader["IssueReason"];
+                        IssueReason = Convert.ToInt32(reader["IssueReason"]);
                         CreatedByUserID = (int)reader["CreatedByUserID"];
                     }
                     reader.Close();

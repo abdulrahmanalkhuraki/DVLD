@@ -1,4 +1,5 @@
-﻿using DVLD.Person;
+﻿using DVLD.License;
+using DVLD.Person;
 using DVLD___Business;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace DVLD.Applications
 {
     public partial class ctrlApplicationCard : UserControl
     {
-        public clsLocalDrivingLicenseApplication application { get; set;}
+        public clsLocalDrivingLicenseApplication application { get; set; }
         public ctrlApplicationCard()
         {
             InitializeComponent();
@@ -24,7 +25,12 @@ namespace DVLD.Applications
         #region Event Handlers
         private void lnklblShowLicenseInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            clsLicense license = clsLicense.FindLicenseByApplicationID(application.ApplicationID);
+            if (license != null)
+            {
+                FrmLicenseDetails frm = new FrmLicenseDetails(license.LicenseID);
+                frm.ShowDialog();
+            }
         }
 
         private void lnklblShowPersonInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

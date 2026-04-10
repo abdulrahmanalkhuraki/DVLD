@@ -122,6 +122,12 @@
     <Compile Include="License\FrmIssueDrivingLicenseForFirstTime.Designer.cs">
       <DependentUpon>FrmIssueDrivingLicenseForFirstTime.cs</DependentUpon>
     </Compile>
+    <Compile Include="License\FrmLicenseDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="License\FrmLicenseDetails.Designer.cs">
+      <DependentUpon>FrmLicenseDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Person\ctrlPersonCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -237,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="License\FrmIssueDrivingLicenseForFirstTime.resx">
       <DependentUpon>FrmIssueDrivingLicenseForFirstTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="License\FrmLicenseDetails.resx">
+      <DependentUpon>FrmLicenseDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Person\ctrlPersonCard.resx">
       <DependentUpon>ctrlPersonCard.cs</DependentUpon>

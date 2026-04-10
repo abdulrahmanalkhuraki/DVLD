@@ -1,11 +1,12 @@
-﻿using System;
+﻿using DVLD.Applications;
+using DVLD.License;
+using DVLD___Business;
+using System;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using DVLD.Applications;
-using DVLD.License;
-using DVLD___Business;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace DVLD.LocalDrivingLicenseApplication
 {
@@ -452,6 +453,19 @@ namespace DVLD.LocalDrivingLicenseApplication
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 _LoadApplications();
+            }
+        }
+
+        private void showLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgvApplications.SelectedRows.Count == 0) return;
+            int appId = Convert.ToInt32(dgvApplications.SelectedRows[0].Cells["LocalDrivingLicenseApplicationID"].Value);
+
+            clsLicense license = clsLicense.FindLicenseByApplicationID(clsLocalDrivingLicenseApplication.Find(appId).ApplicationID);
+            if (license != null)
+            {
+                FrmLicenseDetails frm = new FrmLicenseDetails(license.LicenseID);
+                frm.ShowDialog();
             }
         }
     }
