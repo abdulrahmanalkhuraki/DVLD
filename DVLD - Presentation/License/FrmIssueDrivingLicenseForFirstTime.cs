@@ -35,9 +35,9 @@ namespace DVLD.License
             clsLicense license = new clsLicense();
             license.ApplicationID = app.ApplicationID;
             license.DriverID = driver.DriverId;
-            license.LicenseClass = app.LicenseClassID;
+            license.LicenseClassID = app.LicenseClassID;
             license.IssueDate = DateTime.Now;
-            license.ExpirationDate = DateTime.Now.AddYears(clsLicenseClass.FindLicenseClass(license.LicenseClass).DefaultValidityLength);
+            license.ExpirationDate = DateTime.Now.AddYears(clsLicenseClass.FindLicenseClass(license.LicenseClassID).DefaultValidityLength);
             license.Notes = string.IsNullOrWhiteSpace(tbNotes.Text)? string.Empty : tbNotes.Text;
             license.PaidFees = app.PaidFees;
             license.IsActive = true;
@@ -46,6 +46,8 @@ namespace DVLD.License
             if(license.Save())
             {
                 MessageBox.Show("License Has Been Issued Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                app.ApplicationStatus = enApplicationStatus.Completed;
+                app.Save();
                 this.DialogResult = DialogResult.OK;
                 Close();
                 return;

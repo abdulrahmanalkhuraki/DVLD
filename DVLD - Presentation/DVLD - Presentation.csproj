@@ -110,6 +110,12 @@
     <Compile Include="Applications\LocalDrivingLicenseApplication\FrmManageLocalDrivingLicenseApplications.Designer.cs">
       <DependentUpon>FrmManageLocalDrivingLicenseApplications.cs</DependentUpon>
     </Compile>
+    <Compile Include="License\ctrlLicenseCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="License\ctrlLicenseCard.Designer.cs">
+      <DependentUpon>ctrlLicenseCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="License\FrmIssueDrivingLicenseForFirstTime.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,6 +231,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\LocalDrivingLicenseApplication\FrmManageLocalDrivingLicenseApplications.resx">
       <DependentUpon>FrmManageLocalDrivingLicenseApplications.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="License\ctrlLicenseCard.resx">
+      <DependentUpon>ctrlLicenseCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="License\FrmIssueDrivingLicenseForFirstTime.resx">
       <DependentUpon>FrmIssueDrivingLicenseForFirstTime.cs</DependentUpon>
