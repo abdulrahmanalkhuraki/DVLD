@@ -12,7 +12,7 @@ namespace DVLD___Business
         public int LicenseID { get; private set; }
         public int ApplicationID { get; set; }
         public int DriverID { get; set; }
-        public int LicenseClass { get; set; }
+        public int LicenseClassID { get; set; }
         public DateTime IssueDate { get; set; }
         public DateTime ExpirationDate { get; set; }
         public string Notes { get; set; }
@@ -26,7 +26,7 @@ namespace DVLD___Business
         {
             get
             {
-                switch (LicenseClass)
+                switch (LicenseClassID)
                 {
                     case 1: return "Motorcycle";
                     case 2: return "Motorcycle with Sidecar";
@@ -68,7 +68,7 @@ namespace DVLD___Business
             this.LicenseID = -1;
             this.ApplicationID = -1;
             this.DriverID = -1;
-            this.LicenseClass = -1;
+            this.LicenseClassID = -1;
             this.IssueDate = DateTime.Now;
             this.ExpirationDate = DateTime.Now;
             this.Notes = string.Empty;
@@ -86,7 +86,7 @@ namespace DVLD___Business
             this.LicenseID = LicenseID;
             this.ApplicationID = ApplicationID;
             this.DriverID = DriverID;
-            this.LicenseClass = LicenseClass;
+            this.LicenseClassID = LicenseClass;
             this.IssueDate = IssueDate;
             this.ExpirationDate = ExpirationDate;
             this.Notes = Notes;
@@ -188,7 +188,7 @@ namespace DVLD___Business
         private bool _AddNewLicense()
         {
             this.LicenseID = clsLicenseData.AddNewLicense(this.ApplicationID, this.DriverID,
-                this.LicenseClass, this.IssueDate, this.ExpirationDate, this.Notes,
+                this.LicenseClassID, this.IssueDate, this.ExpirationDate, this.Notes,
                 this.PaidFees, this.IsActive, this.IssueReason, this.CreatedByUserID);
             return this.LicenseID > 0;
         }
@@ -196,7 +196,7 @@ namespace DVLD___Business
         private bool _UpdateLicense()
         {
             return clsLicenseData.UpdateLicense(this.LicenseID, this.ApplicationID, this.DriverID,
-                this.LicenseClass, this.IssueDate, this.ExpirationDate, this.Notes,
+                this.LicenseClassID, this.IssueDate, this.ExpirationDate, this.Notes,
                 this.PaidFees, this.IsActive, this.IssueReason, this.CreatedByUserID);
         }
 
@@ -269,7 +269,7 @@ namespace DVLD___Business
             clsLicense newLicense = new clsLicense();
             newLicense.ApplicationID = this.ApplicationID;
             newLicense.DriverID = this.DriverID;
-            newLicense.LicenseClass = this.LicenseClass;
+            newLicense.LicenseClassID = this.LicenseClassID;
             newLicense.IssueDate = DateTime.Now;
             newLicense.ExpirationDate = DateTime.Now.AddYears(10);
             newLicense.Notes = "Renewed from license ID: " + this.LicenseID;
@@ -290,7 +290,7 @@ namespace DVLD___Business
             clsLicense newLicense = new clsLicense();
             newLicense.ApplicationID = this.ApplicationID;
             newLicense.DriverID = this.DriverID;
-            newLicense.LicenseClass = this.LicenseClass;
+            newLicense.LicenseClassID = this.LicenseClassID;
             newLicense.IssueDate = DateTime.Now;
             newLicense.ExpirationDate = this.ExpirationDate;
             newLicense.Notes = $"Replaced due to: {ReplaceReason.ToString()} from license ID: {this.LicenseID}";

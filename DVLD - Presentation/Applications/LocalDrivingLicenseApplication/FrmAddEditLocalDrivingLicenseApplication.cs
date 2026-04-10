@@ -1,4 +1,5 @@
 ﻿using DVLD___Business;
+using DVLD___Business.Utility;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -131,7 +132,13 @@ namespace DVLD
         {
             if (LocalDrivingLicenseApplication.PersonID == -1)
             {
-                ErrorMessage("You Should Select A Person To Connect her/him with this User.");
+                clsMessages.Error("You Should Select A Person To Connect her/him with this User.");
+                return false;
+            }
+
+            if (clsPerson.FindPerson(LocalDrivingLicenseApplication.PersonID).HasLicense(cbLicenseClass.SelectedIndex))
+            {
+                clsMessages.Error("The Selected Person Already Has Driving License With The Selected Class.");
                 return false;
             }
 
@@ -140,17 +147,12 @@ namespace DVLD
 
             if (existsApplicationID != -1)  
             {
-                ErrorMessage($"Choose another license class. The Selected person Already Has an acitve application for the selected class with ID = {existsApplicationID}");
+                clsMessages.Error($"Choose another license class. The Selected person Already Has an acitve application for the selected class with ID = {existsApplicationID}");
                 return false;
             }
 
 
             return true;
-        }
-
-        private void ErrorMessage(string message)
-        {
-            MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         #endregion

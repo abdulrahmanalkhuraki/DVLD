@@ -1,4 +1,5 @@
-﻿using DVLD___Data_Access;
+﻿using DVLD___Business.Enums;
+using DVLD___Data_Access;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -134,9 +135,9 @@ namespace DVLD___Business
             }
         }
 
-        public bool HasLicense()
+        public bool HasLicense(int LicenseClassID)
         {
-            return clsPersonData.DoesPersonHasLicense(this.PersonID);
+            return clsPersonData.DoesPersonHasLicense(this.PersonID,LicenseClassID);
         }
 
         public bool Save()

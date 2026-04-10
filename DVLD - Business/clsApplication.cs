@@ -6,8 +6,8 @@ namespace DVLD___Business
 {
     public class clsApplication
     {
-        public enMode Mode { get; private set; }
-        public int ApplicationID { get; private set; }
+        public enMode Mode { get; set; }
+        public int ApplicationID { get; set; }
         public int PersonID { get; set; }
         public DateTime ApplicationDate { get; set; }
         public int ApplicationTypeID { get; set; }

@@ -467,7 +467,7 @@ namespace DVLD___Data_Access
             return isFound;
         }
 
-        public static bool DoesPersonHasLicense(int PersonID)
+        public static bool DoesPersonHasLicense(int PersonID,int licenseClassID)
         {
             bool HasLicense = false;
 

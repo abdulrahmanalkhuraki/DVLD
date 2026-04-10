@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using DVLD.Applications;
+using DVLD.License;
 using DVLD___Business;
 
 namespace DVLD.LocalDrivingLicenseApplication
@@ -245,8 +246,13 @@ namespace DVLD.LocalDrivingLicenseApplication
             scadToolStripMenuItem.Enabled = true;
             issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = true;
 
+            if(app.ApplicationStatus == enApplicationStatus.New)
+            {
+                showLicenseToolStripMenuItem.Enabled = false;
+                issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = false;
+            }
 
-            if (app.ApplicationStatus == enApplicationStatus.Completed)
+            if (app.ApplicationStatus == enApplicationStatus.Completed || app.ApplicationStatus == enApplicationStatus.Cancelled)
             {
                 addNewApplicationToolStripMenuItem.Enabled = false;
                 editToolStripMenuItem.Enabled = false;
@@ -257,10 +263,11 @@ namespace DVLD.LocalDrivingLicenseApplication
                 return;
             }
 
-            if (!person.HasLicense() && clsLocalDrivingLicenseApplication.GetPassedTests(appId) == 3)
+            if (!person.HasLicense(app.LicenseClassID) && clsLocalDrivingLicenseApplication.GetPassedTests(appId) == 3)
             {
                 scadToolStripMenuItem.Enabled = false;
                 showLicenseToolStripMenuItem.Enabled = false;
+                issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = true;
             }
 
         }
@@ -441,6 +448,11 @@ namespace DVLD.LocalDrivingLicenseApplication
         {
             if (dgvApplications.SelectedRows.Count == 0) return;
             int appId = Convert.ToInt32(dgvApplications.SelectedRows[0].Cells["LocalDrivingLicenseApplicationID"].Value);
+            FrmIssueDrivingLicenseForFirstTime frm = new FrmIssueDrivingLicenseForFirstTime(appId);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                _LoadApplications();
+            }
         }
     }
 }

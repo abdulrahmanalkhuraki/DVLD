@@ -120,8 +120,7 @@ namespace DVLD___Business
 
         public bool IsForRetakeTest()
         {
-            int renewApplicationTypeID = 2;
-            return clsLocalDrivingLicenseApplication.Find(LocalDrivingLicenseApplicationID).ApplicationTypeID == renewApplicationTypeID;
+            return clsTest.IsThereFaildTestsTakenBefore(clsLocalDrivingLicenseApplication.Find(LocalDrivingLicenseApplicationID).PersonID,TestTypeID);
         }
     }
 }

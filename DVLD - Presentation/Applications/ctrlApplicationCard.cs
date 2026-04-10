@@ -54,7 +54,7 @@ namespace DVLD.Applications
             lblApplicant.Text = clsPerson.FindPerson(application.PersonID).Fullname;
             lblCreatedBy.Text = clsUser.FindUser(application.CreatedByUserID).Username;
 
-            if (clsPerson.FindPerson(application.PersonID).HasLicense())
+            if (clsPerson.FindPerson(application.PersonID).HasLicense(application.LicenseClassID))
                 lnklblShowLicenseInfo.Enabled = true;
             else
                 lnklblShowLicenseInfo.Enabled = false;
