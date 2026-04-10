@@ -14,7 +14,6 @@ namespace DVLD.Applications
     public partial class FrmAddEditAppointment : Form
     {
         private clsTestAppointment appointment;
-        private clsLocalDrivingLicenseApplication retakeApp;
 
         public FrmAddEditAppointment(int LocalDrivingLicenseApplicationID,int TestTypeID) // Add Mode
         {
@@ -31,38 +30,6 @@ namespace DVLD.Applications
             appointment = clsTestAppointment.Find(AppointmentID);
             _ConfigureComponents(enMode.UPDATE);
         }
-
-        #region Event Handlers
-        private void btnClose_Click(object sender, EventArgs e) => Close();
-
-        private void btnSaveRecord_Click(object sender, EventArgs e)
-        {
-            if(appointment.IsForRetakeTest())
-            {
-                retakeApp.Save();
-                appointment.LocalDrivingLicenseApplicationID = retakeApp.LocalDrivingLicenseApplicationID;
-            }
-
-            appointment.AppointmentDate = dtpDate.Value;
-            appointment.PaidFees = Convert.ToDecimal(lblTotalFees.Text); // total Fees
-
-            if(appointment.Save())
-            {
-                MessageBox.Show($"Appointment Has Been Set Successfully on {appointment.AppointmentDate.ToString("yyyy-MM-dd")}."
-                    , "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                DialogResult = DialogResult.OK;
-                Close();
-            }
-            else
-            {
-                MessageBox.Show("Error With Saving Appointment.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        #endregion
-
-        #region Helpers
 
         private void _ConfigureComponents(enMode Mode)
         {
@@ -125,9 +92,13 @@ namespace DVLD.Applications
             }
         }
 
+        private void btnClose_Click(object sender, EventArgs e) => Close();
+
         private void _LoadApplicationInformations()
         {
             clsLocalDrivingLicenseApplication app = clsLocalDrivingLicenseApplication.Find(appointment.LocalDrivingLicenseApplicationID);
+
+            _CheckApplicationType(app);
 
             lblDrivingLicenseApplicationID.Text = app.LocalDrivingLicenseApplicationID.ToString();
             lblLicenseClass.Text = clsLicenseClass.FindLicenseClass(app.LicenseClassID).ClassName;
@@ -138,26 +109,11 @@ namespace DVLD.Applications
             // Retake Test Section
             if (appointment.IsForRetakeTest())
             {
-                retakeApp = new clsLocalDrivingLicenseApplication();
+                decimal renewApplicationFees = clsApplicationType.FindApplicationType(app.ApplicationTypeID).Fees;
+                lblRetakeTestApplicationID.Text = app.LocalDrivingLicenseApplicationID.ToString();
+                lblRetakeFees.Text = renewApplicationFees.ToString("N2");
+                lblTotalFees.Text = (clsTestType.FindTestType(appointment.TestTypeID).Fees + renewApplicationFees).ToString("N2");
 
-                // creating application with retake type id
-                retakeApp.Mode = app.Mode;
-                retakeApp.ApplicationID = app.ApplicationID;
-                retakeApp.PersonID = app.PersonID;
-                retakeApp.ApplicationDate = app.ApplicationDate;
-                retakeApp.LastStatusDate = app.LastStatusDate;
-                retakeApp.ApplicationStatus = app.ApplicationStatus;
-                retakeApp.CreatedByUserID = clsGlobalSettings.CurrentUser.UserID;
-                retakeApp.ApplicationTypeID = 8;
-                retakeApp.LicenseClassID = app.LicenseClassID;
-                retakeApp.PaidFees = clsApplicationType.FindApplicationType(8).Fees;
-                //retakeApp.Save();
-
-                //appointment.LocalDrivingLicenseApplicationID = retakeApp.LocalDrivingLicenseApplicationID;
-
-                //lblRetakeTestApplicationID.Text = retakeApp.LocalDrivingLicenseApplicationID.ToString();
-                lblRetakeFees.Text = retakeApp.PaidFees.ToString("N2");
-                lblTotalFees.Text = (clsTestType.FindTestType(appointment.TestTypeID).Fees + retakeApp.PaidFees).ToString("N2");
             }
             else
             {
@@ -167,6 +123,32 @@ namespace DVLD.Applications
             }
 
         }
-        #endregion
+
+        private void _CheckApplicationType(clsLocalDrivingLicenseApplication app)
+        {
+            if (!clsTest.IsThereFaildTestsTakenBefore(app.PersonID, appointment.TestTypeID))
+                return;
+            app.ApplicationTypeID = 8;
+            app.Save();
+        }
+
+        private void btnSaveRecord_Click(object sender, EventArgs e)
+        {
+            appointment.AppointmentDate = dtpDate.Value;
+            appointment.PaidFees = Convert.ToDecimal(lblTotalFees.Text); // total Fees
+
+            if(appointment.Save())
+            {
+                MessageBox.Show($"Appointment Has Been Set Successfully on {appointment.AppointmentDate.ToString("yyyy-MM-dd")}."
+                    , "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                DialogResult = DialogResult.OK;
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Error With Saving Appointment.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

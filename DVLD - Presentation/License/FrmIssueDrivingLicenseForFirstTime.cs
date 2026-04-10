@@ -1,6 +1,5 @@
 ﻿using DVLD___Business;
 using DVLD___Business.Enums;
-using DVLD___Business.Utility;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +15,6 @@ namespace DVLD.License
     public partial class FrmIssueDrivingLicenseForFirstTime : Form
     {
         private clsLocalDrivingLicenseApplication app;
-
         public FrmIssueDrivingLicenseForFirstTime(int LocalDrivingLicenseApplicationID)
         {
             InitializeComponent();
@@ -27,48 +25,32 @@ namespace DVLD.License
 
         private void btnIssue_Click(object sender, EventArgs e)
         {
-            if(clsLocalDrivingLicenseApplication.GetPassedTests(app.LocalDrivingLicenseApplicationID) != 3)
-            {
-                clsMessages.Error("The license cannot be issued, as some tests have not yet been taken.");
-                return;
-            }
-
-            if (clsMessages.Confirm("Are You Sure You Want to Issue License For this Person?") != DialogResult.Yes) return;
-
-            // Creating Driver
+            // creating Driver
             clsDriver driver = new clsDriver();
-            driver.PersonID = app.PersonID;
-            driver.CreatedByUserID = clsGlobalSettings.CurrentUser.UserID;
+            driver.PersonId = app.PersonID;
+            driver.CreatedByUserId = clsGlobalSettings.CurrentUser.UserID;
+            driver.CreatedDate = DateTime.Now;
             driver.Save();
 
-            // Creating license
             clsLicense license = new clsLicense();
             license.ApplicationID = app.ApplicationID;
-            license.DriverID = driver.DriverID;
-            license.LicenseClassID = app.LicenseClassID;
+            license.DriverID = driver.DriverId;
+            license.LicenseClass = app.LicenseClassID;
             license.IssueDate = DateTime.Now;
-            license.ExpirationDate = license.IssueDate.AddYears(clsLicenseClass.FindLicenseClass(license.LicenseClassID).DefaultValidityLength);
-
-            if(!string.IsNullOrWhiteSpace(tbNotes.Text))
-                license.Notes = tbNotes.Text;
+            license.ExpirationDate = DateTime.Now.AddYears(clsLicenseClass.FindLicenseClass(license.LicenseClass).DefaultValidityLength);
+            license.Notes = string.IsNullOrWhiteSpace(tbNotes.Text)? string.Empty : tbNotes.Text;
             license.PaidFees = app.PaidFees;
             license.IsActive = true;
             license.IssueReason = (int)enIssueReason.FirstTime;
             license.CreatedByUserID = clsGlobalSettings.CurrentUser.UserID;
-
-            if (license.Save()) 
+            if(license.Save())
             {
-                clsMessages.Success("License Has Been Issued Successfully.");
-                app.ApplicationStatus = enApplicationStatus.Completed;
-                app.Save();
-                DialogResult = DialogResult.OK;
+                MessageBox.Show("License Has Been Issued Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.DialogResult = DialogResult.OK;
                 Close();
+                return;
             }
-            else
-            {
-                clsMessages.Error("Something Went Wrong When trying to Issue License.");
-            }
-
+            MessageBox.Show("Something went wrong when trying to issue the license.", "Faild", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void FrmIssueDrivingLicenseForFirstTime_Load(object sender, EventArgs e)
