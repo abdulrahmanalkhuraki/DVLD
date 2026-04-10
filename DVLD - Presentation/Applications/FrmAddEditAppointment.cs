@@ -128,7 +128,7 @@ namespace DVLD.Applications
         {
             if (!clsTest.IsThereFaildTestsTakenBefore(app.PersonID, appointment.TestTypeID))
                 return;
-            app.ApplicationTypeID = 2;
+            app.ApplicationTypeID = 8;
             app.Save();
         }
 
