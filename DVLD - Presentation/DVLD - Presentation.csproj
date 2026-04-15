@@ -73,10 +73,10 @@
     <Compile Include="Applications\FrmApplicationDetails.Designer.cs">
       <DependentUpon>FrmApplicationDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="Applications\FrmTakeTest.cs">
+    <Compile Include="Applications\Tests\FrmTakeTest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Applications\FrmTakeTest.Designer.cs">
+    <Compile Include="Applications\Tests\FrmTakeTest.Designer.cs">
       <DependentUpon>FrmTakeTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Applications\FrmAddEditAppointment.cs">
@@ -85,18 +85,24 @@
     <Compile Include="Applications\FrmAddEditAppointment.Designer.cs">
       <DependentUpon>FrmAddEditAppointment.cs</DependentUpon>
     </Compile>
-    <Compile Include="Applications\FrmTestAppointments.cs">
+    <Compile Include="Applications\Tests\FrmTestAppointments.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Applications\FrmTestAppointments.Designer.cs">
+    <Compile Include="Applications\Tests\FrmTestAppointments.Designer.cs">
       <DependentUpon>FrmTestAppointments.cs</DependentUpon>
     </Compile>
     <Compile Include="clsGlobalSettings.cs" />
-    <Compile Include="Applications\LocalDrivingLicenseApplication\FrmAddEditLocalDrivingLicenseApplication.cs">
+    <Compile Include="Applications\Local Driving License Applications\FrmAddEditLocalDrivingLicenseApplication.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Applications\LocalDrivingLicenseApplication\FrmAddEditLocalDrivingLicenseApplication.Designer.cs">
+    <Compile Include="Applications\Local Driving License Applications\FrmAddEditLocalDrivingLicenseApplication.Designer.cs">
       <DependentUpon>FrmAddEditLocalDrivingLicenseApplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Drivers\FrmManageDrivers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Drivers\FrmManageDrivers.Designer.cs">
+      <DependentUpon>FrmManageDrivers.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
@@ -104,10 +110,10 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Applications\LocalDrivingLicenseApplication\FrmManageLocalDrivingLicenseApplications.cs">
+    <Compile Include="Applications\Local Driving License Applications\FrmManageLocalDrivingLicenseApplications.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Applications\LocalDrivingLicenseApplication\FrmManageLocalDrivingLicenseApplications.Designer.cs">
+    <Compile Include="Applications\Local Driving License Applications\FrmManageLocalDrivingLicenseApplications.Designer.cs">
       <DependentUpon>FrmManageLocalDrivingLicenseApplications.cs</DependentUpon>
     </Compile>
     <Compile Include="License\ctrlLicenseCard.cs">
@@ -223,19 +229,22 @@
     <EmbeddedResource Include="Applications\FrmAddEditAppointment.resx">
       <DependentUpon>FrmAddEditAppointment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Applications\FrmTakeTest.resx">
+    <EmbeddedResource Include="Applications\Tests\FrmTakeTest.resx">
       <DependentUpon>FrmTakeTest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Applications\FrmTestAppointments.resx">
+    <EmbeddedResource Include="Applications\Tests\FrmTestAppointments.resx">
       <DependentUpon>FrmTestAppointments.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Applications\LocalDrivingLicenseApplication\FrmAddEditLocalDrivingLicenseApplication.resx">
+    <EmbeddedResource Include="Applications\Local Driving License Applications\FrmAddEditLocalDrivingLicenseApplication.resx">
       <DependentUpon>FrmAddEditLocalDrivingLicenseApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Drivers\FrmManageDrivers.resx">
+      <DependentUpon>FrmManageDrivers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Applications\LocalDrivingLicenseApplication\FrmManageLocalDrivingLicenseApplications.resx">
+    <EmbeddedResource Include="Applications\Local Driving License Applications\FrmManageLocalDrivingLicenseApplications.resx">
       <DependentUpon>FrmManageLocalDrivingLicenseApplications.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="License\ctrlLicenseCard.resx">

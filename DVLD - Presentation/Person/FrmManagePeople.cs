@@ -21,7 +21,6 @@ namespace DVLD.Person
         {
             _LoadPeople();
             cbFilterBy.SelectedIndex = 0;
-
         }
 
         private void cbFilterBy_SelectedIndexChanged(object sender, EventArgs e)

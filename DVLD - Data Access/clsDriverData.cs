@@ -125,12 +125,7 @@ namespace DVLD___Data_Access
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = @"SELECT 
-                                DriverID AS 'Driver ID',
-                                PersonID AS 'Person ID',
-                                CreatedByUserID AS 'Created By User ID',
-                                FORMAT(CreatedDate, 'yyyy-MM-dd') AS 'Created Date'
-                             FROM Drivers";
+            string query = @"select * from Drivers_View";
 
             SqlCommand command = new SqlCommand(query, connection);
 

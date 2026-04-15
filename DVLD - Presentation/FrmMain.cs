@@ -1,4 +1,5 @@
 ﻿using DVLD.Application_Types;
+using DVLD.Drivers;
 using DVLD.LocalDrivingLicenseApplication;
 using DVLD.Person;
 using DVLD.Test_Types;
@@ -23,6 +24,17 @@ namespace DVLD
         }
 
         #region Applications
+        private void localLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAddEditLocalDrivingLicenseApplication frm = new FrmAddEditLocalDrivingLicenseApplication();
+            frm.ShowDialog();
+        }
+
+        private void localDrivingLicenseApplicationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmManageLocalDrivingLicenseApplications frm = new FrmManageLocalDrivingLicenseApplications();
+            frm.ShowDialog();
+        }
         private void drivingLicenseToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -43,6 +55,11 @@ namespace DVLD
         #endregion
 
         #region Drivers
+        private void driversToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmManageDrivers frm = new FrmManageDrivers();
+            frm.ShowDialog();
+        }
         #endregion
 
         #region People
@@ -86,16 +103,8 @@ namespace DVLD
 
         #endregion
 
-        private void localLicenseToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmAddEditLocalDrivingLicenseApplication frm = new FrmAddEditLocalDrivingLicenseApplication();
-            frm.ShowDialog();
-        }
 
-        private void localDrivingLicenseApplicationsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmManageLocalDrivingLicenseApplications frm = new FrmManageLocalDrivingLicenseApplications();
-            frm.ShowDialog();
-        }
+
+
     }
 }
