@@ -1,4 +1,5 @@
 ﻿using DVLD.Applications;
+using DVLD.Drivers;
 using DVLD.License;
 using DVLD___Business;
 using System;
@@ -465,6 +466,18 @@ namespace DVLD.LocalDrivingLicenseApplication
             if (license != null)
             {
                 FrmLicenseDetails frm = new FrmLicenseDetails(license.LicenseID);
+                frm.ShowDialog();
+            }
+        }
+
+        private void showPersonLicenseHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgvApplications.SelectedRows.Count == 0) return;
+            int appId = Convert.ToInt32(dgvApplications.SelectedRows[0].Cells["LocalDrivingLicenseApplicationID"].Value);
+            clsLicense license = clsLicense.FindLicenseByApplicationID(clsLocalDrivingLicenseApplication.Find(appId).ApplicationID);
+            if (license != null)
+            {
+                FrmDriverLicenseHistory frm = new FrmDriverLicenseHistory(license.DriverID);
                 frm.ShowDialog();
             }
         }

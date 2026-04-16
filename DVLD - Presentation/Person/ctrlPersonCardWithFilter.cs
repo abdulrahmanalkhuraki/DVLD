@@ -114,6 +114,15 @@ namespace DVLD.Person
         public void LoadPerson(int PersonID)
         {
             ctrlPersonCard1.LoadPersonInformation(PersonID);
+
+            if (OnPersonSelected != null)
+            {
+                OnPersonSelected(ctrlPersonCard1.person.PersonID);
+            }
+
+            if (cbSearchBy.SelectedIndex == 1) 
+                cbSearchBy.SelectedIndex = 0;
+            tbSearchText.Text = PersonID.ToString();
         }
     }
 }

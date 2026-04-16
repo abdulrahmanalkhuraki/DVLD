@@ -98,6 +98,12 @@
     <Compile Include="Applications\Local Driving License Applications\FrmAddEditLocalDrivingLicenseApplication.Designer.cs">
       <DependentUpon>FrmAddEditLocalDrivingLicenseApplication.cs</DependentUpon>
     </Compile>
+    <Compile Include="Drivers\FrmDriverLicenseHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Drivers\FrmDriverLicenseHistory.Designer.cs">
+      <DependentUpon>FrmDriverLicenseHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Drivers\FrmManageDrivers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\Local Driving License Applications\FrmAddEditLocalDrivingLicenseApplication.resx">
       <DependentUpon>FrmAddEditLocalDrivingLicenseApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Drivers\FrmDriverLicenseHistory.resx">
+      <DependentUpon>FrmDriverLicenseHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Drivers\FrmManageDrivers.resx">
       <DependentUpon>FrmManageDrivers.cs</DependentUpon>

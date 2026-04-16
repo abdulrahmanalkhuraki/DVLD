@@ -26,6 +26,7 @@ namespace DVLD.License
             DataTable localLicenses = driver.GetLocalDrivingLicenses();
             DataTable internationalLicenses = driver.GetInternationalDrivingLicenses();
 
+            
             dgvLocal.DataSource = localLicenses;
 
             lblLocalRecordsCount.Text = localLicenses.Rows.Count
@@ -33,8 +34,15 @@ namespace DVLD.License
 
             _ConfigureDataGridView(dgvLocal);
 
-            dgvInternational.DataSource = internationalLicenses;
+            if (internationalLicenses.Rows.Count > 0)
+            {
+                dgvInternational.DataSource = internationalLicenses;
+            }
+            else
+            {
+                dgvInternational.DataSource = localLicenses.Clone();
 
+            }
             lblInternationalRecordsCount.Text = internationalLicenses.Rows.Count
                 .ToString(clsGlobalSettings.TablesRecordsCountFormat);
 
@@ -101,17 +109,17 @@ namespace DVLD.License
 
             // Column widths
             if (dgv.Columns.Contains("LicenseID"))
-                dgv.Columns["LicenseID"].Width = 157;
+                dgv.Columns["LicenseID"].Width = 40;
             if (dgv.Columns.Contains("ApplicationID"))
-                dgv.Columns["ApplicationID"].Width = 177;
+                dgv.Columns["ApplicationID"].Width = 40;
             if (dgv.Columns.Contains("ClassName"))
-                dgv.Columns["ClassName"].Width = 377;
+                dgv.Columns["ClassName"].Width = 200;
             if (dgv.Columns.Contains("IssueDate"))
-                dgv.Columns["IssueDate"].Width = 257;
+                dgv.Columns["IssueDate"].Width = 115;
             if (dgv.Columns.Contains("ExpirationDate"))
-                dgv.Columns["ExpirationDate"].Width = 257;
+                dgv.Columns["ExpirationDate"].Width = 115;
             if (dgv.Columns.Contains("IsActive"))
-                dgv.Columns["IsActive"].Width = 157;
+                dgv.Columns["IsActive"].Width = 60;
 
             // Center alignment
             if (dgv.Columns.Contains("LicenseID"))

@@ -31,11 +31,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tbLocal = new System.Windows.Forms.TabPage();
-            this.tbInternational = new System.Windows.Forms.TabPage();
-            this.dgvLocal = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
             this.lblLocalRecordsCount = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dgvLocal = new System.Windows.Forms.DataGridView();
+            this.tbInternational = new System.Windows.Forms.TabPage();
             this.lblInternationalRecordsCount = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -43,8 +43,8 @@
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tbLocal.SuspendLayout();
-            this.tbInternational.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLocal)).BeginInit();
+            this.tbInternational.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInternational)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +54,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(656, 610);
+            this.groupBox1.Size = new System.Drawing.Size(656, 539);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Driver Licesnes";
@@ -66,7 +66,7 @@
             this.tabControl1.Location = new System.Drawing.Point(17, 24);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(618, 563);
+            this.tabControl1.Size = new System.Drawing.Size(618, 506);
             this.tabControl1.TabIndex = 0;
             // 
             // tbLocal
@@ -78,34 +78,30 @@
             this.tbLocal.Location = new System.Drawing.Point(4, 26);
             this.tbLocal.Name = "tbLocal";
             this.tbLocal.Padding = new System.Windows.Forms.Padding(3);
-            this.tbLocal.Size = new System.Drawing.Size(610, 533);
+            this.tbLocal.Size = new System.Drawing.Size(610, 476);
             this.tbLocal.TabIndex = 0;
             this.tbLocal.Text = "Local";
             this.tbLocal.UseVisualStyleBackColor = true;
             // 
-            // tbInternational
+            // lblLocalRecordsCount
             // 
-            this.tbInternational.Controls.Add(this.lblInternationalRecordsCount);
-            this.tbInternational.Controls.Add(this.label4);
-            this.tbInternational.Controls.Add(this.label5);
-            this.tbInternational.Controls.Add(this.dgvInternational);
-            this.tbInternational.Location = new System.Drawing.Point(4, 26);
-            this.tbInternational.Name = "tbInternational";
-            this.tbInternational.Padding = new System.Windows.Forms.Padding(3);
-            this.tbInternational.Size = new System.Drawing.Size(610, 533);
-            this.tbInternational.TabIndex = 1;
-            this.tbInternational.Text = "International";
-            this.tbInternational.UseVisualStyleBackColor = true;
+            this.lblLocalRecordsCount.Font = new System.Drawing.Font("Myanmar Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLocalRecordsCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.lblLocalRecordsCount.Location = new System.Drawing.Point(98, 439);
+            this.lblLocalRecordsCount.Name = "lblLocalRecordsCount";
+            this.lblLocalRecordsCount.Size = new System.Drawing.Size(78, 19);
+            this.lblLocalRecordsCount.TabIndex = 12;
+            this.lblLocalRecordsCount.Text = "0";
             // 
-            // dgvLocal
+            // label3
             // 
-            this.dgvLocal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLocal.Location = new System.Drawing.Point(19, 47);
-            this.dgvLocal.Name = "dgvLocal";
-            this.dgvLocal.RowHeadersWidth = 51;
-            this.dgvLocal.RowTemplate.Height = 24;
-            this.dgvLocal.Size = new System.Drawing.Size(572, 449);
-            this.dgvLocal.TabIndex = 0;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Myanmar Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(14, 439);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(88, 30);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "# Records";
             // 
             // label2
             // 
@@ -119,31 +115,35 @@
             this.label2.Text = "Local License History";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lblLocalRecordsCount
+            // dgvLocal
             // 
-            this.lblLocalRecordsCount.Font = new System.Drawing.Font("Myanmar Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLocalRecordsCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.lblLocalRecordsCount.Location = new System.Drawing.Point(110, 503);
-            this.lblLocalRecordsCount.Name = "lblLocalRecordsCount";
-            this.lblLocalRecordsCount.Size = new System.Drawing.Size(78, 19);
-            this.lblLocalRecordsCount.TabIndex = 12;
-            this.lblLocalRecordsCount.Text = "0";
+            this.dgvLocal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLocal.Location = new System.Drawing.Point(19, 47);
+            this.dgvLocal.Name = "dgvLocal";
+            this.dgvLocal.RowHeadersWidth = 51;
+            this.dgvLocal.RowTemplate.Height = 24;
+            this.dgvLocal.Size = new System.Drawing.Size(572, 387);
+            this.dgvLocal.TabIndex = 0;
             // 
-            // label3
+            // tbInternational
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Myanmar Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(14, 503);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 30);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "# Records";
+            this.tbInternational.Controls.Add(this.lblInternationalRecordsCount);
+            this.tbInternational.Controls.Add(this.label4);
+            this.tbInternational.Controls.Add(this.label5);
+            this.tbInternational.Controls.Add(this.dgvInternational);
+            this.tbInternational.Location = new System.Drawing.Point(4, 26);
+            this.tbInternational.Name = "tbInternational";
+            this.tbInternational.Padding = new System.Windows.Forms.Padding(3);
+            this.tbInternational.Size = new System.Drawing.Size(610, 476);
+            this.tbInternational.TabIndex = 1;
+            this.tbInternational.Text = "International";
+            this.tbInternational.UseVisualStyleBackColor = true;
             // 
             // lblInternationalRecordsCount
             // 
             this.lblInternationalRecordsCount.Font = new System.Drawing.Font("Myanmar Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInternationalRecordsCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.lblInternationalRecordsCount.Location = new System.Drawing.Point(113, 496);
+            this.lblInternationalRecordsCount.Location = new System.Drawing.Point(98, 439);
             this.lblInternationalRecordsCount.Name = "lblInternationalRecordsCount";
             this.lblInternationalRecordsCount.Size = new System.Drawing.Size(78, 19);
             this.lblInternationalRecordsCount.TabIndex = 16;
@@ -153,7 +153,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Myanmar Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(17, 496);
+            this.label4.Location = new System.Drawing.Point(14, 439);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(88, 30);
             this.label4.TabIndex = 15;
@@ -164,7 +164,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Myanmar Text", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label5.Location = new System.Drawing.Point(194, 7);
+            this.label5.Location = new System.Drawing.Point(191, 14);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(229, 30);
             this.label5.TabIndex = 14;
@@ -174,28 +174,27 @@
             // dgvInternational
             // 
             this.dgvInternational.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInternational.Location = new System.Drawing.Point(22, 40);
+            this.dgvInternational.Location = new System.Drawing.Point(19, 47);
             this.dgvInternational.Name = "dgvInternational";
             this.dgvInternational.RowHeadersWidth = 51;
             this.dgvInternational.RowTemplate.Height = 24;
-            this.dgvInternational.Size = new System.Drawing.Size(572, 449);
+            this.dgvInternational.Size = new System.Drawing.Size(572, 387);
             this.dgvInternational.TabIndex = 13;
             // 
             // ctrlLicensesHistory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ctrlLicensesHistory";
-            this.Size = new System.Drawing.Size(656, 610);
+            this.Size = new System.Drawing.Size(656, 539);
             this.groupBox1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tbLocal.ResumeLayout(false);
             this.tbLocal.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLocal)).EndInit();
             this.tbInternational.ResumeLayout(false);
             this.tbInternational.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLocal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInternational)).EndInit();
             this.ResumeLayout(false);
 
