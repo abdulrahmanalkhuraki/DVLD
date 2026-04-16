@@ -86,6 +86,16 @@ namespace DVLD___Business
             return this.DriverId > 0;
         }
 
+        public DataTable GetLocalDrivingLicenses()
+        {
+            return clsDriverData.GetLocalDrivingLicenses(this.DriverId);
+        }
+
+        public DataTable GetInternationalDrivingLicenses()
+        {
+            return clsDriverData.GetInternationalDrivingLicenses(this.DriverId);
+        }
+
         public static bool IsDriverExists(int DriverId)
         {
             return clsDriverData.IsDriverExists(DriverId);

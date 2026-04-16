@@ -10,5 +10,7 @@ namespace DVLD
     public class clsGlobalSettings
     {
         public static clsUser CurrentUser;
+
+        public static string TablesRecordsCountFormat = "N0";
     }
 }
