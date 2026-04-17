@@ -146,6 +146,12 @@
     <Compile Include="License\FrmIssueDrivingLicenseForFirstTime.Designer.cs">
       <DependentUpon>FrmIssueDrivingLicenseForFirstTime.cs</DependentUpon>
     </Compile>
+    <Compile Include="License\FrmIssueInternationalLicesne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="License\FrmIssueInternationalLicesne.Designer.cs">
+      <DependentUpon>FrmIssueInternationalLicesne.cs</DependentUpon>
+    </Compile>
     <Compile Include="License\FrmLicenseDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -279,6 +285,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="License\FrmIssueDrivingLicenseForFirstTime.resx">
       <DependentUpon>FrmIssueDrivingLicenseForFirstTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="License\FrmIssueInternationalLicesne.resx">
+      <DependentUpon>FrmIssueInternationalLicesne.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="License\FrmLicenseDetails.resx">
       <DependentUpon>FrmLicenseDetails.cs</DependentUpon>

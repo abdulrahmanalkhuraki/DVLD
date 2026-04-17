@@ -1,5 +1,6 @@
 ﻿using DVLD.Application_Types;
 using DVLD.Drivers;
+using DVLD.License;
 using DVLD.LocalDrivingLicenseApplication;
 using DVLD.Person;
 using DVLD.Test_Types;
@@ -101,10 +102,15 @@ namespace DVLD
         }
 
 
+
+
+
         #endregion
 
-
-
-
+        private void internationalLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmIssueInternationalLicesne frm = new FrmIssueInternationalLicesne();
+            frm.ShowDialog();
+        }
     }
 }

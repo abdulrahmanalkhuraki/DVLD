@@ -10,7 +10,7 @@ namespace DVLD___Business.Enums
     {
         Class1_Motorcycle = 1,
         Class2_MotorcycleWithSidecar = 2,
-        Class3_PassengerCar = 3,
+        Class3_Ordinary = 3,
         Class4_Truck = 4,
         Class5_Bus = 5,
         Class6_HeavyVehicle = 6,

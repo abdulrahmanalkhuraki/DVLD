@@ -12,5 +12,10 @@ namespace DVLD
         public static clsUser CurrentUser;
 
         public static string TablesRecordsCountFormat = "N0";
+
+        public static string MoneyFormat = "N2";
+
+        public static string DateFormat = "yyyy-MM-dd";
+
     }
 }

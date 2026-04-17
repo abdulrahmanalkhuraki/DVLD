@@ -264,7 +264,7 @@ namespace DVLD___Data_Access
                             FROM Licenses 
                             join LicenseClasses on LicenseClasses.LicenseClassID = Licenses.LicenseClass
                             join Applications on Licenses.ApplicationID = Applications.ApplicationID
-                            WHERE DriverID = @DriverId and ApplicationTypeID == 6 ORDER BY IssueDate DESC";
+                            WHERE DriverID = @DriverId and ApplicationTypeID = 6 ORDER BY IssueDate DESC";
 
             SqlCommand command = new SqlCommand(query, connection);
 
