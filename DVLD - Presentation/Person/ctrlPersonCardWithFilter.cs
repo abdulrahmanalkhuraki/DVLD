@@ -53,11 +53,10 @@ namespace DVLD.Person
                     case 0: // Person ID
                         {
                             if (int.TryParse(tbSearchText.Text, out int PersonID))
-                            {
-                                clsPerson Person = clsPerson.FindPerson(PersonID);
-                                if (Person != null)
+                            {                               
+                                if (clsPerson.IsPersonExists(PersonID))
                                 {
-                                    ctrlPersonCard1.LoadPersonInformation(Person.PersonID);
+                                    ctrlPersonCard1.LoadPersonInformation(PersonID);
                                     IsPersonFound = true;
                                 }
                                 else

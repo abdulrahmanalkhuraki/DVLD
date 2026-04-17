@@ -45,7 +45,7 @@ namespace DVLD.Drivers
             }
             else
             {
-                tbUserInput.Visible = false;
+                tbUserInput.Visible = true;
             }
         }
 
