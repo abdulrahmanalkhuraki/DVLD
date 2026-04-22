@@ -97,7 +97,6 @@ namespace DVLD___Business
             this.Mode = enMode.UPDATE;
         }
 
-        // Static methods
         public static DataTable GetAllLicenses()
         {
             return clsLicenseData.GetAllLicenses();
@@ -166,7 +165,6 @@ namespace DVLD___Business
             return false;
         }
 
-        // Instance methods
         public bool Save()
         {
             switch (Mode)

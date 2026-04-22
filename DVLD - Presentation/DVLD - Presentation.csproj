@@ -146,6 +146,7 @@
     <Compile Include="License\FrmIssueDrivingLicenseForFirstTime.Designer.cs">
       <DependentUpon>FrmIssueDrivingLicenseForFirstTime.cs</DependentUpon>
     </Compile>
+<<<<<<< Updated upstream
     <Compile Include="License\FrmIssueInternationalLicesne.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +158,13 @@
     </Compile>
     <Compile Include="License\FrmLicenseDetails.Designer.cs">
       <DependentUpon>FrmLicenseDetails.cs</DependentUpon>
+=======
+    <Compile Include="Applications\InternationalLicenseApplication\FrmManageInternationalLicenseApplications.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\InternationalLicenseApplication\FrmManageInternationalLicenseApplications.Designer.cs">
+      <DependentUpon>FrmManageInternationalLicenseApplications.cs</DependentUpon>
+>>>>>>> Stashed changes
     </Compile>
     <Compile Include="Person\ctrlPersonCard.cs">
       <SubType>UserControl</SubType>
@@ -259,7 +267,14 @@
     <EmbeddedResource Include="Applications\Tests\FrmTestAppointments.resx">
       <DependentUpon>FrmTestAppointments.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< Updated upstream
     <EmbeddedResource Include="Applications\Local Driving License Applications\FrmAddEditLocalDrivingLicenseApplication.resx">
+=======
+    <EmbeddedResource Include="Applications\InternationalLicenseApplication\FrmManageInternationalLicenseApplications.resx">
+      <DependentUpon>FrmManageInternationalLicenseApplications.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\LocalDrivingLicenseApplication\FrmAddEditLocalDrivingLicenseApplication.resx">
+>>>>>>> Stashed changes
       <DependentUpon>FrmAddEditLocalDrivingLicenseApplication.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Drivers\FrmDriverLicenseHistory.resx">

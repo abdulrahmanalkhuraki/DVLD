@@ -1,13 +1,10 @@
-﻿using DVLD.Applications;
-using DVLD.Drivers;
-using DVLD.License;
-using DVLD___Business;
-using System;
+﻿using System;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
+using DVLD.Applications;
+using DVLD___Business;
 
 namespace DVLD.LocalDrivingLicenseApplication
 {
@@ -248,13 +245,8 @@ namespace DVLD.LocalDrivingLicenseApplication
             scadToolStripMenuItem.Enabled = true;
             issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = true;
 
-            if(app.ApplicationStatus == enApplicationStatus.New)
-            {
-                showLicenseToolStripMenuItem.Enabled = false;
-                issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = false;
-            }
 
-            if (app.ApplicationStatus == enApplicationStatus.Completed || app.ApplicationStatus == enApplicationStatus.Cancelled)
+            if (app.ApplicationStatus == enApplicationStatus.Completed)
             {
                 addNewApplicationToolStripMenuItem.Enabled = false;
                 editToolStripMenuItem.Enabled = false;
@@ -265,14 +257,29 @@ namespace DVLD.LocalDrivingLicenseApplication
                 return;
             }
 
-            if (!person.HasLicense(app.LicenseClassID) && clsLocalDrivingLicenseApplication.GetPassedTests(appId) == 3)
+            if (!person.HasLicense() && clsLocalDrivingLicenseApplication.GetPassedTests(appId) == 3)
             {
                 scadToolStripMenuItem.Enabled = false;
                 showLicenseToolStripMenuItem.Enabled = false;
-                issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = true;
             }
 
         }
+
+        private void _ShowTestAppointmentsForm(byte TestTypeID)
+        {
+            if (dgvApplications.SelectedRows.Count == 0) return;
+            int appId = Convert.ToInt32(dgvApplications.SelectedRows[0].Cells["LocalDrivingLicenseApplicationID"].Value);
+            FrmTestAppointments frm = new FrmTestAppointments(appId, TestTypeID);
+            frm.ShowDialog();
+            _LoadApplications();
+        }
+
+        private void issueDrivingLicenseFirstTimeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgvApplications.SelectedRows.Count == 0) return;
+            int appId = Convert.ToInt32(dgvApplications.SelectedRows[0].Cells["LocalDrivingLicenseApplicationID"].Value);
+        }
+
         #endregion
 
         #endregion
@@ -435,51 +442,5 @@ namespace DVLD.LocalDrivingLicenseApplication
 
         #endregion
 
-
-
-        private void _ShowTestAppointmentsForm(byte TestTypeID)
-        {
-            if (dgvApplications.SelectedRows.Count == 0) return;
-            int appId = Convert.ToInt32(dgvApplications.SelectedRows[0].Cells["LocalDrivingLicenseApplicationID"].Value);
-            FrmTestAppointments frm = new FrmTestAppointments(appId, TestTypeID);
-            frm.ShowDialog();
-            _LoadApplications();
-        }
-
-        private void issueDrivingLicenseFirstTimeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (dgvApplications.SelectedRows.Count == 0) return;
-            int appId = Convert.ToInt32(dgvApplications.SelectedRows[0].Cells["LocalDrivingLicenseApplicationID"].Value);
-            FrmIssueDrivingLicenseForFirstTime frm = new FrmIssueDrivingLicenseForFirstTime(appId);
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                _LoadApplications();
-            }
-        }
-
-        private void showLicenseToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (dgvApplications.SelectedRows.Count == 0) return;
-            int appId = Convert.ToInt32(dgvApplications.SelectedRows[0].Cells["LocalDrivingLicenseApplicationID"].Value);
-
-            clsLicense license = clsLicense.FindLicenseByApplicationID(clsLocalDrivingLicenseApplication.Find(appId).ApplicationID);
-            if (license != null)
-            {
-                FrmLicenseDetails frm = new FrmLicenseDetails(license.LicenseID);
-                frm.ShowDialog();
-            }
-        }
-
-        private void showPersonLicenseHistoryToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (dgvApplications.SelectedRows.Count == 0) return;
-            int appId = Convert.ToInt32(dgvApplications.SelectedRows[0].Cells["LocalDrivingLicenseApplicationID"].Value);
-            clsLicense license = clsLicense.FindLicenseByApplicationID(clsLocalDrivingLicenseApplication.Find(appId).ApplicationID);
-            if (license != null)
-            {
-                FrmDriverLicenseHistory frm = new FrmDriverLicenseHistory(license.DriverID);
-                frm.ShowDialog();
-            }
-        }
     }
 }

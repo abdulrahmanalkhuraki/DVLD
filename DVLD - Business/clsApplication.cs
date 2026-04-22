@@ -50,7 +50,6 @@ namespace DVLD___Business
             this.CreatedByUserID = createdByUserID;
         }
 
-
         public virtual bool Save()
         {
             switch (this.Mode)
