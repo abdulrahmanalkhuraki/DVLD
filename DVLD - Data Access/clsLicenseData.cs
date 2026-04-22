@@ -109,7 +109,7 @@ namespace DVLD___Data_Access
                         dt.Load(reader);
                     reader.Close();
                 }
-                catch (Exception ex)
+                catch
                 {
                     // log ex.Message if needed
                 }
