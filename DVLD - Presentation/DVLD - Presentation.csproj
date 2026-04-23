@@ -75,6 +75,10 @@
     <Compile Include="Applications\FrmApplicationDetails.Designer.cs">
       <DependentUpon>FrmApplicationDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Applications\International Driving License Applications\FrmManageInternationalLicenseApplications.cs" />
+    <Compile Include="Applications\International Driving License Applications\FrmManageInternationalLicenseApplications.Designer.cs">
+      <DependentUpon>FrmManageInternationalLicenseApplications.cs</DependentUpon>
+    </Compile>
     <Compile Include="Applications\Tests\FrmTakeTest.cs">
       <SubType>Form</SubType>
     </Compile>
