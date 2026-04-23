@@ -233,34 +233,60 @@ namespace DVLD.LocalDrivingLicenseApplication
 
             int appId = Convert.ToInt32(dgvApplications.SelectedRows[0].Cells["LocalDrivingLicenseApplicationID"].Value);
             clsLocalDrivingLicenseApplication app = clsLocalDrivingLicenseApplication.Find(appId);
-            clsPerson person = clsPerson.FindPerson(app.PersonID);
 
-            showDetailsToolStripMenuItem.Enabled = true;
-            showLicenseToolStripMenuItem.Enabled = true;
-            showPersonLicenseHistoryToolStripMenuItem.Enabled = true;
-            addNewApplicationToolStripMenuItem.Enabled = true;
-            editToolStripMenuItem.Enabled = true;
-            deleteToolStripMenuItem.Enabled = true;
-            CancelToolStripMenuItem.Enabled = true;
-            scadToolStripMenuItem.Enabled = true;
-            issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = true;
-
-
-            if (app.ApplicationStatus == enApplicationStatus.Completed)
+            if (app.ApplicationStatus == enApplicationStatus.Cancelled)
             {
-                addNewApplicationToolStripMenuItem.Enabled = false;
+                showDetailsToolStripMenuItem.Enabled = true;
                 editToolStripMenuItem.Enabled = false;
-                deleteToolStripMenuItem .Enabled = false;
+                deleteToolStripMenuItem.Enabled = false;
                 CancelToolStripMenuItem.Enabled = false;
                 scadToolStripMenuItem.Enabled = false;
                 issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = false;
+                showLicenseToolStripMenuItem.Enabled = false;
+                showPersonLicenseHistoryToolStripMenuItem.Enabled = true;
                 return;
             }
 
-            if (!person.HasLicense() && clsLocalDrivingLicenseApplication.GetPassedTests(appId) == 3)
+            switch (clsLocalDrivingLicenseApplication.GetPassedTests(appId))
             {
-                scadToolStripMenuItem.Enabled = false;
-                showLicenseToolStripMenuItem.Enabled = false;
+                case 0:
+                case 1:
+                case 2:
+                    {
+                        showDetailsToolStripMenuItem.Enabled = true;
+                        editToolStripMenuItem.Enabled = true;
+                        deleteToolStripMenuItem.Enabled = true;
+                        CancelToolStripMenuItem.Enabled = true;
+                        scadToolStripMenuItem.Enabled = true;
+                        showPersonLicenseHistoryToolStripMenuItem.Enabled = true;
+
+                        issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = false;
+                        showLicenseToolStripMenuItem.Enabled = false;
+                    }
+                    break;
+                case 3:
+                    {
+                        if(app.ApplicationStatus == enApplicationStatus.New)
+                        {
+                            showDetailsToolStripMenuItem.Enabled = true;
+                            editToolStripMenuItem.Enabled = true;
+                            deleteToolStripMenuItem.Enabled = true;
+                            CancelToolStripMenuItem.Enabled = true;
+                            scadToolStripMenuItem.Enabled = false;
+                            showPersonLicenseHistoryToolStripMenuItem.Enabled = true;
+                            issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = true;
+                            showLicenseToolStripMenuItem.Enabled = false;
+                        }
+
+                        showDetailsToolStripMenuItem.Enabled = true;
+                        editToolStripMenuItem.Enabled = false;
+                        deleteToolStripMenuItem.Enabled = false;
+                        CancelToolStripMenuItem.Enabled = false;
+                        scadToolStripMenuItem.Enabled = false;
+                        showPersonLicenseHistoryToolStripMenuItem.Enabled = true;
+                        issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = false;
+                        showLicenseToolStripMenuItem.Enabled = true;
+                    } break;
             }
 
         }

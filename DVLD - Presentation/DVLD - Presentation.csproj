@@ -75,7 +75,9 @@
     <Compile Include="Applications\FrmApplicationDetails.Designer.cs">
       <DependentUpon>FrmApplicationDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="Applications\International Driving License Applications\FrmManageInternationalLicenseApplications.cs" />
+    <Compile Include="Applications\International Driving License Applications\FrmManageInternationalLicenseApplications.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Applications\International Driving License Applications\FrmManageInternationalLicenseApplications.Designer.cs">
       <DependentUpon>FrmManageInternationalLicenseApplications.cs</DependentUpon>
     </Compile>
@@ -128,16 +130,16 @@
     <Compile Include="Applications\Local Driving License Applications\FrmManageLocalDrivingLicenseApplications.Designer.cs">
       <DependentUpon>FrmManageLocalDrivingLicenseApplications.cs</DependentUpon>
     </Compile>
-    <Compile Include="License\ctrlLicenseCard.cs">
+    <Compile Include="License\Local License\ctrlLicenseCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="License\ctrlLicenseCard.Designer.cs">
+    <Compile Include="License\Local License\ctrlLicenseCard.Designer.cs">
       <DependentUpon>ctrlLicenseCard.cs</DependentUpon>
     </Compile>
-    <Compile Include="License\ctrlLicenseFilter.cs">
+    <Compile Include="License\Local License\ctrlLicenseFilter.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="License\ctrlLicenseFilter.Designer.cs">
+    <Compile Include="License\Local License\ctrlLicenseFilter.Designer.cs">
       <DependentUpon>ctrlLicenseFilter.cs</DependentUpon>
     </Compile>
     <Compile Include="License\ctrlLicensesHistory.cs">
@@ -146,11 +148,35 @@
     <Compile Include="License\ctrlLicensesHistory.Designer.cs">
       <DependentUpon>ctrlLicensesHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="License\FrmIssueDrivingLicenseForFirstTime.cs">
+    <Compile Include="License\Local License\FrmIssueDrivingLicenseForFirstTime.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="License\FrmIssueDrivingLicenseForFirstTime.Designer.cs">
+    <Compile Include="License\Local License\FrmIssueDrivingLicenseForFirstTime.Designer.cs">
       <DependentUpon>FrmIssueDrivingLicenseForFirstTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="License\International License\ctrlInternationalLicenseCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="License\International License\ctrlInternationalLicenseCard.Designer.cs">
+      <DependentUpon>ctrlInternationalLicenseCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="License\International License\FrmInternationalLicenseDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="License\International License\FrmInternationalLicenseDetails.Designer.cs">
+      <DependentUpon>FrmInternationalLicenseDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="License\International License\FrmIssueInternationalLicesne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="License\International License\FrmIssueInternationalLicesne.Designer.cs">
+      <DependentUpon>FrmIssueInternationalLicesne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="License\Local License\FrmLicenseDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="License\Local License\FrmLicenseDetails.Designer.cs">
+      <DependentUpon>FrmLicenseDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Person\ctrlPersonCard.cs">
       <SubType>UserControl</SubType>
@@ -247,6 +273,9 @@
     <EmbeddedResource Include="Applications\FrmAddEditAppointment.resx">
       <DependentUpon>FrmAddEditAppointment.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Applications\International Driving License Applications\FrmManageInternationalLicenseApplications.resx">
+      <DependentUpon>FrmManageInternationalLicenseApplications.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Applications\Tests\FrmTakeTest.resx">
       <DependentUpon>FrmTakeTest.cs</DependentUpon>
     </EmbeddedResource>
@@ -265,22 +294,25 @@
     <EmbeddedResource Include="Applications\Local Driving License Applications\FrmManageLocalDrivingLicenseApplications.resx">
       <DependentUpon>FrmManageLocalDrivingLicenseApplications.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="License\ctrlLicenseCard.resx">
+    <EmbeddedResource Include="License\International License\ctrlInternationalLicenseCard.resx">
+      <DependentUpon>ctrlInternationalLicenseCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="License\Local License\ctrlLicenseCard.resx">
       <DependentUpon>ctrlLicenseCard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="License\ctrlLicenseFilter.resx">
+    <EmbeddedResource Include="License\Local License\ctrlLicenseFilter.resx">
       <DependentUpon>ctrlLicenseFilter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="License\ctrlLicensesHistory.resx">
       <DependentUpon>ctrlLicensesHistory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="License\FrmIssueDrivingLicenseForFirstTime.resx">
+    <EmbeddedResource Include="License\Local License\FrmIssueDrivingLicenseForFirstTime.resx">
       <DependentUpon>FrmIssueDrivingLicenseForFirstTime.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="License\FrmIssueInternationalLicesne.resx">
+    <EmbeddedResource Include="License\International License\FrmIssueInternationalLicesne.resx">
       <DependentUpon>FrmIssueInternationalLicesne.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="License\FrmLicenseDetails.resx">
+    <EmbeddedResource Include="License\Local License\FrmLicenseDetails.resx">
       <DependentUpon>FrmLicenseDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Person\ctrlPersonCard.resx">

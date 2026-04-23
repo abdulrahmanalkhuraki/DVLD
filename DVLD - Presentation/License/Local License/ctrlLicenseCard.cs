@@ -68,5 +68,7 @@ namespace DVLD.License
                     pbPersonPicture.Image = Properties.Resources.icons8_person_100__1_;
             }
         }
+
+
     }
 }
