@@ -81,6 +81,12 @@
     <Compile Include="Applications\International Driving License Applications\FrmManageInternationalLicenseApplications.Designer.cs">
       <DependentUpon>FrmManageInternationalLicenseApplications.cs</DependentUpon>
     </Compile>
+    <Compile Include="Applications\Renew Applications\FrmRenewLicenseApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\Renew Applications\FrmRenewLicenseApplication.Designer.cs">
+      <DependentUpon>FrmRenewLicenseApplication.cs</DependentUpon>
+    </Compile>
     <Compile Include="Applications\Tests\FrmTakeTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,6 +281,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\International Driving License Applications\FrmManageInternationalLicenseApplications.resx">
       <DependentUpon>FrmManageInternationalLicenseApplications.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\Renew Applications\FrmRenewLicenseApplication.resx">
+      <DependentUpon>FrmRenewLicenseApplication.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\Tests\FrmTakeTest.resx">
       <DependentUpon>FrmTakeTest.cs</DependentUpon>
