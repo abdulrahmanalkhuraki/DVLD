@@ -47,13 +47,12 @@ namespace DVLD
 
             if (LocalDrivingLicenseApplication.Save())
             {
-                MessageBox.Show("Local Driving License Application Has Been Saved Successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                _ConfigureComponents(LocalDrivingLicenseApplication.Mode);
+                clsMessages.Success("Local Driving License Application Has Been Saved Successfully.");
                 _LoadApplicationInfo();
             }
             else
             {
-                MessageBox.Show("Error With Saving Local Driving License Application.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                clsMessages.Error("Error With Saving Local Driving License Application.");
             }
         }
 

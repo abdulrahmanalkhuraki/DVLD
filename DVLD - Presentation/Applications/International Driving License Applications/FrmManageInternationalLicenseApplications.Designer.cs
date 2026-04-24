@@ -38,16 +38,16 @@
             this.btnNew = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.dgvInternationalLicenses = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showPersonLicenseHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInternationalLicenses)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tbUserInput
@@ -78,7 +78,7 @@
             // 
             this.lblRecordsCount.AutoSize = true;
             this.lblRecordsCount.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecordsCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(125)))), ((int)(((byte)(50)))));
+            this.lblRecordsCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.lblRecordsCount.Location = new System.Drawing.Point(108, 553);
             this.lblRecordsCount.Name = "lblRecordsCount";
             this.lblRecordsCount.Size = new System.Drawing.Size(20, 23);
@@ -146,6 +146,7 @@
             this.dgvInternationalLicenses.AllowUserToOrderColumns = true;
             this.dgvInternationalLicenses.BackgroundColor = System.Drawing.Color.White;
             this.dgvInternationalLicenses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInternationalLicenses.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvInternationalLicenses.Location = new System.Drawing.Point(12, 192);
             this.dgvInternationalLicenses.MultiSelect = false;
             this.dgvInternationalLicenses.Name = "dgvInternationalLicenses";
@@ -155,28 +156,6 @@
             this.dgvInternationalLicenses.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvInternationalLicenses.Size = new System.Drawing.Size(1132, 354);
             this.dgvInternationalLicenses.TabIndex = 38;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Myanmar Text", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(149, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(741, 66);
-            this.label1.TabIndex = 37;
-            this.label1.Text = "International Driving License Application";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.Image = global::DVLD.Properties.Resources.international_License;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(117, 121);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 36;
-            this.pictureBox1.TabStop = false;
             // 
             // contextMenuStrip1
             // 
@@ -212,6 +191,28 @@
             this.showPersonLicenseHistoryToolStripMenuItem.Size = new System.Drawing.Size(299, 28);
             this.showPersonLicenseHistoryToolStripMenuItem.Text = "Show Person License History";
             this.showPersonLicenseHistoryToolStripMenuItem.Click += new System.EventHandler(this.showPersonLicenseHistoryToolStripMenuItem_Click);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Myanmar Text", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(149, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(741, 66);
+            this.label1.TabIndex = 37;
+            this.label1.Text = "International Driving License Application";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Image = global::DVLD.Properties.Resources.international_License;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(117, 121);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 36;
+            this.pictureBox1.TabStop = false;
             // 
             // label2
             // 
@@ -250,8 +251,8 @@
             this.Text = "Manage International License Applications";
             this.Load += new System.EventHandler(this.FrmManageInternationalLicenseApplications_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInternationalLicenses)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

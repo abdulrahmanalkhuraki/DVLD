@@ -1,10 +1,14 @@
-﻿using System;
+﻿using DVLD.Applications;
+using DVLD.Drivers;
+using DVLD.License;
+using DVLD___Business;
+using DVLD___Business.Utility;
+using System;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using DVLD.Applications;
-using DVLD___Business;
 
 namespace DVLD.LocalDrivingLicenseApplication
 {
@@ -305,7 +309,27 @@ namespace DVLD.LocalDrivingLicenseApplication
             if (dgvApplications.SelectedRows.Count == 0) return;
             int appId = Convert.ToInt32(dgvApplications.SelectedRows[0].Cells["LocalDrivingLicenseApplicationID"].Value);
         }
+        private void showLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgvApplications.SelectedRows.Count == 0) return;
+            int appId = Convert.ToInt32(dgvApplications.SelectedRows[0].Cells["LocalDrivingLicenseApplicationID"].Value);
+            clsLocalDrivingLicenseApplication application = clsLocalDrivingLicenseApplication.Find(appId);
+            if (application.ApplicationStatus != enApplicationStatus.Completed) return;
+            clsLicense license = clsLicense.FindLicenseByApplicationID(application.ApplicationID);
+            FrmLicenseDetails frm = new FrmLicenseDetails(license.LicenseID);
+            frm.ShowDialog();
+        }
 
+        private void showPersonLicenseHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgvApplications.SelectedRows.Count == 0) return;
+            int appId = Convert.ToInt32(dgvApplications.SelectedRows[0].Cells["LocalDrivingLicenseApplicationID"].Value);
+            clsLocalDrivingLicenseApplication application = clsLocalDrivingLicenseApplication.Find(appId);
+            if (application.ApplicationStatus != enApplicationStatus.Completed) return;
+            clsLicense license = clsLicense.FindLicenseByApplicationID(application.ApplicationID);
+            FrmDriverLicenseHistory frm = new FrmDriverLicenseHistory(license.DriverID);
+            frm.ShowDialog();
+        }
         #endregion
 
         #endregion
@@ -456,17 +480,13 @@ namespace DVLD.LocalDrivingLicenseApplication
 
             if (!clsLocalDrivingLicenseApplication.Delete(appId))
             {
-                MessageBox.Show("This application cannot be deleted because it is linked to other records.",
-                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                clsMessages.Error("This application cannot be deleted because it is linked to other records.");
                 return;
             }
-
-            MessageBox.Show("Application deleted successfully.", "Success",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            clsMessages.Success("Application deleted successfully.");
             _LoadApplications();
         }
 
         #endregion
-
     }
 }

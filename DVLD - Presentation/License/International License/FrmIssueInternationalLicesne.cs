@@ -1,4 +1,5 @@
 ﻿using DVLD.Drivers;
+using DVLD.License.International_License;
 using DVLD___Business;
 using DVLD___Business.Enums;
 using DVLD___Business.Utility;
@@ -17,7 +18,7 @@ namespace DVLD.License
     public partial class FrmIssueInternationalLicesne : Form
     {
         private clsApplication Application;
-
+        private clsLicense localLicense;
         public FrmIssueInternationalLicesne()
         {
             InitializeComponent();
@@ -40,22 +41,19 @@ namespace DVLD.License
             Application.Save();
             lblInternationalApplicationID.Text = Application.ApplicationID.ToString();
 
-            clsLicense internationalLicense = new clsLicense();
+            clsInternationalLicense internationalLicense = new clsInternationalLicense();
             internationalLicense.ApplicationID = Application.ApplicationID;
-            internationalLicense.CreatedByUserID = clsGlobalSettings.CurrentUser.UserID;
-            internationalLicense.LicenseClassID = 3;
-            internationalLicense.IsActive = true;
-            internationalLicense.IssueReason = (int)enIssueReason.FirstTime;
+            internationalLicense.DriverID = clsDriver.FindDriverByPersonId(Application.PersonID).DriverId;
+            internationalLicense.IssuedUsingLocalLicenseID = localLicense.LicenseID;
             internationalLicense.IssueDate = DateTime.Now;
             internationalLicense.ExpirationDate = DateTime.Now.AddYears(1);
-            internationalLicense.Notes = "International License";
-            internationalLicense.PaidFees = Application.PaidFees;
-            internationalLicense.DriverID = clsDriver.FindDriverByPersonId(Application.PersonID).DriverId;
+            internationalLicense.IsActive = true;
+            internationalLicense.CreatedByUser = clsGlobalSettings.CurrentUser.UserID;
 
             if (internationalLicense.Save())
             {
                 clsMessages.Success("International License Has Been Issued Successfully.");
-                lblInternationalLicenseId.Text = internationalLicense.LicenseID.ToString();
+                lblInternationalLicenseId.Text = internationalLicense.InternationalLicenseID.ToString();
                 lnklblLicenseInfo.Enabled = true;
             }
             else
@@ -68,7 +66,7 @@ namespace DVLD.License
         {
             lnklblLicensesHistory.Enabled = true;
 
-            clsLicense localLicense = clsLicense.FindLicense(LicenseId);
+            localLicense = clsLicense.FindLicense(LicenseId);
             lblLocalLicenseId.Text = localLicense.LicenseID.ToString();
 
             int personId = clsApplication.Find(localLicense.ApplicationID).PersonID;
@@ -132,7 +130,7 @@ namespace DVLD.License
         {
             if(int.TryParse(lblInternationalLicenseId.Text,out int id))
             {
-                FrmLicenseDetails frm = new FrmLicenseDetails(id);
+                FrmInternationalLicenseDetails frm = new FrmInternationalLicenseDetails(id);
                 frm.ShowDialog();
 
             }
