@@ -297,6 +297,9 @@
     <EmbeddedResource Include="License\International License\ctrlInternationalLicenseCard.resx">
       <DependentUpon>ctrlInternationalLicenseCard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="License\International License\FrmInternationalLicenseDetails.resx">
+      <DependentUpon>FrmInternationalLicenseDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="License\Local License\ctrlLicenseCard.resx">
       <DependentUpon>ctrlLicenseCard.cs</DependentUpon>
     </EmbeddedResource>

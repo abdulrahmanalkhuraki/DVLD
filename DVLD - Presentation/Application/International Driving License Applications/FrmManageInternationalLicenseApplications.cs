@@ -7,7 +7,8 @@ using DVLD.Applications;
 using DVLD.Drivers;
 using DVLD.License;
 using DVLD.License.International_License;
-using DVLD___Business;   // Adjust namespace to your business layer
+using DVLD.Person;
+using DVLD___Business;
 
 namespace DVLD.InternationalLicense
 {
@@ -108,8 +109,8 @@ namespace DVLD.InternationalLicense
         private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (dgvInternationalLicenses.SelectedRows.Count == 0) return;
-            int licenseId = Convert.ToInt32(dgvInternationalLicenses.SelectedRows[0].Cells["ApplicationID"].Value);
-            FrmApplicationDetails frm = new FrmApplicationDetails(licenseId);
+            int applicationId = Convert.ToInt32(dgvInternationalLicenses.SelectedRows[0].Cells["ApplicationID"].Value);
+            FrmPersonDetails frm = new FrmPersonDetails(clsApplication.Find(applicationId).PersonID);
             frm.ShowDialog();
         }
 
@@ -214,11 +215,11 @@ namespace DVLD.InternationalLicense
             if (dgvInternationalLicenses.Columns.Contains("IssuedUsingLocalLicenseID"))
                 dgvInternationalLicenses.Columns["IssuedUsingLocalLicenseID"].Width = 100;
             if (dgvInternationalLicenses.Columns.Contains("IssueDate"))
-                dgvInternationalLicenses.Columns["IssueDate"].Width = 120;
+                dgvInternationalLicenses.Columns["IssueDate"].Width = 152;
             if (dgvInternationalLicenses.Columns.Contains("ExpirationDate"))
-                dgvInternationalLicenses.Columns["ExpirationDate"].Width = 120;
+                dgvInternationalLicenses.Columns["ExpirationDate"].Width = 152;
             if (dgvInternationalLicenses.Columns.Contains("IsActive"))
-                dgvInternationalLicenses.Columns["IsActive"].Width = 80;
+                dgvInternationalLicenses.Columns["IsActive"].Width = 100;
 
             // Center alignment for IDs, dates, and IsActive
             string[] centerColumns = { "InternationalLicenseID", "ApplicationID", "DriverID", "IssuedUsingLocalLicenseID",
