@@ -1,5 +1,6 @@
 ﻿using DVLD.Application_Types;
 using DVLD.Drivers;
+using DVLD.InternationalLicense;
 using DVLD.License;
 using DVLD.LocalDrivingLicenseApplication;
 using DVLD.Person;
@@ -34,6 +35,17 @@ namespace DVLD
         private void localDrivingLicenseApplicationsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmManageLocalDrivingLicenseApplications frm = new FrmManageLocalDrivingLicenseApplications();
+            frm.ShowDialog();
+        }
+        private void internationalLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmIssueInternationalLicesne frm = new FrmIssueInternationalLicesne();
+            frm.ShowDialog();
+        }
+
+        private void internationalDrivingLicenseApplicationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmManageInternationalLicenseApplications frm = new FrmManageInternationalLicenseApplications();
             frm.ShowDialog();
         }
         private void drivingLicenseToolStripMenuItem_Click(object sender, EventArgs e)
@@ -107,10 +119,6 @@ namespace DVLD
 
         #endregion
 
-        private void internationalLicenseToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmIssueInternationalLicesne frm = new FrmIssueInternationalLicesne();
-            frm.ShowDialog();
-        }
+
     }
 }

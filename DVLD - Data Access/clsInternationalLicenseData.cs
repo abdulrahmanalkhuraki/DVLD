@@ -15,9 +15,9 @@ namespace DVLD___Data_Access
             {
                 string query = @"INSERT INTO InternationalLicenses 
                                 (ApplicationID, DriverID, IssuedUsingLocalLicenseID, IssueDate, 
-                                 ExpirationDate, IsActive, CreatedByUser)
+                                 ExpirationDate, IsActive, CreatedByUserID)
                                 VALUES (@ApplicationID, @DriverID, @IssuedUsingLocalLicenseID, @IssueDate, 
-                                        @ExpirationDate, @IsActive, @CreatedByUser);
+                                        @ExpirationDate, @IsActive, @CreatedByUserID);
                                 SELECT SCOPE_IDENTITY();";
 
                 SqlCommand command = new SqlCommand(query, connection);
@@ -27,7 +27,7 @@ namespace DVLD___Data_Access
                 command.Parameters.AddWithValue("@IssueDate", issueDate);
                 command.Parameters.AddWithValue("@ExpirationDate", expirationDate);
                 command.Parameters.AddWithValue("@IsActive", isActive);
-                command.Parameters.AddWithValue("@CreatedByUser", createdByUser);
+                command.Parameters.AddWithValue("@CreatedByUserID", createdByUser);
 
                 try
                 {
@@ -78,7 +78,7 @@ namespace DVLD___Data_Access
                 string query = @"SELECT 
                                     InternationalLicenseID, ApplicationID, DriverID, 
                                     IssuedUsingLocalLicenseID, IssueDate, ExpirationDate, 
-                                    IsActive, CreatedByUser
+                                    IsActive, CreatedByUserID
                                 FROM InternationalLicenses 
                                 ORDER BY IssueDate DESC";
 
@@ -126,7 +126,7 @@ namespace DVLD___Data_Access
                         issueDate = (DateTime)reader["IssueDate"];
                         expirationDate = (DateTime)reader["ExpirationDate"];
                         isActive = (bool)reader["IsActive"];
-                        createdByUser = (int)reader["CreatedByUser"];
+                        createdByUser = (int)reader["CreatedByUserID"];
                     }
                     reader.Close();
                 }
@@ -140,7 +140,7 @@ namespace DVLD___Data_Access
 
         public static bool GetInternationalLicenseById(int InternationalLicenseID, ref int ApplicationId, ref int DriverId,
             ref int IssuedUsingLocalLicenseId, ref DateTime IssueDate, ref DateTime expirationDate,
-            ref bool IsActive, ref int CreatedByUser)
+            ref bool IsActive, ref int CreatedByUserID)
         {
             bool isFound = false;
 
@@ -164,7 +164,7 @@ namespace DVLD___Data_Access
                         IssueDate = (DateTime)reader["IssueDate"];
                         expirationDate = (DateTime)reader["ExpirationDate"];
                         IsActive = (bool)reader["IsActive"];
-                        CreatedByUser = (int)reader["CreatedByUser"];
+                        CreatedByUserID = (int)reader["CreatedByUserID"];
                     }
                     reader.Close();
                 }
@@ -216,7 +216,7 @@ namespace DVLD___Data_Access
                                     IssueDate = @IssueDate,
                                     ExpirationDate = @ExpirationDate,
                                     IsActive = @IsActive,
-                                    CreatedByUser = @CreatedByUser
+                                    CreatedByUserID = @CreatedByUserID
                                 WHERE InternationalLicenseID = @InternationalLicenseID";
 
                 SqlCommand command = new SqlCommand(query, connection);
@@ -227,7 +227,7 @@ namespace DVLD___Data_Access
                 command.Parameters.AddWithValue("@IssueDate", issueDate);
                 command.Parameters.AddWithValue("@ExpirationDate", expirationDate);
                 command.Parameters.AddWithValue("@IsActive", isActive);
-                command.Parameters.AddWithValue("@CreatedByUser", createdByUser);
+                command.Parameters.AddWithValue("@CreatedByUserID", createdByUser);
 
                 try
                 {
