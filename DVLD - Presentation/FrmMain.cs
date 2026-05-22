@@ -1,4 +1,5 @@
 ﻿using DVLD.Application_Types;
+using DVLD.Applications.Renew_Applications;
 using DVLD.Drivers;
 using DVLD.InternationalLicense;
 using DVLD.License;
@@ -65,6 +66,12 @@ namespace DVLD
             frm.ShowDialog();
         }
 
+        private void renewDrivingLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmRenewLicenseApplication frm = new FrmRenewLicenseApplication();
+            frm.ShowDialog();
+        }
+
         #endregion
 
         #region Drivers
@@ -112,6 +119,7 @@ namespace DVLD
             FrmChangePassword frm = new FrmChangePassword(clsGlobalSettings.CurrentUser.UserID);
             frm.ShowDialog();
         }
+
 
 
 

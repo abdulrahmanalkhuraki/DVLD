@@ -102,6 +102,23 @@ namespace DVLD.License
             btnIssueLicense.Enabled = true;
         }
 
+        private void lnklblLicensesHistory_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FrmDriverLicenseHistory frm = new FrmDriverLicenseHistory(clsDriver.
+                FindDriverByPersonId(Application.PersonID).DriverId);
+            frm.ShowDialog();
+        }
+
+        private void lnklblLicenseInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (int.TryParse(lblInternationalLicenseId.Text, out int id))
+            {
+                FrmInternationalLicenseDetails frm = new FrmInternationalLicenseDetails(id);
+                frm.ShowDialog();
+
+            }
+        }
+
         #endregion
 
         #region Helpers
@@ -118,22 +135,5 @@ namespace DVLD.License
 
 
         #endregion
-
-        private void lnklblLicensesHistory_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            FrmDriverLicenseHistory frm = new FrmDriverLicenseHistory(clsDriver.
-                FindDriverByPersonId(Application.PersonID).DriverId);
-            frm.ShowDialog();
-        }
-
-        private void lnklblLicenseInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            if(int.TryParse(lblInternationalLicenseId.Text,out int id))
-            {
-                FrmInternationalLicenseDetails frm = new FrmInternationalLicenseDetails(id);
-                frm.ShowDialog();
-
-            }
-        }
     }
 }
