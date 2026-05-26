@@ -87,6 +87,12 @@
     <Compile Include="Applications\Renew Applications\FrmRenewLicenseApplication.Designer.cs">
       <DependentUpon>FrmRenewLicenseApplication.cs</DependentUpon>
     </Compile>
+    <Compile Include="Applications\Replacement For Lost or Damaged\FrmReplacementForLostorDamagedLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\Replacement For Lost or Damaged\FrmReplacementForLostorDamagedLicense.Designer.cs">
+      <DependentUpon>FrmReplacementForLostorDamagedLicense.cs</DependentUpon>
+    </Compile>
     <Compile Include="Applications\Tests\FrmTakeTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -284,6 +290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\Renew Applications\FrmRenewLicenseApplication.resx">
       <DependentUpon>FrmRenewLicenseApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\Replacement For Lost or Damaged\FrmReplacementForLostorDamagedLicense.resx">
+      <DependentUpon>FrmReplacementForLostorDamagedLicense.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\Tests\FrmTakeTest.resx">
       <DependentUpon>FrmTakeTest.cs</DependentUpon>

@@ -39,8 +39,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.lblLicenseFees = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblCreatedBy = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.lblApplicationFees = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.lblExpirationDate = new System.Windows.Forms.Label();
@@ -56,6 +54,8 @@
             this.lblRenewLicenseApplicationID = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.ctrlLicenseFilter1 = new DVLD.License.ctrlLicenseFilter();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lblCreatedBy = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -206,28 +206,6 @@
             this.label3.TabIndex = 24;
             this.label3.Text = "License Fees";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblCreatedBy
-            // 
-            this.lblCreatedBy.AutoSize = true;
-            this.lblCreatedBy.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCreatedBy.Location = new System.Drawing.Point(639, 186);
-            this.lblCreatedBy.Name = "lblCreatedBy";
-            this.lblCreatedBy.Size = new System.Drawing.Size(30, 20);
-            this.lblCreatedBy.TabIndex = 23;
-            this.lblCreatedBy.Text = "???";
-            // 
-            // label12
-            // 
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Image = global::DVLD.Properties.Resources.user1;
-            this.label12.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label12.Location = new System.Drawing.Point(392, 184);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(195, 24);
-            this.label12.TabIndex = 22;
-            this.label12.Text = "Created By";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblApplicationFees
             // 
@@ -392,6 +370,28 @@
             this.ctrlLicenseFilter1.TabIndex = 0;
             this.ctrlLicenseFilter1.OnLicenseSelected += new System.Action<int>(this.ctrlLicenseFilter1_OnLicenseSelected);
             // 
+            // label12
+            // 
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Image = global::DVLD.Properties.Resources.user1;
+            this.label12.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label12.Location = new System.Drawing.Point(392, 184);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(195, 24);
+            this.label12.TabIndex = 22;
+            this.label12.Text = "Created By";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblCreatedBy
+            // 
+            this.lblCreatedBy.AutoSize = true;
+            this.lblCreatedBy.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCreatedBy.Location = new System.Drawing.Point(639, 186);
+            this.lblCreatedBy.Name = "lblCreatedBy";
+            this.lblCreatedBy.Size = new System.Drawing.Size(30, 20);
+            this.lblCreatedBy.TabIndex = 23;
+            this.lblCreatedBy.Text = "???";
+            // 
             // FrmRenewLicenseApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -426,8 +426,6 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnRenewLicense;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label lblCreatedBy;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label lblApplicationFees;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label lblExpirationDate;
@@ -448,5 +446,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbNotes;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblCreatedBy;
+        private System.Windows.Forms.Label label12;
     }
 }
