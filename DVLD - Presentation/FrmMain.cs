@@ -1,5 +1,6 @@
 ﻿using DVLD.Application_Types;
 using DVLD.Applications.Renew_Applications;
+using DVLD.Applications.Replacement_For_Lost_or_Damaged;
 using DVLD.Drivers;
 using DVLD.InternationalLicense;
 using DVLD.License;
@@ -72,6 +73,12 @@ namespace DVLD
             frm.ShowDialog();
         }
 
+        private void replacmentForLostOrDamagedLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmReplacementForLostorDamagedLicense frm = new FrmReplacementForLostorDamagedLicense();
+            frm.ShowDialog();
+        }
+
         #endregion
 
         #region Drivers
@@ -119,6 +126,7 @@ namespace DVLD
             FrmChangePassword frm = new FrmChangePassword(clsGlobalSettings.CurrentUser.UserID);
             frm.ShowDialog();
         }
+
 
 
 

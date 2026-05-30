@@ -28,37 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ctrlLicenseFilter1 = new DVLD.License.ctrlLicenseFilter();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblReplaceLicenseApplicationID = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lblApplicationDate = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.lblApplicationFees = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.lblReplacedLicenseID = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblOldLicenseID = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.lblCreatedBy = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.rbDamaged = new System.Windows.Forms.RadioButton();
+            this.lblOldLicenseID = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblReplacedLicenseID = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblApplicationFees = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.lblApplicationDate = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lblReplaceLicenseApplicationID = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.gbReplacementReason = new System.Windows.Forms.GroupBox();
             this.rbLost = new System.Windows.Forms.RadioButton();
+            this.rbDamaged = new System.Windows.Forms.RadioButton();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnReplaceLicense = new System.Windows.Forms.Button();
             this.lnklblLicenseInfo = new System.Windows.Forms.LinkLabel();
             this.lnklblLicensesHistory = new System.Windows.Forms.LinkLabel();
+            this.ctrlLicenseFilter1 = new DVLD.License.ctrlLicenseFilter();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.gbReplacementReason.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // ctrlLicenseFilter1
-            // 
-            this.ctrlLicenseFilter1.Location = new System.Drawing.Point(2, 12);
-            this.ctrlLicenseFilter1.Name = "ctrlLicenseFilter1";
-            this.ctrlLicenseFilter1.Size = new System.Drawing.Size(913, 394);
-            this.ctrlLicenseFilter1.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -80,116 +73,6 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Application Info For License Replacement";
-            // 
-            // lblReplaceLicenseApplicationID
-            // 
-            this.lblReplaceLicenseApplicationID.AutoSize = true;
-            this.lblReplaceLicenseApplicationID.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReplaceLicenseApplicationID.Location = new System.Drawing.Point(271, 40);
-            this.lblReplaceLicenseApplicationID.Name = "lblReplaceLicenseApplicationID";
-            this.lblReplaceLicenseApplicationID.Size = new System.Drawing.Size(30, 20);
-            this.lblReplaceLicenseApplicationID.TabIndex = 11;
-            this.lblReplaceLicenseApplicationID.Text = "???";
-            // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Image = global::DVLD.Properties.Resources.icons8_id_24;
-            this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label7.Location = new System.Drawing.Point(24, 38);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(195, 24);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "L.R Application  ID";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblApplicationDate
-            // 
-            this.lblApplicationDate.AutoSize = true;
-            this.lblApplicationDate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApplicationDate.Location = new System.Drawing.Point(271, 80);
-            this.lblApplicationDate.Name = "lblApplicationDate";
-            this.lblApplicationDate.Size = new System.Drawing.Size(30, 20);
-            this.lblApplicationDate.TabIndex = 13;
-            this.lblApplicationDate.Text = "???";
-            // 
-            // label9
-            // 
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Image = global::DVLD.Properties.Resources.icons8_date_24;
-            this.label9.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label9.Location = new System.Drawing.Point(24, 78);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(195, 24);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "Application Date";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblApplicationFees
-            // 
-            this.lblApplicationFees.AutoSize = true;
-            this.lblApplicationFees.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApplicationFees.Location = new System.Drawing.Point(271, 121);
-            this.lblApplicationFees.Name = "lblApplicationFees";
-            this.lblApplicationFees.Size = new System.Drawing.Size(30, 20);
-            this.lblApplicationFees.TabIndex = 23;
-            this.lblApplicationFees.Text = "???";
-            // 
-            // label14
-            // 
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Image = global::DVLD.Properties.Resources.icons8_fees_24;
-            this.label14.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label14.Location = new System.Drawing.Point(24, 119);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(195, 24);
-            this.label14.TabIndex = 22;
-            this.label14.Text = "Application Fees";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblReplacedLicenseID
-            // 
-            this.lblReplacedLicenseID.AutoSize = true;
-            this.lblReplacedLicenseID.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReplacedLicenseID.Location = new System.Drawing.Point(674, 40);
-            this.lblReplacedLicenseID.Name = "lblReplacedLicenseID";
-            this.lblReplacedLicenseID.Size = new System.Drawing.Size(30, 20);
-            this.lblReplacedLicenseID.TabIndex = 25;
-            this.lblReplacedLicenseID.Text = "???";
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Image = global::DVLD.Properties.Resources.id__10_;
-            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label2.Location = new System.Drawing.Point(427, 38);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(195, 24);
-            this.label2.TabIndex = 24;
-            this.label2.Text = "Replaced License  ID";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblOldLicenseID
-            // 
-            this.lblOldLicenseID.AutoSize = true;
-            this.lblOldLicenseID.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOldLicenseID.Location = new System.Drawing.Point(674, 80);
-            this.lblOldLicenseID.Name = "lblOldLicenseID";
-            this.lblOldLicenseID.Size = new System.Drawing.Size(30, 20);
-            this.lblOldLicenseID.TabIndex = 27;
-            this.lblOldLicenseID.Text = "???";
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Image = global::DVLD.Properties.Resources.id__8_2;
-            this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label4.Location = new System.Drawing.Point(427, 78);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(195, 24);
-            this.label4.TabIndex = 26;
-            this.label4.Text = "Old License ID";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblCreatedBy
             // 
@@ -213,16 +96,137 @@
             this.label12.Text = "Created By";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // groupBox2
+            // lblOldLicenseID
             // 
-            this.groupBox2.Controls.Add(this.rbLost);
-            this.groupBox2.Controls.Add(this.rbDamaged);
-            this.groupBox2.Location = new System.Drawing.Point(12, 583);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(274, 76);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Replacement For";
+            this.lblOldLicenseID.AutoSize = true;
+            this.lblOldLicenseID.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOldLicenseID.Location = new System.Drawing.Point(674, 80);
+            this.lblOldLicenseID.Name = "lblOldLicenseID";
+            this.lblOldLicenseID.Size = new System.Drawing.Size(30, 20);
+            this.lblOldLicenseID.TabIndex = 27;
+            this.lblOldLicenseID.Text = "???";
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Image = global::DVLD.Properties.Resources.id__8_2;
+            this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label4.Location = new System.Drawing.Point(427, 78);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(195, 24);
+            this.label4.TabIndex = 26;
+            this.label4.Text = "Old License ID";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblReplacedLicenseID
+            // 
+            this.lblReplacedLicenseID.AutoSize = true;
+            this.lblReplacedLicenseID.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReplacedLicenseID.Location = new System.Drawing.Point(674, 40);
+            this.lblReplacedLicenseID.Name = "lblReplacedLicenseID";
+            this.lblReplacedLicenseID.Size = new System.Drawing.Size(30, 20);
+            this.lblReplacedLicenseID.TabIndex = 25;
+            this.lblReplacedLicenseID.Text = "???";
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Image = global::DVLD.Properties.Resources.id__10_;
+            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label2.Location = new System.Drawing.Point(427, 38);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(195, 24);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "Replaced License  ID";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblApplicationFees
+            // 
+            this.lblApplicationFees.AutoSize = true;
+            this.lblApplicationFees.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApplicationFees.Location = new System.Drawing.Point(271, 121);
+            this.lblApplicationFees.Name = "lblApplicationFees";
+            this.lblApplicationFees.Size = new System.Drawing.Size(30, 20);
+            this.lblApplicationFees.TabIndex = 23;
+            this.lblApplicationFees.Text = "???";
+            // 
+            // label14
+            // 
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Image = global::DVLD.Properties.Resources.icons8_fees_24;
+            this.label14.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label14.Location = new System.Drawing.Point(24, 119);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(195, 24);
+            this.label14.TabIndex = 22;
+            this.label14.Text = "Application Fees";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblApplicationDate
+            // 
+            this.lblApplicationDate.AutoSize = true;
+            this.lblApplicationDate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApplicationDate.Location = new System.Drawing.Point(271, 80);
+            this.lblApplicationDate.Name = "lblApplicationDate";
+            this.lblApplicationDate.Size = new System.Drawing.Size(30, 20);
+            this.lblApplicationDate.TabIndex = 13;
+            this.lblApplicationDate.Text = "???";
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Image = global::DVLD.Properties.Resources.icons8_date_24;
+            this.label9.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label9.Location = new System.Drawing.Point(24, 78);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(195, 24);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "Application Date";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblReplaceLicenseApplicationID
+            // 
+            this.lblReplaceLicenseApplicationID.AutoSize = true;
+            this.lblReplaceLicenseApplicationID.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReplaceLicenseApplicationID.Location = new System.Drawing.Point(271, 40);
+            this.lblReplaceLicenseApplicationID.Name = "lblReplaceLicenseApplicationID";
+            this.lblReplaceLicenseApplicationID.Size = new System.Drawing.Size(30, 20);
+            this.lblReplaceLicenseApplicationID.TabIndex = 11;
+            this.lblReplaceLicenseApplicationID.Text = "???";
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Image = global::DVLD.Properties.Resources.icons8_id_24;
+            this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label7.Location = new System.Drawing.Point(24, 38);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(195, 24);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "L.R Application  ID";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // gbReplacementReason
+            // 
+            this.gbReplacementReason.Controls.Add(this.rbLost);
+            this.gbReplacementReason.Controls.Add(this.rbDamaged);
+            this.gbReplacementReason.Enabled = false;
+            this.gbReplacementReason.Location = new System.Drawing.Point(12, 583);
+            this.gbReplacementReason.Name = "gbReplacementReason";
+            this.gbReplacementReason.Size = new System.Drawing.Size(274, 76);
+            this.gbReplacementReason.TabIndex = 2;
+            this.gbReplacementReason.TabStop = false;
+            this.gbReplacementReason.Text = "Replacement For";
+            // 
+            // rbLost
+            // 
+            this.rbLost.AutoSize = true;
+            this.rbLost.Location = new System.Drawing.Point(166, 38);
+            this.rbLost.Name = "rbLost";
+            this.rbLost.Size = new System.Drawing.Size(53, 20);
+            this.rbLost.TabIndex = 1;
+            this.rbLost.Text = "Lost";
+            this.rbLost.UseVisualStyleBackColor = true;
             // 
             // rbDamaged
             // 
@@ -235,16 +239,7 @@
             this.rbDamaged.TabStop = true;
             this.rbDamaged.Text = "Damaged";
             this.rbDamaged.UseVisualStyleBackColor = true;
-            // 
-            // rbLost
-            // 
-            this.rbLost.AutoSize = true;
-            this.rbLost.Location = new System.Drawing.Point(166, 38);
-            this.rbLost.Name = "rbLost";
-            this.rbLost.Size = new System.Drawing.Size(53, 20);
-            this.rbLost.TabIndex = 1;
-            this.rbLost.Text = "Lost";
-            this.rbLost.UseVisualStyleBackColor = true;
+            this.rbDamaged.CheckedChanged += new System.EventHandler(this.rbDamaged_CheckedChanged);
             // 
             // btnClose
             // 
@@ -258,6 +253,7 @@
             this.btnClose.Text = "Close";
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnReplaceLicense
             // 
@@ -272,6 +268,7 @@
             this.btnReplaceLicense.Text = "Replace License";
             this.btnReplaceLicense.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReplaceLicense.UseVisualStyleBackColor = false;
+            this.btnReplaceLicense.Click += new System.EventHandler(this.btnReplaceLicense_Click);
             // 
             // lnklblLicenseInfo
             // 
@@ -283,6 +280,7 @@
             this.lnklblLicenseInfo.TabIndex = 53;
             this.lnklblLicenseInfo.TabStop = true;
             this.lnklblLicenseInfo.Text = "Show Replaced License Info";
+            this.lnklblLicenseInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnklblLicenseInfo_LinkClicked);
             // 
             // lnklblLicensesHistory
             // 
@@ -294,17 +292,25 @@
             this.lnklblLicensesHistory.TabIndex = 52;
             this.lnklblLicensesHistory.TabStop = true;
             this.lnklblLicensesHistory.Text = "Show Licenses History";
+            this.lnklblLicensesHistory.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnklblLicensesHistory_LinkClicked);
+            // 
+            // ctrlLicenseFilter1
+            // 
+            this.ctrlLicenseFilter1.Location = new System.Drawing.Point(2, 3);
+            this.ctrlLicenseFilter1.Name = "ctrlLicenseFilter1";
+            this.ctrlLicenseFilter1.Size = new System.Drawing.Size(913, 403);
+            this.ctrlLicenseFilter1.TabIndex = 0;
+            this.ctrlLicenseFilter1.OnLicenseSelected += new System.Action<int>(this.ctrlLicenseFilter1_OnLicenseSelected);
             // 
             // FrmReplacementForLostorDamagedLicense
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(911, 671);
             this.Controls.Add(this.lnklblLicenseInfo);
             this.Controls.Add(this.lnklblLicensesHistory);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnReplaceLicense);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.gbReplacementReason);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.ctrlLicenseFilter1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -313,11 +319,12 @@
             this.Name = "FrmReplacementForLostorDamagedLicense";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Replacement For Lost or Damaged License";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.gbReplacementReason.ResumeLayout(false);
+            this.gbReplacementReason.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -339,7 +346,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblCreatedBy;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gbReplacementReason;
         private System.Windows.Forms.RadioButton rbDamaged;
         private System.Windows.Forms.RadioButton rbLost;
         private System.Windows.Forms.Button btnClose;

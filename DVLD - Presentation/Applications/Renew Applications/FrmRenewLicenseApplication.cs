@@ -35,6 +35,10 @@ namespace DVLD.Applications.Renew_Applications
 
         private void btnRenewLicense_Click(object sender, EventArgs e)
         {
+            // confirm operation
+            if (clsMessages.Confirm("Are You Sure You Want To Renew This license?") == DialogResult.No)
+                return;
+
             // save the application
             Application.Save();
             lblRenewLicenseApplicationID.Text = Application.ApplicationID.ToString();
@@ -144,9 +148,6 @@ namespace DVLD.Applications.Renew_Applications
             lblCreatedBy.Text = clsGlobalSettings.CurrentUser.Username;
         }
 
-
         #endregion
-
-
     }
 }
