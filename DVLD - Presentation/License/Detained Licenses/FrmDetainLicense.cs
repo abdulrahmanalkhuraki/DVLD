@@ -14,6 +14,11 @@ namespace DVLD.License.Detained_Licenses
         {
             InitializeComponent();
         }
+        public FrmDetainLicense(int LicenseID)
+        {
+            InitializeComponent();
+            ctrlLicenseFilter1.LoadLicense(LicenseID);
+        }
 
         #region Event Handlers
 

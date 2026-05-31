@@ -33,6 +33,26 @@ namespace DVLD.License
         public void DisableFilter() => gbFilter.Enabled = false;
         public void EnableFilter() => gbFilter.Enabled = true;
 
+        public void LoadLicense(int LicenseID)
+        {
+            if (LicenseID <= 0) return;
+
+            if (!clsLicense.IsLicenseExists(LicenseID))
+            {
+                clsMessages.Error($"License with Id = {LicenseID} Not Found.");
+                return;
+            }
+
+            ctrlLicenseCard1.LoadLicenseInfo(LicenseID);
+
+            if (OnLicenseSelected != null)
+            {
+                OnLicenseSelected(LicenseID);
+            }
+            tbLicenseId.Text = LicenseID.ToString();
+            DisableFilter();
+        }
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
             if (int.TryParse(tbLicenseId.Text, out int LicenseID))

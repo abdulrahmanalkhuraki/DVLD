@@ -1,5 +1,6 @@
 ﻿using DVLD___Data_Access;
 using System;
+using System.Data;
 
 namespace DVLD___Business
 {
@@ -120,6 +121,11 @@ namespace DVLD___Business
             return clsDetainedLicenseData.UpdateDetainedLicense(this.DetainID, this.LicenseID, this.DetainDate,
                 this.FineFees, this.CreatedByUserID, this.IsReleased, this.ReleaseDate,
                 this.ReleasedByUserID, this.ReleaseApplicationID);
+        }
+
+        public static DataTable GetAllDetainedLicenses()
+        {
+            return clsDetainedLicenseData.GetAllDetainedLicenses();
         }
     }
 }

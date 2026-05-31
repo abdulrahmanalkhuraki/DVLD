@@ -62,6 +62,12 @@ namespace DVLD
             frm.ShowDialog();
         }
 
+        private void manageDetainedLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmManageDetainedLicenses frm = new FrmManageDetainedLicenses();
+            frm.ShowDialog();
+        }
+
         private void releaseDetainedLicenseToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             FrmReleaseDetainedLicense frm = new FrmReleaseDetainedLicense();
@@ -139,6 +145,7 @@ namespace DVLD
             FrmChangePassword frm = new FrmChangePassword(clsGlobalSettings.CurrentUser.UserID);
             frm.ShowDialog();
         }
+
 
 
 

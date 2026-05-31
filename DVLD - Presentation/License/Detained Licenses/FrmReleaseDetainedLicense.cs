@@ -2,13 +2,6 @@
 using DVLD___Business;
 using DVLD___Business.Utility;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DVLD.License.Detained_Licenses
@@ -24,6 +17,15 @@ namespace DVLD.License.Detained_Licenses
             Application.ApplicationTypeID = 5;
             Application.PaidFees = clsApplicationType.FindApplicationType(5).Fees;
             Application.CreatedByUserID = clsGlobalSettings.CurrentUser.UserID;
+        }
+        public FrmReleaseDetainedLicense(int LicenseId)
+        {
+            InitializeComponent();
+            Application = new clsApplication();
+            Application.ApplicationTypeID = 5;
+            Application.PaidFees = clsApplicationType.FindApplicationType(5).Fees;
+            Application.CreatedByUserID = clsGlobalSettings.CurrentUser.UserID;
+            ctrlLicenseFilter1.LoadLicense(LicenseId);
         }
 
         #region Event Handlers

@@ -148,6 +148,12 @@
     <Compile Include="License\Detained Licenses\FrmDetainLicense.Designer.cs">
       <DependentUpon>FrmDetainLicense.cs</DependentUpon>
     </Compile>
+    <Compile Include="License\Detained Licenses\FrmManageDetainedLicenses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="License\Detained Licenses\FrmManageDetainedLicenses.Designer.cs">
+      <DependentUpon>FrmManageDetainedLicenses.cs</DependentUpon>
+    </Compile>
     <Compile Include="License\Detained Licenses\FrmReleaseDetainedLicense.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -326,6 +332,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="License\Detained Licenses\FrmDetainLicense.resx">
       <DependentUpon>FrmDetainLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="License\Detained Licenses\FrmManageDetainedLicenses.resx">
+      <DependentUpon>FrmManageDetainedLicenses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="License\Detained Licenses\FrmReleaseDetainedLicense.resx">
       <DependentUpon>FrmReleaseDetainedLicense.cs</DependentUpon>
@@ -643,6 +652,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DVLD.ico" />
+    <None Include="Resources\icons8-taxi-license-100.png" />
+    <None Include="Resources\icons8-taxi-license-32.png" />
     <None Include="Resources\Release2.png" />
     <None Include="Resources\id %288%292.png" />
     <None Include="Resources\international License24.png" />
