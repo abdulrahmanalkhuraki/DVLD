@@ -223,6 +223,7 @@
             this.releaseDetainedLicenseToolStripMenuItem1.Name = "releaseDetainedLicenseToolStripMenuItem1";
             this.releaseDetainedLicenseToolStripMenuItem1.Size = new System.Drawing.Size(261, 26);
             this.releaseDetainedLicenseToolStripMenuItem1.Text = "Release Detained License";
+            this.releaseDetainedLicenseToolStripMenuItem1.Click += new System.EventHandler(this.releaseDetainedLicenseToolStripMenuItem1_Click);
             // 
             // manageApplicationsToolStripMenuItem1
             // 

@@ -148,6 +148,12 @@
     <Compile Include="License\Detained Licenses\FrmDetainLicense.Designer.cs">
       <DependentUpon>FrmDetainLicense.cs</DependentUpon>
     </Compile>
+    <Compile Include="License\Detained Licenses\FrmReleaseDetainedLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="License\Detained Licenses\FrmReleaseDetainedLicense.Designer.cs">
+      <DependentUpon>FrmReleaseDetainedLicense.cs</DependentUpon>
+    </Compile>
     <Compile Include="License\Local License\ctrlLicenseCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -320,6 +326,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="License\Detained Licenses\FrmDetainLicense.resx">
       <DependentUpon>FrmDetainLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="License\Detained Licenses\FrmReleaseDetainedLicense.resx">
+      <DependentUpon>FrmReleaseDetainedLicense.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="License\International License\ctrlInternationalLicenseCard.resx">
       <DependentUpon>ctrlInternationalLicenseCard.cs</DependentUpon>
@@ -634,6 +643,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DVLD.ico" />
+    <None Include="Resources\Release2.png" />
     <None Include="Resources\id %288%292.png" />
     <None Include="Resources\international License24.png" />
     <None Include="Resources\id %288%291.png" />
