@@ -4,6 +4,7 @@ using DVLD.Applications.Replacement_For_Lost_or_Damaged;
 using DVLD.Drivers;
 using DVLD.InternationalLicense;
 using DVLD.License;
+using DVLD.License.Detained_Licenses;
 using DVLD.LocalDrivingLicenseApplication;
 using DVLD.Person;
 using DVLD.Test_Types;
@@ -53,6 +54,12 @@ namespace DVLD
         private void drivingLicenseToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void detainLicenseToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmDetainLicense frm = new FrmDetainLicense();
+            frm.ShowDialog();
         }
 
         private void manageApplicationsToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -126,6 +133,7 @@ namespace DVLD
             FrmChangePassword frm = new FrmChangePassword(clsGlobalSettings.CurrentUser.UserID);
             frm.ShowDialog();
         }
+
 
 
 

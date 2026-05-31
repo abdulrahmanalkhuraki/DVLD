@@ -46,7 +46,7 @@ namespace DVLD.License
             lblDateOfBirth.Text = licenseOwner.DateOfBirth.ToString("yyyy-MM-dd");
             lblExpirationDate.Text = License.ExpirationDate.ToString("yyyy-MM-dd");
             lblDriverId.Text = License.DriverID.ToString();
-            lblIsDetained.Text = License.IsLicenseDetained() ? "Yes" : "No";
+            lblIsDetained.Text = License.IsDetained() ? "Yes" : "No";
             _LoadPersonPicture(licenseOwner);
 
         }

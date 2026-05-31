@@ -200,6 +200,7 @@
             this.detainLicenseToolStripMenuItem1,
             this.releaseDetainedLicenseToolStripMenuItem1});
             this.detainLicenseToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.detainLicenseToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("detainLicenseToolStripMenuItem.Image")));
             this.detainLicenseToolStripMenuItem.Name = "detainLicenseToolStripMenuItem";
             this.detainLicenseToolStripMenuItem.Size = new System.Drawing.Size(264, 26);
             this.detainLicenseToolStripMenuItem.Text = "Detain License";
@@ -215,6 +216,7 @@
             this.detainLicenseToolStripMenuItem1.Name = "detainLicenseToolStripMenuItem1";
             this.detainLicenseToolStripMenuItem1.Size = new System.Drawing.Size(261, 26);
             this.detainLicenseToolStripMenuItem1.Text = "Detain License";
+            this.detainLicenseToolStripMenuItem1.Click += new System.EventHandler(this.detainLicenseToolStripMenuItem1_Click);
             // 
             // releaseDetainedLicenseToolStripMenuItem1
             // 

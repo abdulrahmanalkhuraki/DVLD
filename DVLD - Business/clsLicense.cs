@@ -198,7 +198,7 @@ namespace DVLD___Business
                 this.PaidFees, this.IsActive, this.IssueReason, this.CreatedByUserID);
         }
 
-        public bool IsLicenseDetained()
+        public bool IsDetained()
         {
             return clsDetainedLicenseData.IsLicenseDetained(this.LicenseID);
         }
@@ -210,14 +210,12 @@ namespace DVLD___Business
 
         public bool DetainLicense(decimal FineFees, int CreatedByUserID)
         {
-            if (IsLicenseDetained())
+            if (IsDetained())
             {
-                this.Notes = "License is already detained!";
                 return false;
             }
             if (!this.IsActive)
             {
-                this.Notes = "Cannot detain an inactive license!";
                 return false;
             }
 
@@ -258,35 +256,50 @@ namespace DVLD___Business
             return false;
         }
 
-        public bool RenewLicense(int NewCreatedByUserID)
+        public bool RenewLicense(int NewCreatedByUserID, int NewApplicationID, ref int RenewedLicenseID)
         {
+            // Making current license inactive
             this.IsActive = false;
             if (!this.Save())
                 return false;
 
+            // Validity Length For this license Class
+            int validityLength = clsLicenseClass.FindLicenseClass(this.LicenseClassID).DefaultValidityLength;
+
+            // Creating New License Record
             clsLicense newLicense = new clsLicense();
-            newLicense.ApplicationID = this.ApplicationID;
+            newLicense.ApplicationID = NewApplicationID;
             newLicense.DriverID = this.DriverID;
             newLicense.LicenseClassID = this.LicenseClassID;
             newLicense.IssueDate = DateTime.Now;
-            newLicense.ExpirationDate = DateTime.Now.AddYears(10);
+            newLicense.ExpirationDate = DateTime.Now.AddYears(validityLength);
             newLicense.Notes = "Renewed from license ID: " + this.LicenseID;
             newLicense.PaidFees = this.PaidFees;
             newLicense.IsActive = true;
             newLicense.IssueReason = (int)enIssueReason.Renew;
             newLicense.CreatedByUserID = NewCreatedByUserID;
 
-            return newLicense.Save();
+            // Save License
+            bool IsLicenseSaved = newLicense.Save();
+
+            if (IsLicenseSaved)
+            {
+                RenewedLicenseID = newLicense.LicenseID;
+                return true;
+            }
+            return false;
         }
 
-        public bool ReplaceLicense(int NewCreatedByUserID, enIssueReason ReplaceReason)
+        public bool ReplaceLicense(int NewCreatedByUserID, int NewApplicationID, ref int ReplacedLicenseID, enIssueReason ReplaceReason)
         {
+            // Making current license inactive
             this.IsActive = false;
             if (!this.Save())
                 return false;
 
+            // Creating New License Record
             clsLicense newLicense = new clsLicense();
-            newLicense.ApplicationID = this.ApplicationID;
+            newLicense.ApplicationID = NewApplicationID;
             newLicense.DriverID = this.DriverID;
             newLicense.LicenseClassID = this.LicenseClassID;
             newLicense.IssueDate = DateTime.Now;
@@ -297,7 +310,15 @@ namespace DVLD___Business
             newLicense.IssueReason = (int)ReplaceReason;
             newLicense.CreatedByUserID = NewCreatedByUserID;
 
-            return newLicense.Save();
+            // Save License
+            bool IsLicenseSaved = newLicense.Save();
+
+            if (IsLicenseSaved)
+            {
+                ReplacedLicenseID = newLicense.LicenseID;
+                return true;
+            }
+            return false;
         }
     }
 }

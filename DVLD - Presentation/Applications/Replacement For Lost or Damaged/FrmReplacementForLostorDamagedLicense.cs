@@ -48,30 +48,19 @@ namespace DVLD.Applications.Replacement_For_Lost_or_Damaged
             Application.Save();
             lblReplaceLicenseApplicationID.Text = Application.ApplicationID.ToString();
 
-            // making old license inactive
-            OldLicense.IsActive = false;
-            OldLicense.Save();
 
-            // creating new license record
-            clsLicense ReplacedLicense = new clsLicense();
-            ReplacedLicense.ApplicationID = Application.ApplicationID;
-            ReplacedLicense.LicenseClassID = OldLicense.LicenseClassID;
-            ReplacedLicense.PaidFees = clsLicenseClass.FindLicenseClass(ReplacedLicense.LicenseClassID).ClassFees;
-            ReplacedLicense.DriverID = clsDriver.FindDriverByPersonId(Application.PersonID).DriverId;
-            ReplacedLicense.IssueDate = DateTime.Now;
-            int validityLength = clsLicenseClass.FindLicenseClass(OldLicense.LicenseClassID).DefaultValidityLength;
-            ReplacedLicense.ExpirationDate = DateTime.Now.AddYears(validityLength);
-            ReplacedLicense.IsActive = true;
-            ReplacedLicense.Notes = rbDamaged.Checked ? "Replacement For Damaged." : "Replacement For Lost.";
-            ReplacedLicense.IssueReason = rbDamaged.Checked?(int)enIssueReason.ReplacementForDamaged
-                : (int)enIssueReason.ReplacementForLost;
-            ReplacedLicense.CreatedByUserID = clsGlobalSettings.CurrentUser.UserID;
+            int ReplacedLicenseID = -1;
 
-            // saving replaced license to the database
-            if (ReplacedLicense.Save())
+            enIssueReason ReplaceReason = rbDamaged.Checked ? enIssueReason.ReplacementForDamaged
+               : enIssueReason.ReplacementForLost;
+
+            if (OldLicense.ReplaceLicense(clsGlobalSettings.CurrentUser.UserID,
+                Application.ApplicationID,
+                ref ReplacedLicenseID,
+                ReplaceReason))
             {
                 clsMessages.Success("License Has Been Replaced Successfully.");
-                lblReplacedLicenseID.Text = ReplacedLicense.LicenseID.ToString();
+                lblReplacedLicenseID.Text = ReplacedLicenseID.ToString();
                 lnklblLicenseInfo.Enabled = true;
             }
             else
@@ -99,7 +88,7 @@ namespace DVLD.Applications.Replacement_For_Lost_or_Damaged
                 return;
             }
 
-            if (OldLicense.IsLicenseDetained())
+            if (OldLicense.IsDetained())
             {
                 clsMessages.Error("Sorry, this License is Detained.");
                 return;

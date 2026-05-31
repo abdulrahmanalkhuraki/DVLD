@@ -43,28 +43,12 @@ namespace DVLD.Applications.Renew_Applications
             Application.Save();
             lblRenewLicenseApplicationID.Text = Application.ApplicationID.ToString();
 
-            // making old license inactive
-            OldLicense.IsActive = false;
-            OldLicense.Save();
+            int RenewedLicenseID = -1;
 
-            // creating new license record
-            clsLicense NewLicense = new clsLicense();
-            NewLicense.ApplicationID = Application.ApplicationID;
-            NewLicense.LicenseClassID = OldLicense.LicenseClassID;
-            NewLicense.PaidFees = clsLicenseClass.FindLicenseClass(NewLicense.LicenseClassID).ClassFees;
-            NewLicense.DriverID = clsDriver.FindDriverByPersonId(Application.PersonID).DriverId;
-            NewLicense.IssueDate = DateTime.Now;
-            int validityLength = clsLicenseClass.FindLicenseClass(OldLicense.LicenseClassID).DefaultValidityLength;
-            NewLicense.ExpirationDate = DateTime.Now.AddYears(validityLength);
-            NewLicense.IsActive = true;
-            NewLicense.Notes = tbNotes.Text.Trim();
-            NewLicense.IssueReason = (int)enIssueReason.Renew;
-            NewLicense.CreatedByUserID = clsGlobalSettings.CurrentUser.UserID;
-
-            if (NewLicense.Save())
+            if (OldLicense.RenewLicense(clsGlobalSettings.CurrentUser.UserID,Application.ApplicationID,ref RenewedLicenseID))
             {
                 clsMessages.Success("License Has Been Renewed Successfully.");
-                lblRenewedLicenseID.Text = NewLicense.LicenseID.ToString();
+                lblRenewedLicenseID.Text = RenewedLicenseID.ToString();
                 lnklblLicenseInfo.Enabled = true;
             }
             else
@@ -98,7 +82,7 @@ namespace DVLD.Applications.Renew_Applications
                 return;
             }
 
-            if (OldLicense.IsLicenseDetained())
+            if (OldLicense.IsDetained())
             {
                 clsMessages.Error("Sorry, this License is Detained.");
                 return;
