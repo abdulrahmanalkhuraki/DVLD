@@ -652,6 +652,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DVLD.ico" />
+    <None Include="Resources\icons8-manage-48.png" />
+    <None Include="Resources\icons8-replace-64.png" />
+    <None Include="Resources\reload.png" />
     <None Include="Resources\icons8-taxi-license-100.png" />
     <None Include="Resources\icons8-taxi-license-32.png" />
     <None Include="Resources\Release2.png" />

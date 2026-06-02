@@ -61,19 +61,18 @@ namespace DVLD.Drivers
             switch (filterIndex)
             {
                 case 1: // Driver ID
-                    if (int.TryParse(tbUserInput.Text, out int did))
+                    if (int.TryParse(tbUserInput.Text.Trim(), out int did))
                         filtered = allDrivers.Select($"DriverID = {did}");
                     break;
                 case 2: // Person ID
-                    if (int.TryParse(tbUserInput.Text, out int pid))
+                    if (int.TryParse(tbUserInput.Text.Trim(), out int pid))
                         filtered = allDrivers.Select($"PersonID = {pid}");
                     break;
                 case 3: // National No.
-                    if (int.TryParse(tbUserInput.Text, out int Nnu))
-                        filtered = allDrivers.Select($"NationalNo = {Nnu}");
+                    filtered = allDrivers.Select($"NationalNo = '{tbUserInput.Text.Trim()}'");
                     break;
                 case 4: // Full Name
-                    filtered = allDrivers.Select($"FullName LIKE '{tbUserInput.Text}%'");
+                    filtered = allDrivers.Select($"FullName LIKE '{tbUserInput.Text.Trim()}%'");
                     break;
                 default: break;
             }

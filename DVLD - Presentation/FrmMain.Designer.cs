@@ -139,6 +139,7 @@
             // 
             // renewDrivingLicenseToolStripMenuItem
             // 
+            this.renewDrivingLicenseToolStripMenuItem.Image = global::DVLD.Properties.Resources.reload;
             this.renewDrivingLicenseToolStripMenuItem.Name = "renewDrivingLicenseToolStripMenuItem";
             this.renewDrivingLicenseToolStripMenuItem.Size = new System.Drawing.Size(370, 26);
             this.renewDrivingLicenseToolStripMenuItem.Text = "Renew Driving License";
@@ -151,6 +152,7 @@
             // 
             // replacmentForLostOrDamagedLicenseToolStripMenuItem
             // 
+            this.replacmentForLostOrDamagedLicenseToolStripMenuItem.Image = global::DVLD.Properties.Resources.icons8_replace_64;
             this.replacmentForLostOrDamagedLicenseToolStripMenuItem.Name = "replacmentForLostOrDamagedLicenseToolStripMenuItem";
             this.replacmentForLostOrDamagedLicenseToolStripMenuItem.Size = new System.Drawing.Size(370, 26);
             this.replacmentForLostOrDamagedLicenseToolStripMenuItem.Text = "Replacment For Lost or Damaged License";
@@ -207,6 +209,7 @@
             // 
             // manageDetainedLicenseToolStripMenuItem
             // 
+            this.manageDetainedLicenseToolStripMenuItem.Image = global::DVLD.Properties.Resources.icons8_manage_48;
             this.manageDetainedLicenseToolStripMenuItem.Name = "manageDetainedLicenseToolStripMenuItem";
             this.manageDetainedLicenseToolStripMenuItem.Size = new System.Drawing.Size(261, 26);
             this.manageDetainedLicenseToolStripMenuItem.Text = "Manage Detained License";
@@ -214,6 +217,7 @@
             // 
             // detainLicenseToolStripMenuItem1
             // 
+            this.detainLicenseToolStripMenuItem1.Image = global::DVLD.Properties.Resources.icons8_taxi_license_100;
             this.detainLicenseToolStripMenuItem1.Name = "detainLicenseToolStripMenuItem1";
             this.detainLicenseToolStripMenuItem1.Size = new System.Drawing.Size(261, 26);
             this.detainLicenseToolStripMenuItem1.Text = "Detain License";
@@ -221,6 +225,7 @@
             // 
             // releaseDetainedLicenseToolStripMenuItem1
             // 
+            this.releaseDetainedLicenseToolStripMenuItem1.Image = global::DVLD.Properties.Resources.Release2;
             this.releaseDetainedLicenseToolStripMenuItem1.Name = "releaseDetainedLicenseToolStripMenuItem1";
             this.releaseDetainedLicenseToolStripMenuItem1.Size = new System.Drawing.Size(261, 26);
             this.releaseDetainedLicenseToolStripMenuItem1.Text = "Release Detained License";

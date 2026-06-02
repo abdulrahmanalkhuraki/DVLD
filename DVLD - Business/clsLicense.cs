@@ -273,7 +273,7 @@ namespace DVLD___Business
             newLicense.LicenseClassID = this.LicenseClassID;
             newLicense.IssueDate = DateTime.Now;
             newLicense.ExpirationDate = DateTime.Now.AddYears(validityLength);
-            newLicense.Notes = "Renewed from license ID: " + this.LicenseID;
+            newLicense.Notes = "Renewed";
             newLicense.PaidFees = this.PaidFees;
             newLicense.IsActive = true;
             newLicense.IssueReason = (int)enIssueReason.Renew;
@@ -304,7 +304,7 @@ namespace DVLD___Business
             newLicense.LicenseClassID = this.LicenseClassID;
             newLicense.IssueDate = DateTime.Now;
             newLicense.ExpirationDate = this.ExpirationDate;
-            newLicense.Notes = $"Replaced due to: {ReplaceReason.ToString()} from license ID: {this.LicenseID}";
+            newLicense.Notes = ReplaceReason.ToString();
             newLicense.PaidFees = this.PaidFees;
             newLicense.IsActive = true;
             newLicense.IssueReason = (int)ReplaceReason;

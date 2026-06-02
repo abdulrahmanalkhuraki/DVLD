@@ -82,6 +82,17 @@ namespace DVLD.License.Detained_Licenses
                 clsMessages.Error("Sorry, No License To Detain.");
                 return;
             }
+            if (string.IsNullOrEmpty(tbFineFees.Text))
+            {
+                errorProvider1.SetError(tbFineFees, "Enter Fine Fees");
+                tbFineFees.Focus();
+                return;
+            }
+            else
+            {
+                errorProvider1.SetError(tbFineFees, "");
+            }
+
 
             if (license.DetainLicense(decimal.Parse(tbFineFees.Text), clsGlobalSettings.CurrentUser.UserID))
             {

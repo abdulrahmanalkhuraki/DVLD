@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDetainLicense));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbFineFees = new System.Windows.Forms.TextBox();
@@ -45,7 +46,9 @@
             this.lnklblLicensesHistory = new System.Windows.Forms.LinkLabel();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnDetainLicense = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -237,6 +240,10 @@
             this.btnDetainLicense.UseVisualStyleBackColor = false;
             this.btnDetainLicense.Click += new System.EventHandler(this.btnDetainLicense_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // FrmDetainLicense
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -257,6 +264,7 @@
             this.Text = "Detain License";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -280,5 +288,6 @@
         private System.Windows.Forms.LinkLabel lnklblLicensesHistory;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnDetainLicense;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

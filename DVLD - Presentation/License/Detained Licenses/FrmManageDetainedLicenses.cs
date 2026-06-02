@@ -64,8 +64,6 @@ namespace DVLD.License.Detained_Licenses
                 "Detain ID",
                 "License ID",
                 "Detain Date",
-                "Detain Date",
-                "Fine Fees",
                 "Fine Fees",
                 "Is Released",
                 "Release Date"

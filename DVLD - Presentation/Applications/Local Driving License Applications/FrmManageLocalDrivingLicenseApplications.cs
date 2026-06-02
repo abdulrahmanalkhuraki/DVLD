@@ -262,7 +262,7 @@ namespace DVLD.LocalDrivingLicenseApplication
                         deleteToolStripMenuItem.Enabled = true;
                         CancelToolStripMenuItem.Enabled = true;
                         scadToolStripMenuItem.Enabled = true;
-                        showPersonLicenseHistoryToolStripMenuItem.Enabled = true;
+                        showPersonLicenseHistoryToolStripMenuItem.Enabled = clsPerson.FindPerson(app.PersonID).HasLicense(3);
 
                         issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = false;
                         showLicenseToolStripMenuItem.Enabled = false;
@@ -277,9 +277,10 @@ namespace DVLD.LocalDrivingLicenseApplication
                             deleteToolStripMenuItem.Enabled = true;
                             CancelToolStripMenuItem.Enabled = true;
                             scadToolStripMenuItem.Enabled = false;
-                            showPersonLicenseHistoryToolStripMenuItem.Enabled = true;
+                            showPersonLicenseHistoryToolStripMenuItem.Enabled = clsPerson.FindPerson(app.PersonID).HasLicense(3);
                             issueDrivingLicenseFirstTimeToolStripMenuItem.Enabled = true;
                             showLicenseToolStripMenuItem.Enabled = false;
+                            break;
                         }
 
                         showDetailsToolStripMenuItem.Enabled = true;
@@ -308,6 +309,9 @@ namespace DVLD.LocalDrivingLicenseApplication
         {
             if (dgvApplications.SelectedRows.Count == 0) return;
             int appId = Convert.ToInt32(dgvApplications.SelectedRows[0].Cells["LocalDrivingLicenseApplicationID"].Value);
+            FrmIssueDrivingLicenseForFirstTime frm = new FrmIssueDrivingLicenseForFirstTime(appId);
+            frm.ShowDialog();
+
         }
         private void showLicenseToolStripMenuItem_Click(object sender, EventArgs e)
         {

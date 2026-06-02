@@ -32,27 +32,27 @@
             this.lblName = new System.Windows.Forms.Label();
             this.lblLicenseClass = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblIsDetained = new System.Windows.Forms.Label();
-            this.lblDriverId = new System.Windows.Forms.Label();
-            this.lblExpirationDate = new System.Windows.Forms.Label();
-            this.lblDateOfBirth = new System.Windows.Forms.Label();
-            this.lblIsActive = new System.Windows.Forms.Label();
-            this.lblNotes = new System.Windows.Forms.Label();
-            this.lblIssueReason = new System.Windows.Forms.Label();
-            this.lblIssueDate = new System.Windows.Forms.Label();
-            this.lblGender = new System.Windows.Forms.Label();
-            this.lblNationalNumber = new System.Windows.Forms.Label();
             this.pbPersonPicture = new System.Windows.Forms.PictureBox();
+            this.lblIsDetained = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.lblDriverId = new System.Windows.Forms.Label();
+            this.lblExpirationDate = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.lblDateOfBirth = new System.Windows.Forms.Label();
+            this.lblIsActive = new System.Windows.Forms.Label();
+            this.lblNotes = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.lblIssueReason = new System.Windows.Forms.Label();
+            this.lblIssueDate = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.lblGender = new System.Windows.Forms.Label();
+            this.lblNationalNumber = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -69,7 +69,6 @@
             this.lblLicenseId.Size = new System.Drawing.Size(30, 20);
             this.lblLicenseId.TabIndex = 15;
             this.lblLicenseId.Text = "???";
-
             // 
             // lblName
             // 
@@ -80,7 +79,6 @@
             this.lblName.Size = new System.Drawing.Size(30, 20);
             this.lblName.TabIndex = 13;
             this.lblName.Text = "???";
-
             // 
             // lblLicenseClass
             // 
@@ -91,7 +89,6 @@
             this.lblLicenseClass.Size = new System.Drawing.Size(30, 20);
             this.lblLicenseClass.TabIndex = 11;
             this.lblLicenseClass.Text = "???";
-
             // 
             // groupBox1
             // 
@@ -131,117 +128,6 @@
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "License Info";
-
-            // 
-            // lblIsDetained
-            // 
-            this.lblIsDetained.AutoSize = true;
-            this.lblIsDetained.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIsDetained.Location = new System.Drawing.Point(512, 264);
-            this.lblIsDetained.Name = "lblIsDetained";
-            this.lblIsDetained.Size = new System.Drawing.Size(30, 20);
-            this.lblIsDetained.TabIndex = 35;
-            this.lblIsDetained.Text = "???";
-
-            // 
-            // lblDriverId
-            // 
-            this.lblDriverId.AutoSize = true;
-            this.lblDriverId.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDriverId.Location = new System.Drawing.Point(512, 231);
-            this.lblDriverId.Name = "lblDriverId";
-            this.lblDriverId.Size = new System.Drawing.Size(30, 20);
-            this.lblDriverId.TabIndex = 33;
-            this.lblDriverId.Text = "???";
-
-            // 
-            // lblExpirationDate
-            // 
-            this.lblExpirationDate.AutoSize = true;
-            this.lblExpirationDate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExpirationDate.Location = new System.Drawing.Point(512, 199);
-            this.lblExpirationDate.Name = "lblExpirationDate";
-            this.lblExpirationDate.Size = new System.Drawing.Size(30, 20);
-            this.lblExpirationDate.TabIndex = 31;
-            this.lblExpirationDate.Text = "???";
-
-            // 
-            // lblDateOfBirth
-            // 
-            this.lblDateOfBirth.AutoSize = true;
-            this.lblDateOfBirth.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateOfBirth.Location = new System.Drawing.Point(512, 166);
-            this.lblDateOfBirth.Name = "lblDateOfBirth";
-            this.lblDateOfBirth.Size = new System.Drawing.Size(30, 20);
-            this.lblDateOfBirth.TabIndex = 29;
-            this.lblDateOfBirth.Text = "???";
-
-            // 
-            // lblIsActive
-            // 
-            this.lblIsActive.AutoSize = true;
-            this.lblIsActive.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIsActive.Location = new System.Drawing.Point(512, 135);
-            this.lblIsActive.Name = "lblIsActive";
-            this.lblIsActive.Size = new System.Drawing.Size(30, 20);
-            this.lblIsActive.TabIndex = 27;
-            this.lblIsActive.Text = "???";
-
-            // 
-            // lblNotes
-            // 
-            this.lblNotes.AutoSize = true;
-            this.lblNotes.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNotes.Location = new System.Drawing.Point(222, 264);
-            this.lblNotes.Name = "lblNotes";
-            this.lblNotes.Size = new System.Drawing.Size(30, 20);
-            this.lblNotes.TabIndex = 25;
-            this.lblNotes.Text = "???";
-
-            // 
-            // lblIssueReason
-            // 
-            this.lblIssueReason.AutoSize = true;
-            this.lblIssueReason.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIssueReason.Location = new System.Drawing.Point(222, 231);
-            this.lblIssueReason.Name = "lblIssueReason";
-            this.lblIssueReason.Size = new System.Drawing.Size(30, 20);
-            this.lblIssueReason.TabIndex = 23;
-            this.lblIssueReason.Text = "???";
-
-            // 
-            // lblIssueDate
-            // 
-            this.lblIssueDate.AutoSize = true;
-            this.lblIssueDate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIssueDate.Location = new System.Drawing.Point(222, 199);
-            this.lblIssueDate.Name = "lblIssueDate";
-            this.lblIssueDate.Size = new System.Drawing.Size(30, 20);
-            this.lblIssueDate.TabIndex = 21;
-            this.lblIssueDate.Text = "???";
-
-            // 
-            // lblGender
-            // 
-            this.lblGender.AutoSize = true;
-            this.lblGender.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGender.Location = new System.Drawing.Point(222, 166);
-            this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(30, 20);
-            this.lblGender.TabIndex = 19;
-            this.lblGender.Text = "???";
-
-            // 
-            // lblNationalNumber
-            // 
-            this.lblNationalNumber.AutoSize = true;
-            this.lblNationalNumber.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNationalNumber.Location = new System.Drawing.Point(222, 135);
-            this.lblNationalNumber.Name = "lblNationalNumber";
-            this.lblNationalNumber.Size = new System.Drawing.Size(30, 20);
-            this.lblNationalNumber.TabIndex = 17;
-            this.lblNationalNumber.Text = "???";
-
             // 
             // pbPersonPicture
             // 
@@ -252,7 +138,16 @@
             this.pbPersonPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbPersonPicture.TabIndex = 36;
             this.pbPersonPicture.TabStop = false;
-
+            // 
+            // lblIsDetained
+            // 
+            this.lblIsDetained.AutoSize = true;
+            this.lblIsDetained.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIsDetained.Location = new System.Drawing.Point(512, 264);
+            this.lblIsDetained.Name = "lblIsDetained";
+            this.lblIsDetained.Size = new System.Drawing.Size(30, 20);
+            this.lblIsDetained.TabIndex = 35;
+            this.lblIsDetained.Text = "???";
             // 
             // label15
             // 
@@ -265,7 +160,6 @@
             this.label15.TabIndex = 32;
             this.label15.Text = "Driver Id";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-
             // 
             // label16
             // 
@@ -278,7 +172,26 @@
             this.label16.TabIndex = 34;
             this.label16.Text = "Is Detained";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-
+            // 
+            // lblDriverId
+            // 
+            this.lblDriverId.AutoSize = true;
+            this.lblDriverId.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDriverId.Location = new System.Drawing.Point(512, 231);
+            this.lblDriverId.Name = "lblDriverId";
+            this.lblDriverId.Size = new System.Drawing.Size(30, 20);
+            this.lblDriverId.TabIndex = 33;
+            this.lblDriverId.Text = "???";
+            // 
+            // lblExpirationDate
+            // 
+            this.lblExpirationDate.AutoSize = true;
+            this.lblExpirationDate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExpirationDate.Location = new System.Drawing.Point(512, 199);
+            this.lblExpirationDate.Name = "lblExpirationDate";
+            this.lblExpirationDate.Size = new System.Drawing.Size(30, 20);
+            this.lblExpirationDate.TabIndex = 31;
+            this.lblExpirationDate.Text = "???";
             // 
             // label19
             // 
@@ -291,7 +204,6 @@
             this.label19.TabIndex = 28;
             this.label19.Text = "Date Of Birth";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-
             // 
             // label20
             // 
@@ -304,7 +216,6 @@
             this.label20.TabIndex = 30;
             this.label20.Text = "Expiration Date";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-
             // 
             // label21
             // 
@@ -317,7 +228,35 @@
             this.label21.TabIndex = 26;
             this.label21.Text = "Is Active";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-
+            // 
+            // lblDateOfBirth
+            // 
+            this.lblDateOfBirth.AutoSize = true;
+            this.lblDateOfBirth.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateOfBirth.Location = new System.Drawing.Point(512, 166);
+            this.lblDateOfBirth.Name = "lblDateOfBirth";
+            this.lblDateOfBirth.Size = new System.Drawing.Size(30, 20);
+            this.lblDateOfBirth.TabIndex = 29;
+            this.lblDateOfBirth.Text = "???";
+            // 
+            // lblIsActive
+            // 
+            this.lblIsActive.AutoSize = true;
+            this.lblIsActive.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIsActive.Location = new System.Drawing.Point(512, 135);
+            this.lblIsActive.Name = "lblIsActive";
+            this.lblIsActive.Size = new System.Drawing.Size(30, 20);
+            this.lblIsActive.TabIndex = 27;
+            this.lblIsActive.Text = "???";
+            // 
+            // lblNotes
+            // 
+            this.lblNotes.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNotes.Location = new System.Drawing.Point(222, 264);
+            this.lblNotes.Name = "lblNotes";
+            this.lblNotes.Size = new System.Drawing.Size(102, 41);
+            this.lblNotes.TabIndex = 25;
+            this.lblNotes.Text = "???";
             // 
             // label11
             // 
@@ -330,7 +269,6 @@
             this.label11.TabIndex = 22;
             this.label11.Text = "Issue Reason";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-
             // 
             // label12
             // 
@@ -343,7 +281,26 @@
             this.label12.TabIndex = 24;
             this.label12.Text = "Notes";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-
+            // 
+            // lblIssueReason
+            // 
+            this.lblIssueReason.AutoSize = true;
+            this.lblIssueReason.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIssueReason.Location = new System.Drawing.Point(222, 231);
+            this.lblIssueReason.Name = "lblIssueReason";
+            this.lblIssueReason.Size = new System.Drawing.Size(30, 20);
+            this.lblIssueReason.TabIndex = 23;
+            this.lblIssueReason.Text = "???";
+            // 
+            // lblIssueDate
+            // 
+            this.lblIssueDate.AutoSize = true;
+            this.lblIssueDate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIssueDate.Location = new System.Drawing.Point(222, 199);
+            this.lblIssueDate.Name = "lblIssueDate";
+            this.lblIssueDate.Size = new System.Drawing.Size(30, 20);
+            this.lblIssueDate.TabIndex = 21;
+            this.lblIssueDate.Text = "???";
             // 
             // label4
             // 
@@ -356,7 +313,6 @@
             this.label4.TabIndex = 18;
             this.label4.Text = "Gender";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-
             // 
             // label6
             // 
@@ -369,7 +325,6 @@
             this.label6.TabIndex = 20;
             this.label6.Text = "Issue Date";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-
             // 
             // label7
             // 
@@ -382,7 +337,26 @@
             this.label7.TabIndex = 16;
             this.label7.Text = "National No.";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-
+            // 
+            // lblGender
+            // 
+            this.lblGender.AutoSize = true;
+            this.lblGender.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGender.Location = new System.Drawing.Point(222, 166);
+            this.lblGender.Name = "lblGender";
+            this.lblGender.Size = new System.Drawing.Size(30, 20);
+            this.lblGender.TabIndex = 19;
+            this.lblGender.Text = "???";
+            // 
+            // lblNationalNumber
+            // 
+            this.lblNationalNumber.AutoSize = true;
+            this.lblNationalNumber.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNationalNumber.Location = new System.Drawing.Point(222, 135);
+            this.lblNationalNumber.Name = "lblNationalNumber";
+            this.lblNationalNumber.Size = new System.Drawing.Size(30, 20);
+            this.lblNationalNumber.TabIndex = 17;
+            this.lblNationalNumber.Text = "???";
             // 
             // label3
             // 
@@ -395,7 +369,6 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "Name";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-
             // 
             // label5
             // 
@@ -408,7 +381,6 @@
             this.label5.TabIndex = 14;
             this.label5.Text = "License ID";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-
             // 
             // label1
             // 
@@ -421,7 +393,6 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Class";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-
             // 
             // ctrlLicenseCard
             // 

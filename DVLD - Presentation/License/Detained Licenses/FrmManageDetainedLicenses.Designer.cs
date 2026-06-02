@@ -87,6 +87,7 @@
             // cbUserChoice
             // 
             this.cbUserChoice.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbUserChoice.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbUserChoice.Font = new System.Drawing.Font("Myanmar Text", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbUserChoice.FormattingEnabled = true;
             this.cbUserChoice.Items.AddRange(new object[] {
@@ -151,6 +152,7 @@
             this.dgvDetainedLicenses.AllowUserToOrderColumns = true;
             this.dgvDetainedLicenses.BackgroundColor = System.Drawing.Color.White;
             this.dgvDetainedLicenses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetainedLicenses.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvDetainedLicenses.Location = new System.Drawing.Point(12, 196);
             this.dgvDetainedLicenses.MultiSelect = false;
             this.dgvDetainedLicenses.Name = "dgvDetainedLicenses";
@@ -227,6 +229,7 @@
             this.dtpUserInput.Name = "dtpUserInput";
             this.dtpUserInput.Size = new System.Drawing.Size(186, 35);
             this.dtpUserInput.TabIndex = 25;
+            this.dtpUserInput.Visible = false;
             this.dtpUserInput.ValueChanged += new System.EventHandler(this.dtpUserInput_ValueChanged);
             // 
             // contextMenuStrip1
